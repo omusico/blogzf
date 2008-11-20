@@ -1,10 +1,5 @@
 <?php
 /**
- * Front Controller
- * @version 2.0
- */
-
-/**
  * Configuración inicial
  */
 error_reporting(E_ALL | E_STRICT);
@@ -18,7 +13,6 @@ date_default_timezone_set('America/Buenos_Aires');
 set_include_path( 
     '../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
-    '../library/Stomp'       . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
     '../application/views'   . PATH_SEPARATOR .
     '.'                               . PATH_SEPARATOR .
@@ -32,12 +26,8 @@ Zend_Loader::registerAutoload();
  * Setup controller
  */
 $controller = Zend_Controller_Front::getInstance();
-
-// File de configuracion
 $controller->setParam( 'config', 'config.default.ini' )
     ->setParam( 'env', 'development' )
     ->setControllerDirectory('../application/controller')
-    ->registerPlugin(new Zend_Controller_Plugin_ErrorHandler())
     ->throwExceptions(true)
-    ->registerPlugin(new Pbook_Plugins_Security())
     ->dispatch();
