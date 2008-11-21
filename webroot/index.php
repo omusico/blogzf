@@ -24,6 +24,7 @@ include "Zend/Loader.php";
 Zend_Loader::registerAutoload();
 /**
  * Configuramos el layout
+ * Agregamos el layout de colorpaper
  */    
 $options = array( 'layout' => 'colorpaper/colorpaper', 
                 'layoutPath' => 'layout/' 
