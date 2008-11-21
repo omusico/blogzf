@@ -15,7 +15,7 @@ set_include_path(
     '../library'             . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
     '../application/views'   . PATH_SEPARATOR .
-    '.'                               . PATH_SEPARATOR .
+    '.'                      . PATH_SEPARATOR .
     get_include_path());
 /**
  * Carga de clases que sean necesarias
@@ -23,11 +23,17 @@ set_include_path(
 include "Zend/Loader.php";
 Zend_Loader::registerAutoload();
 /**
+ * Configuramos el layout
+ */    
+$options = array( 'layout' => 'colorpaper/colorpaper', 
+                'layoutPath' => 'layout/' 
+);
+Zend_Layout::startMvc( $options );
+/**
  * Setup controller
  */
 $controller = Zend_Controller_Front::getInstance();
 $controller->setParam( 'config', 'config.default.ini' )
-    ->setParam( 'env', 'development' )
     ->setControllerDirectory('../application/controller')
     ->throwExceptions(true)
     ->dispatch();
