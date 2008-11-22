@@ -31,6 +31,13 @@ class IndexController extends Zend_Controller_Action
          $this->view->headScript()
 			->appendFile( $this->view->staticServer . '/js/mootools/mootools.js');
 		 */
+         /**
+          * Asignamos a las diferentes vistas, su modulo correspondiente.
+          */
+         $response = $this->getResponse();
+         $response->insert( 'sidebar', $this->view->action( 'rightcontent', 'sidebar' ));
+         $response->insert( 'footer', $this->view->action( 'footer', 'sidebar' ));
+         $response->insert( 'topMenu', $this->view->action( 'menutop','sidebar' ));
     }
     public function indexAction()
     {

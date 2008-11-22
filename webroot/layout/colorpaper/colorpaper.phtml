@@ -8,145 +8,32 @@
 	</head>
 	<body>
 	<a name="top"></a>
-	<div id="footer-back"><div id="footer-bg">
-		<div id="main">
-			<div id="main-top">
-				<div id="navigationed">
-					<ul id="navigation" class="clearfix">
-						<li class="current_page_item"><a href="<?=$this->appServer?>" title="My Web Blog">Home</a></li>
-						<li class="page_item page-item-2"><a href="<?=$this->appServer?>/?page_id=2" title="About">About</a></li>
-                        <li class="page_item page-item-50"><a href="<?=$this->appServer?>/?page_id=50" title="Contact">Contact</a></li>
-                        <li class="page_item page-item-53"><a href="<?=$this->appServer?>/?page_id=53" title="Extras">Extras</a></li>
-					</ul>
-				</div>
-				<div id="container">
-					<div id="content-back" class="clearfix"><div id="content-bottom">
-						<div id="left-col">
-							<div class="clearfix">
-								<div id="colors">
-									<a href="<?=$this->appServer?>/wp-content/themes/colorpaper/switcher.php?style=teal" class="color-blue">Blue</a>
-									<a href="<?=$this->appServer?>/wp-content/themes/colorpaper/switcher.php?style=orange" class="color-orange">Orange</a>
-									<a href="<?=$this->appServer?>/wp-content/themes/colorpaper/switcher.php?style=green" class="color-green">Green</a>
-									<a href="<?=$this->appServer?>/wp-content/themes/colorpaper/switcher.php?style=pink" class="color-pink">Pink</a>
-									<a href="<?=$this->appServer?>/wp-content/themes/colorpaper/switcher.php?style=purple" class="color-purple">Purple</a>
-								</div>
-								<div id="featured">
-									<div class="featured-content">
-												<h3><a href="<?=$this->appServer?>/?p=41" rel="bookmark" title="Permanent Link to Puppies mark birth of commercial pet cloning">Puppies mark birth of commercial pet cloning</a></h3>
-												<p>A
-                                                        U.S. woman received five puppies Tuesday that were cloned from her
-                                                        beloved late pitbull, becoming the inaugural customer of a South Korean
-                                                        company that says it is the world’s first successful commercial canine
-                                                        cloning service.</p>
-											<div class="post-meta">
-													<a href="<?=$this->appServer?>/?p=41#more-41" rel="bookmark" title="Read More of Puppies mark birth of commercial pet cloning" class="btn btn-orange">Read More</a> <a href="<?=$this->appServer?>/?p=41#comments" title="Comment on Puppies mark birth of commercial pet cloning">12 Comments</a> &nbsp; | &nbsp;  Posted by <span class="orange weight-normal">FTL</span>
-											</div>
-																			</div>
-								</div>
+	<div id="footer-back">
+		<div id="footer-bg">
+			<div id="main">
+				<div id="main-top">
+					<div id="navigationed">
+						<?= $this->layout()->topMenu; ?>
+					</div>
+					<div id="container">
+						<div id="content-back" class="clearfix"><div id="content-bottom">
+						
+							<div id="left-col">
+								<?= $this->layout()->content?>
 							</div>
-							<div class="left-content">
-														
-									<div class="post">
-										<div class="post-date"><span class="month block">Aug </span><span class="day">28 </span></div>
-										<h4><a href="<?=$this->appServer?>/?p=39" rel="bookmark" title="Permanent Link to Ocean ‘dead zones’ becoming global problem">Ocean ‘dead zones’ becoming global problem</a></h4>
-										<p>Like
-a chronic disease spreading through the body, “dead zones” with too
-little oxygen for life are expanding in the world’s oceans.</p>
-										<div class="post-meta">
-													<a href="<?=$this->appServer?>/?p=39#more-39" rel="bookmark" title="Read More of Ocean ‘dead zones’ becoming global problem" class="btn btn-pink">Read More</a> <a href="<?=$this->appServer?>/?p=39#comments" title="Comment on Ocean ‘dead zones’ becoming global problem">1 Comment</a> &nbsp; | &nbsp;  Posted by <span class="pink weight-normal">FTL</span>
-										</div>
-									</div>
-									
-																
-								<div class="clearfix pagination bluegray">
-									<a href="<?=$this->appServer?>/?paged=2">Previous Page</a> <span class="extralarge">1 of 3</span> 								</div>
-								
-															</div>
-						</div>
-						<div id="right-col">
-																					<div id="logo">
-								<h1>My Web Blog</h1>
+							<div id="right-col">
+								<?= $this->layout()->sidebar; ?>
 							</div>
-							<ul id="right-content">
-																								<li><h5>About</h5>
-										About me. Edit this in the options panel.									</li>
-																
-																
-																<li id="flickr" class="clearfix"><h5>Photo Stream</h5>
-									<script type="text/javascript" src="My%20Web%20Blog_files/badge_code_v2.js"></script><div class="flickr_badge_image" id="flickr_badge_image1"><a href="http://www.flickr.com/photos/sutanto/3044290957/"><img src="My%20Web%20Blog_files/3044290957_8746d2d20a_s.jpg" alt="A photo on Flickr" title="Fogless in San Francisco" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image2"><a href="http://www.flickr.com/photos/sutanto/3041796159/"><img src="My%20Web%20Blog_files/3041796159_311e412602_s.jpg" alt="A photo on Flickr" title="Notorious Hong Kong Haze" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image3"><a href="http://www.flickr.com/photos/sutanto/3040579996/"><img src="My%20Web%20Blog_files/3040579996_40c4c16b8d_s.jpg" alt="A photo on Flickr" title="Hong Kong Lightshow" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image4"><a href="http://www.flickr.com/photos/sutanto/3036733249/"><img src="My%20Web%20Blog_files/3036733249_d269e5656e_s.jpg" alt="A photo on Flickr" title="MTR Route Map" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image5"><a href="http://www.flickr.com/photos/sutanto/3035749338/"><img src="My%20Web%20Blog_files/3035749338_f5705c35c4_s.jpg" alt="A photo on Flickr" title="Royal Brunei V8-RBP" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image6"><a href="http://www.flickr.com/photos/sutanto/3030225163/"><img src="My%20Web%20Blog_files/3030225163_6be4c27cb6_s.jpg" alt="A photo on Flickr" title="Canon Panorama" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image7"><a href="http://www.flickr.com/photos/sutanto/3030225889/"><img src="My%20Web%20Blog_files/3030225889_692ff032af_s.jpg" alt="A photo on Flickr" title="Cathay Pacific B-HNJ" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image8"><a href="http://www.flickr.com/photos/sutanto/3031063914/"><img src="My%20Web%20Blog_files/3031063914_03c874a874_s.jpg" alt="A photo on Flickr" title="Vietnam Airlines VN-A349" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image9"><a href="http://www.flickr.com/photos/sutanto/3028893110/"><img src="My%20Web%20Blog_files/3028893110_a135ba92a5_s.jpg" alt="A photo on Flickr" title="Scenes from A-Ma Temple #2" height="75" width="75"></a></div><span style="position: absolute; left: -999em; top: -999em; visibility: hidden;" class="flickr_badge_beacon"><img src="My%20Web%20Blog_files/p.gif" alt="" height="0" width="0"></span>
-								</li>
-								
-								<li><h5>Categories</h5>
-									<ul>
-											<li class="cat-item cat-item-4"><a href="<?=$this->appServer?>/?cat=4" title="World Business News &amp; More">Business</a>
-</li>
-	<li class="cat-item cat-item-7"><a href="<?=$this->appServer?>/?cat=7" title="Movies, Music, Games &amp; More">Entertainment</a>
-</li>
-	<li class="cat-item cat-item-5"><a href="<?=$this->appServer?>/?cat=5" title="Science News">Science</a>
-</li>
-	<li class="cat-item cat-item-3"><a href="<?=$this->appServer?>/?cat=3" title="Topic about Technology">Technology</a>
-</li>
-	<li class="cat-item cat-item-1"><a href="<?=$this->appServer?>/?cat=1" title="View all posts filed under World News">World News</a>
-</li>
-									</ul>
-								</li>								
-								
-																<li><h5>Recent Articles</h5>
-								                                                        U.S. woman received five puppies Tuesday that were cloned from her
-                                                        beloved late pitbull, becoming the inaugural customer of a South Korean
-                                                        company that says it is the world’s first successful commercial canine
-                                                        cloning service.</p>
-									<ul>
-										<li><a href="<?=$this->appServer?>/?p=41">Puppies mark birth of commercial pet cloning</a></li><li><a href="<?=$this->appServer?>/?p=39">Ocean ‘dead zones’ becoming global problem</a></li><li><a href="<?=$this->appServer?>/?p=38">Gulf ‘dead zone’ suffocating fish and livelihoods</a></li><li><a href="<?=$this->appServer?>/?p=36">Study: Organic food not more nutritional</a></li><li><a href="<?=$this->appServer?>/?p=34">Eco communities: Living the green life</a></li><li><a href="<?=$this->appServer?>/?p=32">Arctic ice at second-lowest level ever</a></li>									</ul>
-								</li>
-												
-
-								<li><h5>Archives</h5>
-									<ul>
-											<li><a href="<?=$this->appServer?>/?m=200808" title="August 2008">August 2008</a></li>
-									</ul>
-								</li>
-								
-								<li><h5>Search</h5>
-									
-									<ul>
-				
-<div class="box">
-
-<form method="get" id="searchform" action="<?=$this->appServer?>/">
-<div><input value="" name="s" id="s" class="text" size="40" type="text"><br>
-	<br>
-<input id="searchsubmit" value="Search" class="btn submit btn-green" type="submit">
-</div>
-
-</form>
-
-					
 						</div>
-										
-    
-									</ul>
-								
-							</li></ul>
-<br><a href="<?=$this->appServer?>/?feed=rss2"><img src="My%20Web%20Blog_files/rss.gif" hspace="22" border="0"></a>
-<br><br><br>						</div>
-					</div></div>
+					</div>
 					<div id="footer" class="clearfix">
-						<div>
-							<ul class="footer-pages clearfix">
-								<li class="first"><a href="<?=$this->appServer?>" title="My Web Blog Home">Home</a></li>
-								<li class="page_item page-item-2"><a href="<?=$this->appServer?>/?page_id=2" title="About">About</a></li>
-<li class="page_item page-item-50"><a href="<?=$this->appServer?>/?page_id=50" title="Contact">Contact</a></li>
-<li class="page_item page-item-53"><a href="<?=$this->appServer?>/?page_id=53" title="Extras">Extras</a></li>
-							</ul>
-							<br><p><big><strong>© Copyright My Web Blog. All rights reserved.</strong></big><br>
-								Designed by FTL <a href="http://www.freethemelayouts.com/" style="color: rgb(220, 231, 192); text-decoration: none;">Wordpress Themes</a> brought to you by <a href="http://smashingmagazine.com/" style="color: rgb(220, 231, 192); text-decoration: none;">Smashing Magazine</a>
-								</p>
-						</div>
-						<a href="#top" class="btn btn-footer right">Back to Top</a>
+						<?= $this->layout()->footer?>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div></div>
-	</body></html>
+	</div>
+</div>
+</body>
+
+</html>
