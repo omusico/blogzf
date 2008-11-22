@@ -3,13 +3,17 @@ class IndexController extends Zend_Controller_Action
 {
     public function preDispatch()
     {
-        /**
+    	/**
+    	 * Traemo los datos del archivo de configuaracion
+    	 */
+    	$registry = Zend_Registry::getInstance();
+		$config = $registry->get( 'config_ini' );
+    	/**
          * Url basicas del sistema
          */
-        $this->view->staticServer = 'http://blogzf.dev:8001/';
-        $this->view->appServer = 'http://blogzf.dev:8001/';
-                
-        /**
+        $this->view->staticServer = $config->site->static->server;
+        $this->view->appServer = $config->site->static->server;
+     	/**
          * Agrego el titulo de la pagina
          */
         $this->view->headTitle()->append('Blog con Zend Framework');
@@ -27,7 +31,6 @@ class IndexController extends Zend_Controller_Action
          $this->view->headScript()
 			->appendFile( $this->view->staticServer . '/js/mootools/mootools.js');
 		 */
-                  
     }
     public function indexAction()
     {

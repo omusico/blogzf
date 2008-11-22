@@ -31,6 +31,15 @@ $options = array( 'layout' => 'colorpaper/colorpaper',
 );
 Zend_Layout::startMvc( $options );
 /**
+ * Levantamos la configuracion del archivo config.default.ini
+ */
+$config = new Zend_Config_Ini('config/config.default.ini');
+/**
+ * Registramos de forma global la configuracion del sitio. 
+ */
+$registry = Zend_Registry::getInstance();
+$registry->set( 'config_ini', $config );
+/**
  * Setup controller
  */
 $controller = Zend_Controller_Front::getInstance();
