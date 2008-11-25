@@ -1,0 +1,34 @@
+<center>
+<div class="main">
+<h2>Listado de ordenes cerradas para esta sucursal</h2>
+<? if ( count( $this->paginator )): ?>
+
+<table width="80%" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+        <? $i=0; foreach ( $this->paginator as $item ): ?>
+        <tr>
+            <td><?= $item["author_id"]; ?></td>
+            <td><?= $item["username"]; ?></td>
+            <td><?= $item["display_name"]; ?></td>
+            <td><?= $item["status"]; ?></td>
+            <td><a href="/order/show/orderId/<?= $item["author_id"] ?>">Ver</a></td>
+        </tr>
+        <? ++ $i; endforeach; ?>
+    </tbody>
+</table>
+
+<br class="clear" />
+<?= $this->paginator ?>
+<? endif; ?>
+
+</div>
+
+</center>
