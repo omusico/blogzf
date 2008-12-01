@@ -26,9 +26,10 @@ Zend_Loader::registerAutoload();
  * Configuramos el layout
  * Agregamos el layout de colorpaper
  */    
-$options = array( 'layout' => 'colorpaper/colorpaper', 
-                'layoutPath' => 'layout/' 
-);
+$options = array(  
+	'layout' => 'admin/index',
+	'layout' => 'colorpaper/colorpaper',
+    'layoutPath' => 'layout/' );
 Zend_Layout::startMvc( $options );
 /**
  * Levantamos la configuracion del archivo config.default.ini
@@ -45,5 +46,12 @@ $registry->set( 'config_ini', $config );
 $controller = Zend_Controller_Front::getInstance();
 $controller->setParam( 'config', 'config.default.ini' )
     ->setControllerDirectory('../application/controller')
-    ->throwExceptions(true)
-    ->dispatch();
+    ->throwExceptions(true);
+
+$router = $controller->getRouter();
+$route = new Zend_Controller_Router_Route_Regex(
+    '^admin$',
+    array( 'controller' => 'admin', 'action' => 'index'  ));
+$router->addRoute('sitemap', $route);
+    
+$controller->dispatch();
