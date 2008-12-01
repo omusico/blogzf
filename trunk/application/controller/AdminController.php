@@ -1,5 +1,5 @@
 <?php
-class IndexController extends Zend_Controller_Action
+class AdminController extends Zend_Controller_Action
 {
     public function preDispatch()
     {
@@ -16,14 +16,13 @@ class IndexController extends Zend_Controller_Action
      	/**
          * Agrego el titulo de la pagina
          */
-        $this->view->headTitle()->append('Blog con Zend Framework');
+        $this->view->headTitle()->append('Administracion de BlogZf');
         /**
          * Agrego los css para esta pagina
          */
         $this->view->headLink()
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/jd.gallery.css' )
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/pink.css' )
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/style.css' );
+            ->appendStylesheet( $this->view->staticServer . 'layout/admin/css/login.css' )
+            ->appendStylesheet( $this->view->staticServer . 'layout/admin/css/colors-fresh.css' );
         /**
          * Agrego los js basicos - POr ahora ninguno
          */
@@ -34,10 +33,10 @@ class IndexController extends Zend_Controller_Action
          /**
           * Asignamos a las diferentes vistas, su modulo correspondiente.
           */
-         $response = $this->getResponse();
-         $response->insert( 'sidebar', $this->view->action( 'rightcontent', 'sidebar' ));
-         $response->insert( 'footer', $this->view->action( 'footer', 'sidebar' ));
-         $response->insert( 'topMenu', $this->view->action( 'menutop','sidebar' ));
+//         $response = $this->getResponse();
+  //       $response->insert( 'sidebar', $this->view->action( 'rightcontent', 'sidebar' ));
+   //      $response->insert( 'footer', $this->view->action( 'footer', 'sidebar' ));
+     //    $response->insert( 'topMenu', $this->view->action( 'menutop','sidebar' ));
     }
     public function indexAction()
     {

@@ -13,6 +13,11 @@ class AuthorsController extends Zend_Controller_Action
     	 */
     	$registry = Zend_Registry::getInstance();
 		$config = $registry->get( 'config_ini' );
+		/**
+		 * Sete el layout que voy a usar en este caso va a ser admin
+		 * 
+		 */
+		$this->_helper->layout->setLayout('admin/index');
     	/**
          * Url basicas del sistema
          */
@@ -21,14 +26,12 @@ class AuthorsController extends Zend_Controller_Action
      	/**
          * Agrego el titulo de la pagina
          */
-        $this->view->headTitle()->append('Blog con Zend Framework');
+        $this->view->headTitle()->append('Admin de Blogzf');
         /**
          * Agrego los css para esta pagina
          */
         $this->view->headLink()
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/jd.gallery.css' )
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/pink.css' )
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/css/style.css' );
+            ->appendStylesheet( $this->view->staticServer . 'layout/admin/css/style.css' );
         /**
          * Agrego los js basicos - POr ahora ninguno
          */
@@ -36,13 +39,6 @@ class AuthorsController extends Zend_Controller_Action
          $this->view->headScript()
 			->appendFile( $this->view->staticServer . '/js/mootools/mootools.js');
 		 */
-         /**
-          * Asignamos a las diferentes vistas, su modulo correspondiente.
-          */
-         $response = $this->getResponse();
-         $response->insert( 'sidebar', $this->view->action( 'rightcontent', 'sidebar' ));
-         $response->insert( 'footer', $this->view->action( 'footer', 'sidebar' ));
-         $response->insert( 'topMenu', $this->view->action( 'menutop','sidebar' ));	
          /**
           * Nos conectamos a la base de datos. 
           */
@@ -53,7 +49,23 @@ class AuthorsController extends Zend_Controller_Action
 	}
 	public function createAction()
 	{
-		
+        $form = new forms_Authors();
+	    if ( $this->_request->isPost() ) {
+		    $authorData = $this->_request->getPost();
+		    if ( $form->isValid( $authorData ) ) {
+		        /**
+		         * Si los datos estan ok, Creamos el registro
+		         */
+		        unset( $authorData['submit']);
+		        $authors = new Authors();
+		        $authorData['password'] = md5( $authorData['password'] );
+		        $authorId = $authors->add( $userData );
+		        $this->_redirect( '/authors/read/' );
+		    } else {
+		        $form->populate( $userData );
+		    }
+	    }
+	    $this->form = $form;
 	}
 	public function readAction()
 	{

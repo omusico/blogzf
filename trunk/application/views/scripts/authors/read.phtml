@@ -1,34 +1,41 @@
-<center>
+<style>
+	table tr th {
+		text-align:left;
+	}
+</style>
 <div class="main">
-<h2>Listado de ordenes cerradas para esta sucursal</h2>
-<? if ( count( $this->paginator )): ?>
+	<h2>Autores</h2>
 
-<table width="80%" border="0" cellpadding="0" cellspacing="0">
-    <thead>
-      <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Nombre</th>
-            <th>Estado</th>
-      </tr>
-    </thead>
-    <tbody>
-        <? $i=0; foreach ( $this->paginator as $item ): ?>
-        <tr>
-            <td><?= $item["author_id"]; ?></td>
-            <td><?= $item["username"]; ?></td>
-            <td><?= $item["display_name"]; ?></td>
-            <td><?= $item["status"]; ?></td>
-            <td><a href="/order/show/orderId/<?= $item["author_id"] ?>">Ver</a></td>
-        </tr>
-        <? ++ $i; endforeach; ?>
-    </tbody>
-</table>
+	<div class="menu">
+		<ul>
+			<li><a href="/authors/create/">Agregar</a></li>
+		</ul>
+	</div>
+	<?php if ( count( $this->paginator )): ?>
 
-<br class="clear" />
-<?= $this->paginator ?>
-<? endif; ?>
-
+	<table width="80%" border="0" cellpadding="0" cellspacing="0">
+		<thead>
+	    	<tr>
+				<th>Id</th>
+				<th>Username</th>
+				<th>Nombre</th>
+				<th>Estado</th>
+ 			</tr>
+	    </thead>
+	    <tbody>
+	        <?php $i=0; foreach ( $this->paginator as $author ): ?>
+	        <tr>
+	            <td><?= $author["author_id"] ?></td>
+	            <td><?= $author["username"] ?></td>
+	            <td><?= $author["display_name"] ?></td>
+	            <td><?= $author["status"] ?></td>
+	            <td><a href="/authors/update/authorId/<?= $author["author_id"] ?>">Modificar</a></td>
+	            <td><a href="/authors/delete/authorId/<?= $author["author_id"] ?>">Borrar</a></td>
+	        </tr>
+	        <?php ++ $i; endforeach; ?>
+	    </tbody>
+	</table>
+	<br class="clear" />
+	<?= $this->paginator ?>
+	<?php endif; ?>
 </div>
-
-</center>
