@@ -19,8 +19,7 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     	/**
     	 * Traemo los datos del archivo de configuaracion
     	 */
-    	$registry = Zend_Registry::getInstance();
-		$config = $registry->get( 'config_ini' );
+    	$config = Zend_Registry::getInstance()->get( 'config_ini' );
 		$this->view = new Zend_View();
     	/**
          * Url basicas del sistema
@@ -37,8 +36,13 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          * de la cantidad de css, si necesitamos separar en mas archivos. Podemos hacer un @import desde 
          * style.css
          */
+        
+        $layout = ( $request->module == 'admin' )
+                ? $config->site->layout->admin 
+                : $config->site->layout->default;
         $this->view->headLink()
-            ->appendStylesheet( $this->view->staticServer . 'layout/colorpaper/styles.css' );
+                ->appendStylesheet( $this->view->staticServer . 
+                	'layout/'.$layout.'/styles.css' );
         /**
          * Agrego los js basicos - POr ahora ninguno
          */

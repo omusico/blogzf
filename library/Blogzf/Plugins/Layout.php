@@ -20,10 +20,15 @@ class Blogzf_Plugins_Layout extends Zend_Controller_Plugin_Abstract
          * Configuramos el layout
          * Aca podriamos llamar a una tabla y obtener el layout activo
          * Por ahora vamos a usar los dos por defecto
-         */    
+         */
+        $config = Zend_Registry::getInstance()->get( 'config_ini' );
+        $layout = ( $request->getParam('module') == 'admin' )
+                ? $config->site->layout->admin
+                : $config->site->layout->default;
+        
         $options = array(  
         	'layout' => 'admin/index',
-        	'layout' => 'colorpaper/colorpaper',
+        	'layout' => $layout,
             'layoutPath' => 'layout/' );
         Zend_Layout::startMvc( $options );        
     }
