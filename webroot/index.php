@@ -29,4 +29,12 @@ $controller = Zend_Controller_Front::getInstance();
 $controller->setParam( 'config', 'config.default.ini' )
     ->setControllerDirectory('../application/controller')
     ->throwExceptions(true);
+/**
+ * Ahora levantamos los plugins, esto mas adelante podemos hacerlo dinamico
+ * Mas adelante veremos como 
+ */   
+$controller->registerPlugin( new Blogzf_Plugins_Config());
+$controller->registerPlugin( new Blogzf_Plugins_Layout());
+$controller->registerPlugin( new Blogzf_Plugins_View()); 
+
 $controller->dispatch();
