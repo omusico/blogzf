@@ -15,6 +15,8 @@ set_include_path(
     '../library'             . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
     '../application/views'   . PATH_SEPARATOR .
+	'../application/admin'   . PATH_SEPARATOR .
+	'../application/admin/views' . PATH_SEPARATOR .
     '.'                      . PATH_SEPARATOR .
     get_include_path());
 /**
@@ -27,14 +29,16 @@ Zend_Loader::registerAutoload();
  */
 $controller = Zend_Controller_Front::getInstance();
 $controller->setParam( 'config', 'config.default.ini' )
-    ->setControllerDirectory('../application/controller')
+    ->setControllerDirectory( array( 
+    	'default'=> '../application/controller',
+    	'admin'=> '../application/admin/controller'))
     ->throwExceptions(true);
 /**
  * Ahora levantamos los plugins, esto mas adelante podemos hacerlo dinamico
  * Mas adelante veremos como 
  */   
+
 $controller->registerPlugin( new Blogzf_Plugins_Config());
 $controller->registerPlugin( new Blogzf_Plugins_Layout());
-$controller->registerPlugin( new Blogzf_Plugins_View()); 
-
+$controller->registerPlugin( new Blogzf_Plugins_View());
 $controller->dispatch();
