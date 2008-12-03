@@ -16,7 +16,7 @@ class Admin_IndexController extends Zend_Controller_Action
                 $authAdapter->setCredential( $credentials['password'] );
                 $result = Zend_Auth::getInstance()->authenticate($authAdapter);
                 if( $result->isValid() ){
-                    $this->_redirect('/admin/dashboard/');    
+                    $this->_redirect('/admin/dashboard/');
                 }
                 $form->populate( $credentials );
             } else {

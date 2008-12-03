@@ -25,10 +25,8 @@ class Blogzf_Plugins_Layout extends Zend_Controller_Plugin_Abstract
         $layout = ( $request->getParam('module') == 'admin' )
                 ? $config->site->layout->admin
                 : $config->site->layout->default;
-        
         $options = array(  
-        	'layout' => 'admin/index',
-        	'layout' => $layout,
+        	'layout' => $layout . '/index',
             'layoutPath' => 'layout/' );
         Zend_Layout::startMvc( $options );        
     }

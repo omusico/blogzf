@@ -37,7 +37,6 @@ $controller->setParam( 'config', 'config.default.ini' )
  * Ahora levantamos los plugins, esto mas adelante podemos hacerlo dinamico
  * Mas adelante veremos como 
  */   
-
 $controller->registerPlugin( new Blogzf_Plugins_Config());
 $controller->registerPlugin( new Blogzf_Plugins_Layout());
 $controller->registerPlugin( new Blogzf_Plugins_View());
