@@ -40,4 +40,5 @@ $controller->setParam( 'config', 'config.default.ini' )
 $controller->registerPlugin( new Blogzf_Plugins_Config());
 $controller->registerPlugin( new Blogzf_Plugins_Layout());
 $controller->registerPlugin( new Blogzf_Plugins_View());
+$controller->registerPlugin( new Blogzf_Plugins_Backoffice());
 $controller->dispatch();

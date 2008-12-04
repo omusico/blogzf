@@ -5,18 +5,28 @@ class Admin_PostsController extends Zend_Controller_Action
 	{
         $form = new forms_Posts();
 	    if ( $this->_request->isPost() ) {
-		    $postsData = $this->_request->getPost();
-		    if ( $form->isValid( $postsData ) ) {
-		        unset( $postsData['submit']);
-		        $posts = new Posts();
-		        $postsData['password'] = md5( $postsData['password'] );
-		        $postsId = $posts->add( $postsData );
-		        $this->_redirect( '/posts/read/' );
+		    $postData = $this->_request->getPost();
+		    if ( $form->isValid( $postData ) ) {
+		        try {
+                    $posts = new Posts();
+                    $post = $posts->createRow();
+                    $post->title = $postData['title'];
+                    $post->content = $postData['content'];
+                    $post->user_id = $postData['user_id'];
+                    $post->comment = $postData['comment'];
+                    $post->created_date = new Zend_Db_Expr('now()');
+                    $post->status = $postData['status'];
+    		        $post->save();
+    		        $this->_redirect( '/admin/posts/read/' );
+		        } catch( Zend_Exception $e ) {
+		            echo "Caught exception: " . get_class( $e ) . "\n";
+                    echo "Message: " . $e->getMessage() . "\n";
+		        }
 		    } else {
 		        $form->populate( $postsData );
 		    }
 	    }
-	    $this->form = $form;
+	    $this->view->form = $form;
 	}
 	public function readAction()
 	{
