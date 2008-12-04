@@ -1,0 +1,41 @@
+<style>
+	table tr th {
+		text-align:left;
+	}
+</style>
+<div class="main">
+	<h2>Posts</h2>
+
+	<div class="menu">
+		<ul>
+			<li><a href="/posts/create/">Agregar</a></li>
+		</ul>
+	</div>
+	<?php if ( count( $this->paginator )): ?>
+
+	<table width="80%" border="0" cellpadding="0" cellspacing="0">
+		<thead>
+	    	<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>User</th>
+				<th>Created date</th>
+ 			</tr>
+	    </thead>
+	    <tbody>
+	        <?php $i=0; foreach ( $this->paginator as $post ): ?>
+	        <tr>
+	            <td><?= $post["post_id"] ?></td>
+	            <td><?= $post["title"] ?></td>
+	            <td><?= $post["user_id"] ?></td>
+	            <td><?= $post["created_date"] ?></td>
+	            <td><a href="/posts/update/postId/<?= $post["post_id"] ?>">Modificar</a></td>
+	            <td><a href="/posts/delete/postId/<?= $post["post_id"] ?>">Borrar</a></td>
+	        </tr>
+	        <?php ++ $i; endforeach; ?>
+	    </tbody>
+	</table>
+	<br class="clear" />
+	<?= $this->paginator ?>
+	<?php endif; ?>
+</div>
