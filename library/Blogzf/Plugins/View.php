@@ -53,10 +53,14 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          /**
           * Asignamos a las diferentes vistas, su modulo correspondiente.
           */
+         
          $response = $this->getResponse();
-         $response->insert( 'sidebar', $this->view->action( 'rightcontent', 'sidebar' ));
-         $response->insert( 'footer', $this->view->action( 'footer', 'sidebar' ));
-         $response->insert( 'topMenu', $this->view->action( 'menutop','sidebar' ));
+         $response->insert( 'sidebar', 
+             $this->view->action( 'rightcontent', 'sidebar', $request->module ));
+         $response->insert( 'footer', 
+             $this->view->action( 'footer', 'sidebar', $request->module  ));
+         $response->insert( 'topMenu', 
+             $this->view->action( 'menutop','sidebar', $request->module ));
     }
     public function postDispatch (Zend_Controller_Request_Abstract $request)
     {
