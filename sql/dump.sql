@@ -1,4 +1,4 @@
-CREATE TABLE `blogzf`.`posts` (
+CREATE TABLE `posts` (
 `post_id` MEDIUMINT( 10 ) NOT NULL AUTO_INCREMENT ,
 `user_id` MEDIUMINT( 10 ) NOT NULL ,
 `title` TEXT NOT NULL ,
@@ -10,7 +10,7 @@ CREATE TABLE `blogzf`.`posts` (
 PRIMARY KEY ( `post_id` )
 ) ENGINE = MYISAM;
 
-CREATE TABLE `blogzf`.`users` (
+CREATE TABLE `users` (
 `user_id` MEDIUMINT( 10 ) NOT NULL AUTO_INCREMENT ,
 `username` CHAR( 50 ) NOT NULL ,
 `password` CHAR( 50 ) NOT NULL ,
