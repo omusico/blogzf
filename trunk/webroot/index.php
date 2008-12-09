@@ -13,8 +13,8 @@ date_default_timezone_set('America/Buenos_Aires');
 set_include_path( 
     '../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
-    '../application/model'   . PATH_SEPARATOR .
-    '../application/views'   . PATH_SEPARATOR .
+    '../application/blog/model'   . PATH_SEPARATOR .
+    '../application/blog/views'   . PATH_SEPARATOR .
 	'../application/admin'   . PATH_SEPARATOR .
 	'../application/admin/views' . PATH_SEPARATOR .
     '.'                      . PATH_SEPARATOR .
@@ -30,7 +30,7 @@ Zend_Loader::registerAutoload();
 $controller = Zend_Controller_Front::getInstance();
 $controller->setParam( 'config', 'config.default.ini' )
     ->setControllerDirectory( array( 
-    	'default'=> '../application/controller',
+    	'default'=> '../application/blog/controller',
     	'admin'=> '../application/admin/controller'))
     ->throwExceptions(true);
 /**
