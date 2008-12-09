@@ -1,5 +1,5 @@
 <?php 
-class Blog_SidebarController extends Zend_Controller_Action
+class SidebarController extends Zend_Controller_Action
 {
 	public function preDispatch()
 	{
