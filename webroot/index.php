@@ -13,7 +13,7 @@ date_default_timezone_set('America/Buenos_Aires');
 set_include_path( 
     '../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
-    '../application/blog/model'   . PATH_SEPARATOR .
+    '../application/model'   . PATH_SEPARATOR .
     '../application/blog/views'   . PATH_SEPARATOR .
 	'../application/admin'   . PATH_SEPARATOR .
 	'../application/admin/views' . PATH_SEPARATOR .
