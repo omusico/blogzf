@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 
 CREATE TABLE IF NOT EXISTS `log` (
   `log_id` bigint(20) NOT NULL,
-  `user_id` int(11) default NULL,
+  `user_id` bigint(20) default NULL,
   `log_table` varchar(255) character set utf8 collate utf8_bin NOT NULL,
   `log_created_on` timestamp NULL default NULL,
   `log_ip` varchar(39) character set utf8 collate utf8_bin NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 
 CREATE TABLE IF NOT EXISTS `media` (
   `media_id` bigint(20) NOT NULL auto_increment,
-  `user_id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `media_path` varchar(255) NOT NULL,
   `media_title` varchar(255) NOT NULL,
   `media_file` varchar(255) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `media` (
 
 CREATE TABLE IF NOT EXISTS `post` (
   `post_id` bigint(20) NOT NULL auto_increment,
-  `user_id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `post_created_on` timestamp NULL default NULL,
   `post_updated_on` timestamp NULL default NULL on update CURRENT_TIMESTAMP,
   `post_password` varchar(32) default NULL,
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `post_tag` (
 --
 
 CREATE TABLE IF NOT EXISTS `session` (
-  `session_id` varchar(40) NOT NULL,
+  `session_id` char(40) NOT NULL,
   `session_time` int(11) NOT NULL default '0',
   `sesssion_start` int(11) NOT NULL default '0',
   `sesssion_value` longtext NOT NULL,
@@ -257,12 +257,12 @@ CREATE TABLE IF NOT EXISTS `tag` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` bigint(20) NOT NULL auto_increment,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `display_name` varchar(100) NOT NULL,
-  `status` smallint(1) NOT NULL,
-  `created_on` timestamp NULL default NULL,
-  `updated_on` timestamp NULL default NULL on update CURRENT_TIMESTAMP,
+  `username` char(50) NOT NULL,
+  `password` char(50) NOT NULL,
+  `display_name` char(100) NOT NULL,
+  `status` char(30) NOT NULL,
+  `created_date` timestamp NULL default NULL,
+  `updated_date` timestamp NULL default NULL on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -270,8 +270,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Volcar la base de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `display_name`, `status`, `created_on`, `updated_on`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 0, '2008-12-09 18:03:49', '2008-12-09 18:03:49');
+INSERT INTO `users` (`username`, `password`, `display_name`, `status`, `created_date`) VALUES
+( 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 0, NOW());
 
 --
 -- Filtros para las tablas descargadas (dump)
