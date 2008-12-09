@@ -1,5 +1,5 @@
 <?php
-class Blog_AuthorsController extends Zend_Controller_Action 
+class AuthorsController extends Zend_Controller_Action 
 {
 	/**
 	 * Contiene la instancia de Zend_Db
