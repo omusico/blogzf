@@ -20,7 +20,15 @@ class IndexController extends Zend_Controller_Action
 		 * Este es el tpl que voy a usar como paginador
 		 */
         $posts = new Post();
-        $query = $posts->select()->where('post_status = 1')->order('post_created_on DESC');
+        $query = $posts->select()
+                       ->from('post',array('*','num_comments'=>new Zend_Db_Expr('COUNT(comment_id)'), 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)', 'day' => 'DAY(post_created_on)' ))
+                       ->join('users','users.user_id=post.user_id','username')
+                       ->joinleft('comment', 'comment.post_id=post.post_id')
+                       ->group('comment.post_id')
+                       ->where('post_status = 1')
+                       ->order('post_created_on DESC')
+                       ->setIntegrityCheck(false);
+                       
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         $paginator = new Zend_Paginator( new Zend_Paginator_Adapter_DbTableSelect( $query ));
         $paginator->setCurrentPageNumber( $this->_getParam( 'page' ) );
