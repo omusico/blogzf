@@ -1,5 +1,5 @@
 <?php
-class Admin_PostsController extends Zend_Controller_Action 
+class Admin_PostsController extends Blogzf_Controller_Action     
 {
 	public function createAction()
 	{
@@ -8,7 +8,7 @@ class Admin_PostsController extends Zend_Controller_Action
 		    $postData = $this->_request->getPost();
 		    if ( $form->isValid( $postData ) ) {
 		        try {
-                    $posts = new Posts();
+                    $posts = new Post();
                     $post = $posts->createRow();
                     $post->title = $postData['title'];
                     $post->content = $postData['content'];
@@ -37,7 +37,7 @@ class Admin_PostsController extends Zend_Controller_Action
 		/**
 		 * Este es el tpl que voy a usar como paginador
 		 */
-        $posts = new Posts();
+        $posts = new Post();
         $query = $posts->select();
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         $paginator = new Zend_Paginator( new Zend_Paginator_Adapter_DbSelect( $query ));
@@ -47,7 +47,7 @@ class Admin_PostsController extends Zend_Controller_Action
 	public function updateAction()
 	{
         $form = new forms_Posts();
-        $posts = new Posts();
+        $posts = new Post();
         $postId = (int) $this->_request->getParam('postId', 0);
         $post = $posts->find( $postId )->current();
 	    if ( $this->_request->isPost() ) {

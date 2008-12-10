@@ -1,12 +1,14 @@
 <?php 
 class Admin_SidebarController extends Zend_Controller_Action
 {
-	public function preDispatch()
-	{
-		$this->view->title = 'Blog ZF';	
-	}
+    public function preDispatch()
+    {
+    }
 	public function menutopAction()
 	{
+        if( !Zend_Auth::getInstance()->hasIdentity()  ) {
+            $this->_helper->viewRenderer->setNoRender();
+        } 
 	}
 	public function rightcontentAction()
 	{
@@ -16,5 +18,3 @@ class Admin_SidebarController extends Zend_Controller_Action
 	{
 	}
 }
-
-

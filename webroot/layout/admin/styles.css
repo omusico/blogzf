@@ -1,6 +1,6 @@
 @import url(css/error_messages.css);
 body {
-  background: #858484 url('/imgs/bg2.gif') top left repeat-x;
+  background: #858484 url('imgs/bg2.gif') top left repeat-x;
   margin: 0;
   padding: 0;
   font: 10.5pt/1.3em "Trebuchet MS", Trebuchet, Helvetica, Arial;
@@ -120,7 +120,7 @@ dl.zend_form dd {
 
 #container2 {
   width: 907px;
-  background: #fff url('/imgs/container-bg2.gif') top left repeat-y;
+  background: #fff url('imgs/container-bg2.gif') top left repeat-y;
   margin: 0 auto;
 }
 
@@ -161,7 +161,7 @@ dl.zend_form dd {
 
 /* ----------------------------- */
 #header-white2 {
-  background: #fff url('/imgs/header-white-bg2.gif') top left no-repeat;
+  background: #fff url('imgs/header-white-bg2.gif') top left no-repeat;
   height: 120px;
 }
 
@@ -172,7 +172,7 @@ dl.zend_form dd {
 }
 
 #navigation {
-  background: url('/imgs/navigation-bg.gif') top left no-repeat;
+  background: url('imgs/navigation-bg.gif') top left no-repeat;
   font: 13px/1.2 Verdana, sans-serif;
   width: 834px;
   height: 43px;
@@ -212,7 +212,7 @@ dl.zend_form dd {
 }
 
 #bottom-white2 {
-	background: url('/imgs/bottom-white2.gif') top left no-repeat;
+	background: url('imgs/bottom-white2.gif') top left no-repeat;
 	height: 21px;
 }
 
