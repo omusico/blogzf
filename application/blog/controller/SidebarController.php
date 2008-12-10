@@ -45,7 +45,10 @@ class SidebarController extends Zend_Controller_Action
                       ->setIntegrityCheck(false);
    
         $this->view->cloudTags = $tags->getAdapter()->fetchPairs($query);
-        
+/*
+        $flickr = new Zend_Service_Flickr('b1db2f69a586256303a1fecee26bb211');
+        $this->view->flickr = $flickr->userSearch('songosalsa@yahoo.es');
+   */     
         
 	}
 	public function footerAction()

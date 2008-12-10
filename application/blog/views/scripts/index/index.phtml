@@ -2,18 +2,25 @@
 							
 	<?php if ( count( $this->paginator )): ?>
 	<?php $i=0; foreach ( $this->paginator as $post ): ?>
-	<?php 
-	    $month = $post->post_created_on;
-	    $day = $post->post_created_on;
-	?>
+
 	<div class="post">
-		<div class="post-date"><span class="month block">Aug</span><span class="day">28</span></div>
-		<h4><a href="<?=$this->appServer?>/?p=39" rel="bookmark" title="Permanent Link to Ocean ‘dead zones’ becoming global problem"><?=$post->post_title; ?></a></h4>
-		<p><?=$post->post_content; ?></p>
+		<div class="post-date"><span class="month block"><?=$post->month; ?></span><span class="day"><?=$post->day; ?></span></div>
+		<h4><a href="<?=$post->post_url; ?>" rel="bookmark" title="Permanent Link to "><?=$post->post_title; ?></a></h4>
+		<p>
+	
+	    <?php if ($post->post_excerpt) {
+                echo $post->post_excerpt;
+	        }  else {
+                echo $post->post_content;
+	            
+	        }
+        ?>
+		
+		</p>
 		<div class="post-meta">
-    		<a href="<?=$this->appServer?>/?p=39#more-39" rel="bookmark" title="Read More of Ocean ‘dead zones’ becoming global problem" class="btn btn-pink">Read More</a> 
-    		<a href="<?=$this->appServer?>/?p=39#comments" title="Comment on Ocean ‘dead zones’ becoming global problem">1 Comment</a> &nbsp; | &nbsp;  Posted by 
-    		<span class="pink weight-normal"><?=$post->user_id; ?></span>
+    		<a href="<?=$post->post_url; ?>" rel="bookmark" title="Read More of <?=$post->post_title; ?>" class="btn btn-pink">Read More</a> 
+    		<?=$this->numComments($post->num_comments); ?>&nbsp; | &nbsp;  Posted by 
+    		<span class="pink weight-normal"><?=$post->username; ?></span>
 		</div>
 	</div>
 	<?php endforeach;?>
@@ -22,7 +29,7 @@
 
 											
 	<div class="clearfix pagination bluegray">
-			<?= $this->paginator ?><a href="<?=$this->appServer?>/?paged=2">Previous Page</a> 
+			<?= $this->paginator ?>
 		<span class="extralarge">1 of 3</span>
 	</div>
 	
