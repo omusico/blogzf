@@ -15,8 +15,8 @@ class Admin_IndexController extends Zend_Controller_Action
                 $dbAdapter = Zend_Db_Table_Abstract::getDefaultAdapter();
                 $authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
                 $authAdapter->setTableName( 'users' );
-                $authAdapter->setIdentityColumn('username');
-                $authAdapter->setCredentialColumn('password');
+                $authAdapter->setIdentityColumn( 'username' );
+                $authAdapter->setCredentialColumn( 'password' );
                 $authAdapter->setIdentity( $credentials['username'] );
                 $authAdapter->setCredential( $credentials['password'] );
                 $result = Zend_Auth::getInstance()->authenticate($authAdapter);
@@ -31,5 +31,10 @@ class Admin_IndexController extends Zend_Controller_Action
             }
         }
         $this->view->form = $form;
+    }
+    public function logoutAction()
+    {
+        Zend_Auth::getInstance()->clearIdentity();
+        $this->_redirect('/admin');
     }
 }

@@ -13,7 +13,7 @@
 	</div>
 	<?php if ( count( $this->paginator )): ?>
 
-	<table border="1" width="80%" border="0" cellpadding="0" cellspacing="0">
+	<table width="80%" border="0" cellpadding="0" cellspacing="0">
 		<thead>
 	    	<tr>
 				<th>Id</th>
@@ -27,9 +27,9 @@
 	        <?php $i=0; foreach ( $this->paginator as $post ): ?>
 	        <tr>
 	            <td><?= $post["post_id"] ?></td>
-	            <td><?= $post["title"] ?></td>
+	            <td><?= $post["post_title"] ?></td>
 	            <td><?= $post["user_id"] ?></td>
-	            <td><?= $post["created_date"] ?></td>
+	            <td><?= $post["post_created_on"] ?></td>
 	            <td>
 	            	<a href="/admin/posts/update/postId/<?= $post["post_id"] ?>">Modificar</a> 
 	             	<a href="/admin/posts/delete/postId/<?= $post["post_id"] ?>">Borrar</a>
