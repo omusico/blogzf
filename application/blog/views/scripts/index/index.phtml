@@ -3,17 +3,17 @@
 	<?php if ( count( $this->paginator )): ?>
 	<?php $i=0; foreach ( $this->paginator as $post ): ?>
 	<?php 
-	    $month = $post['created_date'];
-	    $day = $post['created_date'];
+	    $month = $post->post_created_on;
+	    $day = $post->post_created_on;
 	?>
 	<div class="post">
 		<div class="post-date"><span class="month block">Aug</span><span class="day">28</span></div>
-		<h4><a href="<?=$this->appServer?>/?p=39" rel="bookmark" title="Permanent Link to Ocean ‘dead zones’ becoming global problem"><?=$post['title']?></a></h4>
-		<p><?=$post['content']?></p>
+		<h4><a href="<?=$this->appServer?>/?p=39" rel="bookmark" title="Permanent Link to Ocean ‘dead zones’ becoming global problem"><?=$post->post_title; ?></a></h4>
+		<p><?=$post->post_content; ?></p>
 		<div class="post-meta">
     		<a href="<?=$this->appServer?>/?p=39#more-39" rel="bookmark" title="Read More of Ocean ‘dead zones’ becoming global problem" class="btn btn-pink">Read More</a> 
     		<a href="<?=$this->appServer?>/?p=39#comments" title="Comment on Ocean ‘dead zones’ becoming global problem">1 Comment</a> &nbsp; | &nbsp;  Posted by 
-    		<span class="pink weight-normal"><?=$post['user_id']?></span>
+    		<span class="pink weight-normal"><?=$post->user_id; ?></span>
 		</div>
 	</div>
 	<?php endforeach;?>

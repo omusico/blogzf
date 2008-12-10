@@ -13,30 +13,44 @@
 	</li>
 	
 	<li><h5>Categories</h5>
-		<ul>
-				<li class="cat-item cat-item-4"><a href="<?=$this->appServer?>/?cat=4" title="World Business News &amp; More">Business</a></li>
-				<li class="cat-item cat-item-7"><a href="<?=$this->appServer?>/?cat=7" title="Movies, Music, Games &amp; More">Entertainment</a></li>
-				<li class="cat-item cat-item-5"><a href="<?=$this->appServer?>/?cat=5" title="Science News">Science</a></li>
-				<li class="cat-item cat-item-3"><a href="<?=$this->appServer?>/?cat=3" title="Topic about Technology">Technology</a></li>
-				<li class="cat-item cat-item-1"><a href="<?=$this->appServer?>/?cat=1" title="View all posts filed under World News">World News</a></li>
-		</ul>
+		<?php echo $this->NestedTree($this->categories); ?>
 	</li>								
 	
 	<li><h5>Recent Articles</h5>
-	    <p> U.S. woman received five puppies Tuesday that were cloned from her beloved late pitbull, becoming the inaugural customer of a South Korean company that says it is the world’s first successful commercial canine cloning service.</p>
 		<ul>
-			<li><a href="<?=$this->appServer?>/?p=41">Puppies mark birth of commercial pet cloning</a></li>
-			<li><a href="<?=$this->appServer?>/?p=39">Ocean ‘dead zones’ becoming global problem</a></li>
-			<li><a href="<?=$this->appServer?>/?p=38">Gulf ‘dead zone’ suffocating fish and livelihoods</a></li>
-			<li><a href="<?=$this->appServer?>/?p=36">Study: Organic food not more nutritional</a></li>
-			<li><a href="<?=$this->appServer?>/?p=34">Eco communities: Living the green life</a></li>
-			<li><a href="<?=$this->appServer?>/?p=32">Arctic ice at second-lowest level ever</a></li>									</ul>
-		</li>
+		    <?php echo $this->partialLoop('partial/recents.phtml', $this->recentPosts); ?>
+	   </ul>
 	<li>
 		<h5>Archives</h5>
-		<ul>
-			<li><a href="<?=$this->appServer?>/?m=200808" title="August 2008">August 2008</a></li>
-		</ul>
+ 	    <?php echo $this->partialLoop('partial/archives.phtml', $this->archivesByMonth); ?>
+	</li>
+	<li>
+		<h5>Tags</h5>
+		<p>
+			<?php
+			
+			    $tags = $this->cloudTags;
+			    
+			    $max_size = 250; 
+                $min_size = 100; 
+                
+                $max_qty = max(array_values($tags));
+                $min_qty = min(array_values($tags));
+
+                $spread = $max_qty - $min_qty;
+                if (0 == $spread) {
+                    $spread = 1;
+                }
+                
+                $step = ($max_size - $min_size)/($spread);
+                
+                foreach ($tags as $key => $value) {
+
+                     $size = $min_size + (($value - $min_qty) * $step);
+                     echo sprintf('<span style="font-size:%s%%">%s</span>', $size, $key);
+              }
+			?>
+		</p>
 	</li>
 	<li><h5>Search</h5>
 		<ul>

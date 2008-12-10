@@ -8,50 +8,13 @@
  * @version 0.1.0
  * @date 2007-03-01 9:49
  * @license MIT 
-*/
-
-/**
- * @package TreeModel class
+ * @package  class
  */ 
+
 abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
 	
-	private $_dbh;
-	
-	
-  private $_id;
-   
-  /**
-   * The name field in the table
-   *
-   * @var string
-   * @access private
-   */
-  private $_label;
-
-  /**
-   * Right field name in the table
-   *
-   * @var string
-   * @access private
-   */
-  private $_right;
-  
-  /**
-   * Left field name in the table
-   *
-   * @var string
-   * @access private
-   */
-  private $_left;
-  
-  /**
-   * Error string for some functions
-   *
-   * @var string
-   * @access private
-   */
-  private $_error;
-
+  protected $_dbh;
+  protected $_error;
   protected $_left = 'lft';
   protected $_right = 'rgt';
   protected $_label = 'label';
@@ -59,12 +22,8 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
 
 	function __construct() {
 		parent::__construct();
-		
+	
 		$this->_dbh = $this->getAdapter();
-		
-		$this->_left = $left;
-		$this->_right = $right;
-		$this->_label = $label;
 	}
 	
   /**
@@ -101,24 +60,26 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
    * @return array of rows from model's table
    */
   function enumTree() {
-    $data = $this->_dbh->query("SELECT node.*, 
+    $data = $this->_dbh->query("SELECT node.{$this->_label} as label, node.{$this->_primary} as id, 
                                  (count(parent.{$this->_label})-1) as depth, 
                                  IF((node.{$this->_right} = node.{$this->_left}+1), true, null) as is_leaf, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_left}=node.{$this->_left}-1
                                  ) as is_first, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_right}=node.{$this->_right}+1
                                  ) as is_last
                           FROM {$this->_name} as node, {$this->_name} as parent
                           WHERE node.{$this->_left} BETWEEN parent.{$this->_left} AND parent.{$this->_right}
-                          GROUP BY node.id
+                          GROUP BY node.{$this->_primary}
                           ORDER BY node.{$this->_left} ASC");
        
-    return $this->_reduce($data->fetchAll());
-    
+    return new Zend_Db_Table_Rowset(array(
+    						'table'=> $this->_name, 
+    						'data' => $this->_reduce($data->fetchAll())
+                ));           
   }
 
   /**
@@ -686,4 +647,4 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
     
   }
 }
-?>
+

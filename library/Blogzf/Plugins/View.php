@@ -5,6 +5,9 @@
  */
 class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
 {
+    protected $_viewRenderer;
+    protected $_view;
+          
     public function routeStartup (Zend_Controller_Request_Abstract $request)
     {
     }
@@ -16,20 +19,25 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     }
     public function preDispatch (Zend_Controller_Request_Abstract $request)
     {
+        
+        $this->_viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
+        $this->_viewRenderer->initView();
+        
     	/**
     	 * Traemo los datos del archivo de configuaracion
     	 */
     	$config = Zend_Registry::getInstance()->get( 'config_ini' );
-		$this->view = new Zend_View();
+		$this->_view = $this->_viewRenderer->view;
+		
     	/**
          * Url basicas del sistema
          */
-        $this->view->staticServer = $config->site->static->server;
-        $this->view->appServer = $config->site->static->server;
+        $this->_view->staticServer = $config->site->static->server;
+        $this->_view->appServer = $config->site->static->server;
      	/**
          * Agrego el titulo de la pagina
          */
-        $this->view->headTitle()->append( $config->site->title );
+        $this->_view->headTitle()->append( $config->site->title );
         /**
          * Agrego los css para esta pagina que siempre va a ser el mismo. 
          * /layout/nombre_layout/style.css esto es para poder agregar muchos layout. Y no dependan
@@ -40,27 +48,19 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
         $layout = ( $request->module == 'admin' )
                 ? $config->site->layout->admin 
                 : $config->site->layout->default;
-        $this->view->headLink()
-                ->appendStylesheet( $this->view->staticServer . 
+        $this->_view->headLink()
+                ->appendStylesheet( $this->_view->staticServer . 
                 	'layout/'.$layout.'/styles.css' );
-        /**
-         * Agrego los js basicos - POr ahora ninguno
-         */
-        /*
-         $this->view->headScript()
-			->appendFile( $this->view->staticServer . '/js/mootools/mootools.js');
-		 */
-         /**
-          * Asignamos a las diferentes vistas, su modulo correspondiente.
-          */
-         
-         $response = $this->getResponse();
-         $response->insert( 'sidebar', 
-             $this->view->action( 'rightcontent', 'sidebar', $request->module ));
-         $response->insert( 'footer', 
-             $this->view->action( 'footer', 'sidebar', $request->module  ));
-         $response->insert( 'topMenu', 
-             $this->view->action( 'menutop','sidebar', $request->module ));
+       
+        $response = $this->getResponse();
+        $response->insert( 'sidebar', 
+             $this->_view->action( 'rightcontent', 'sidebar', $request->module ));
+        $response->insert( 'footer', 
+             $this->_view->action( 'footer', 'sidebar', $request->module  ));
+        $response->insert( 'menutop', 
+             $this->_view->action( 'menutop','sidebar', $request->module ));
+                
+                
     }
     public function postDispatch (Zend_Controller_Request_Abstract $request)
     {
