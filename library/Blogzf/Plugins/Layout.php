@@ -16,7 +16,7 @@ class Blogzf_Plugins_Layout extends Zend_Controller_Plugin_Abstract
     }
     public function preDispatch (Zend_Controller_Request_Abstract $request)
     {
-        /**
+		/**
          * Configuramos el layout
          * Aca podriamos llamar a una tabla y obtener el layout activo
          * Por ahora vamos a usar los dos por defecto
@@ -28,7 +28,8 @@ class Blogzf_Plugins_Layout extends Zend_Controller_Plugin_Abstract
         $options = array(  
         	'layout' => $layout . '/index',
             'layoutPath' => 'layout/' );
-        Zend_Layout::startMvc( $options );        
+        Zend_Layout::startMvc( $options );  
+              
     }
     public function postDispatch (Zend_Controller_Request_Abstract $request)
     {

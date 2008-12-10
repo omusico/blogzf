@@ -1,1 +1,303 @@
-@CHARSET "UTF-8";
+@import url(css/error_messages.css);
+body {
+  background: #858484 url('/imgs/bg2.gif') top left repeat-x;
+  margin: 0;
+  padding: 0;
+  font: 10.5pt/1.3em "Trebuchet MS", Trebuchet, Helvetica, Arial;
+}
+
+h1 {
+  margin: 60px 40px 25px 40px;
+}
+
+img {
+  border: none;
+}
+
+
+/* General text styling */
+
+h2 { 
+  color: #000; 
+  font-weight: normal;
+  margin: 18px 0 28px 0;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", Helvetica, Arial;
+  font-size: 160%;
+}
+
+h3 { 
+  color: #88a3c7; 
+  font-family: Helvetica, Arial, Verdana;
+  font-weight: normal;
+	padding: 10px 0 3px 0;
+	margin: 0;
+}
+
+h4 {
+	margin: 10px 0 5px 0;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a { 
+  color: #265D8B;
+}
+
+a:hover {
+  color: #5b2d08;
+  background: #fbfbec;
+}
+
+blockquote a {
+  text-decoration: none;
+  border: none;
+  color: #999;
+}
+
+blockquote a:hover {
+  background: none;
+}
+
+a img:hover {
+  background: none;
+}
+
+strong {
+  color: #000;
+  font-weight: bold;
+}
+
+em {
+}
+
+ul {
+  padding: 0 0 0 18px;
+  margin-left: 0;
+}
+
+/* Para los forms de Zend*/
+dl.zend_form  {
+  margin: 9px 0;
+}
+
+dl.zend_form dt {
+	padding: 3px;
+	margin 0;
+}
+
+dl.zend_form dd {
+  margin: 0;
+	padding: 3px;
+}
+
+
+
+/* Para el form de rango de fechas de reportes */
+
+.reportForm dl {
+	width: 800px;
+  margin: 9px 0;
+}
+
+.reportForm dl dt {
+	float: left;
+	display: block;
+	padding: 3px;
+	margin 0;
+}
+
+.reportForm dl dd {
+  margin: 0;
+	float: left;
+	display: block;
+	padding: 3px;
+}
+
+/* END General text styling */
+
+#container2 {
+  width: 907px;
+  background: #fff url('/imgs/container-bg2.gif') top left repeat-y;
+  margin: 0 auto;
+}
+
+#header-content {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 834px;
+  height: 85px;
+}
+
+#header-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#header-content a:hover {
+  background: transparent;
+}
+
+#header-content h1 {
+  text-align: right;
+  color: #fff;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", Helvetica, Arial;
+  font-weight: normal;
+  font-size: 21pt;
+  line-height: 21pt;  
+  margin: 15px 0 15px 0;
+}
+
+#header-content p {
+  color: #133862;
+  font-size: 12pt;
+  line-height: 1.3em;
+  font-family: "Helvetica", "HelveticaNeue", Helvetica, Arial;
+}
+
+
+/* ----------------------------- */
+#header-white2 {
+  background: #fff url('/imgs/header-white-bg2.gif') top left no-repeat;
+  height: 120px;
+}
+
+#header-image {
+  width: 834px;
+  height: 80px;
+  padding-top: 35px;
+}
+
+#navigation {
+  background: url('/imgs/navigation-bg.gif') top left no-repeat;
+  font: 13px/1.2 Verdana, sans-serif;
+  width: 834px;
+  height: 43px;
+  margin: 0 auto;
+}
+
+#navigation ul {
+  margin: 0;
+}
+
+#navigation a:hover {
+  background: none;
+}
+
+#navigation ul {
+  list-style-type: none;
+  padding: 14px;
+}
+
+#navigation li {
+  display: inline;
+  margin: 0 10px;
+}
+
+#navigation li a {
+	color: #bbb;
+	text-decoration: none;
+}
+
+#navigation li.active a, #navigation li a:hover, #navigation li.active {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.content {
+	padding: 20px 35px;
+}
+
+#bottom-white2 {
+	background: url('/imgs/bottom-white2.gif') top left no-repeat;
+	height: 21px;
+}
+
+#footer {
+	background: #464646 none repeat scroll 0 0;
+	border-top: 1px solid #323232;
+	color: #999999;
+	font-size: 85%;
+	margin: 20px 0 0;
+	padding: 10px 0;
+	text-align: center;
+}
+#footer ul {
+	list-style-type: none;
+	padding: 0;
+}
+#footer li {
+	display:inline;
+}
+#footer li a {
+	color: #E9F7B3;
+}
+#footer li a:hover {
+	background: transparent none repeat scroll 0 0;
+	color: #FFFFFF;
+}
+
+/* content style */
+.container {
+	width: 810px;
+	border: 0;
+	height: 700px;
+	padding: 10px;
+	margin: auto;
+}
+
+.content-left {
+	float: left;
+	border: 0;
+	width: 790px;
+	margin: 10px;
+}
+
+.content-right {
+	float: left;
+	border: 0;
+	width: 250px;
+}
+
+.clear {
+	claer: both;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.even td  { padding: 5px; }
+.odd td  { padding: 5px; }
+
+th { padding: 5px; }
+tr.even td {
+	background: #eee;
+	border-top: 1px solid #ddd;
+}
+tr td {
+	padding: 2px;
+}
+
+tr th {
+	padding: 2px;
+	margin-top: 5px;
+	background: #07c;
+	color: #fff;
+}
+
+/* Reports */
+.reportList {
+	width: 800px;
+}
+
+.reportItem {
+	width: 380px;
+	float: left;
+	padding: 10px;
+}
+
+/* vim: se ts=2 sw=2 ai: */
