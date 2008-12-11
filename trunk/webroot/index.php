@@ -24,21 +24,50 @@ set_include_path(
  */
 include "Zend/Loader.php";
 Zend_Loader::registerAutoload();
+
+$request = new Zend_Controller_Request_Http();
+$response = new Zend_Controller_Response_Http();
+$response->setHeader('Content-type','text/html; charset=utf-8');
+
+
 /**
  * Setup controller
  */
 $controller = Zend_Controller_Front::getInstance();
-$controller->setParam( 'config', 'config.default.ini' )
-    ->setControllerDirectory( array( 
-    	'default'=> '../application/blog/controller',
-    	'admin'=> '../application/admin/controller'))
-    ->throwExceptions(true);
-/**
- * Ahora levantamos los plugins, esto mas adelante podemos hacerlo dinamico
- * Mas adelante veremos como 
- */   
+$controller->setParam( 'config', 'config.default.ini' );
+
+$dirs = new DirectoryIterator('../application/');
+
+foreach ($dirs as $dir) {
+    if ($dir->isDir() && !in_array($dir,  array('model','.','..')) ) {
+        $controller->addControllerDirectory('../application/' . $dir->getFilename() .'/controllers', $dir->getFilename());
+    }
+}
+
+
+$router = $controller->getRouter();
+  
+/*
+if (file_exists("../application/routes.xml")) {
+   $routes = new Zend_Config_Xml("../application/routes.xml", 'routes');
+
+   if ($routes->route) {
+    foreach ($routes as $route) {
+        $router->addRoute($route->name,  new Zend_Controller_Router_Route($route->url, $route->params->toArray() ));
+    }
+   }
+}
+*/
+
+//$router->addRoute('default', new Zend_Controller_Router_Route(':controller/:action', array('module' => 'blog') ));
+
+$controller->throwExceptions(true);
+
+
 $controller->registerPlugin( new Blogzf_Plugins_Config());
 $controller->registerPlugin( new Blogzf_Plugins_Layout());
 $controller->registerPlugin( new Blogzf_Plugins_View());
 $controller->registerPlugin( new Blogzf_Plugins_Backoffice());
-$controller->dispatch();
+$controller->dispatch($request, $response);
+
+
