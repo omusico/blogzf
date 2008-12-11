@@ -1,5 +1,5 @@
 <?php
-class PageController extends Zend_Controller_Action
+class Blog_PageController extends Zend_Controller_Action
 {
     public function preDispatch()
     {

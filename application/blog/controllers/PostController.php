@@ -1,5 +1,5 @@
 <?php
-class IndexController extends Zend_Controller_Action
+class Blog_PostController extends Zend_Controller_Action
 {
     public function preDispatch()
     {
