@@ -3,17 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generaci√≥n: 10-12-2008 a las 18:50:21
--- Versi√≥n del servidor: 5.0.51
--- Versi√≥n de PHP: 5.2.6-5
+-- Tiempo de generación: 11-12-2008 a las 22:19:56
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6-5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `zfblog`
@@ -33,16 +27,17 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_url` varchar(255) NOT NULL,
   `category_position` int(11) default '0',
   PRIMARY KEY  (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_left`, `category_right`, `category_title`, `category_url`, `category_position`) VALUES
-(1, 0, 5, 'default', '', 0),
-(2, 1, 2, 'zend framework', '', 0),
-(3, 3, 4, 'php', '', 0);
+(1, 0, 7, 'default', 'default', 0),
+(2, 1, 2, 'zend framework', 'zend-framework', 0),
+(3, 3, 6, 'php', 'php', 0),
+(4, 4, 5, 'php 5', 'php5', 0);
 
 -- --------------------------------------------------------
 
@@ -67,14 +62,15 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_trackback` smallint(6) NOT NULL default '0',
   PRIMARY KEY  (`comment_id`),
   KEY `idx_comment_post_id` USING BTREE (`post_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `comment`
 --
 
 INSERT INTO `comment` (`comment_id`, `post_id`, `comment_created_on`, `comment_updated_on`, `comment_author`, `comment_email`, `comment_site`, `comment_content`, `comment_words`, `comment_ip`, `comment_status`, `comment_spam_status`, `comment_spam_filter`, `comment_trackback`) VALUES
-(1, 1, NULL, '2008-12-10 18:10:11', NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', NULL, 0);
+(1, 1, '2008-12-11 12:20:13', '2008-12-11 12:29:04', 'Sebastien Cramatte', '', '', 'hola mundo. Lorem ipsum dolorm consectetur ...', '', '', 0, '0', '', 0),
+(2, 1, '2008-12-11 13:13:14', '2008-12-11 13:13:42', 'Pablo', NULL, NULL, 'Lorem ipsum dolorm consectetur ...', NULL, NULL, 0, '0', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -135,20 +131,23 @@ CREATE TABLE IF NOT EXISTS `page` (
   `page_id` bigint(20) NOT NULL auto_increment,
   `page_url` varchar(255) default NULL,
   `page_title` varchar(255) default NULL,
+  `page_excerpt` varchar(255) NOT NULL,
   `page_content` text,
   `page_lang` varchar(5) default NULL,
   `page_status` smallint(6) default NULL,
   `page_keywords` varchar(255) default NULL,
   `page_description` varchar(255) default NULL,
   PRIMARY KEY  (`page_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcar la base de datos para la tabla `page`
 --
 
-INSERT INTO `page` (`page_id`, `page_url`, `page_title`, `page_content`, `page_lang`, `page_status`, `page_keywords`, `page_description`) VALUES
-(1, 'about', 'About', 'Lorem Ipsum Dolor ...', 'es', 1, NULL, NULL);
+INSERT INTO `page` (`page_id`, `page_url`, `page_title`, `page_excerpt`, `page_content`, `page_lang`, `page_status`, `page_keywords`, `page_description`) VALUES
+(1, 'about', 'About', 'My name is Sébastien, I''m helping Pablo building this nice Blog !', 'Hola mundo.', 'es', 1, NULL, NULL),
+(2, 'contact', 'Contact', '', 'Hola mundo', 'es', 1, NULL, NULL),
+(3, 'extras', 'Extras', '', 'Hola mundo ...', 'es', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -184,9 +183,9 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`post_id`, `user_id`, `post_created_on`, `post_updated_on`, `post_password`, `post_url`, `post_lang`, `post_title`, `post_excerpt`, `post_content`, `post_notes`, `post_status`, `post_selected`, `post_open_comment`, `post_open_tb`) VALUES
-(1, 1, '2008-12-08 17:12:48', '2008-12-09 17:52:42', '', 'lorem-ipsum-dolor', 'es', 'Lorem Ipsum Dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 0, 0, 0),
-(2, 1, '2008-11-10 16:49:51', '2008-12-10 17:00:32', NULL, 'lorem-ipsum-dolor-2', 'es', 'Lorem Ipsum Dolor 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 1, 0, 0),
-(3, 1, '2008-10-10 16:50:03', '2008-12-10 17:00:42', NULL, 'lorem-ipsum-dolor-3', 'es', 'Lorem Ipsum Dolor 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 1, 0, 0);
+(1, 1, '2008-09-08 17:12:48', '2008-12-11 15:01:00', '', 'lorem-ipsum-dolor', 'es', 'Lorem Ipsum Dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 0, 0, 0),
+(2, 1, '2008-10-10 16:49:51', '0000-00-00 00:00:00', NULL, 'lorem-ipsum-dolor-2', 'es', 'Lorem Ipsum Dolor 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 1, 0, 0),
+(3, 1, '2008-10-10 16:50:03', '2008-12-11 17:14:03', NULL, 'lorem-ipsum-dolor-3', 'es', 'Lorem Ipsum Dolor 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. \r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium. Nam lorem. Nam magna erat, tincidunt at, feugiat euismod, convallis et, lectus. Praesent faucibus suscipit dui. Praesent suscipit massa et ante fringilla tincidunt. Nulla purus. Morbi malesuada sodales dui. Phasellus urna purus, pulvinar non, rutrum sit amet, fringilla vel, velit. Ut tortor. Pellentesque molestie volutpat leo. In vitae nisi. Integer ac arcu a leo imperdiet consectetur. Nam vitae erat in nulla scelerisque adipiscing. Nam mauris magna, sagittis euismod, vulputate in, elementum eu, justo. Mauris molestie, mi in molestie pharetra, neque lorem accumsan purus, sed feugiat quam pede vitae diam. Sed dolor eros, aliquam vitae, accumsan in, tristique id, ante. Integer neque pede, commodo quis, bibendum venenatis, porta ut, urna. Ut ac justo cursus lorem tincidunt dictum. Proin sed est. Sed adipiscing, diam ut consectetur aliquam, ante lacus sagittis erat, at tempor sapien magna in eros. ', NULL, 1, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +205,11 @@ CREATE TABLE IF NOT EXISTS `post_category` (
 --
 
 INSERT INTO `post_category` (`category_id`, `post_id`) VALUES
-(1, 1);
+(1, 1),
+(2, 1),
+(3, 1),
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -281,6 +284,7 @@ CREATE TABLE IF NOT EXISTS `session` (
 CREATE TABLE IF NOT EXISTS `tag` (
   `tag_id` bigint(20) NOT NULL auto_increment,
   `tag_word` varchar(255) NOT NULL,
+  `tag_url` varchar(255) NOT NULL,
   PRIMARY KEY  (`tag_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
@@ -288,13 +292,13 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- Volcar la base de datos para la tabla `tag`
 --
 
-INSERT INTO `tag` (`tag_id`, `tag_word`) VALUES
-(1, 'php'),
-(2, 'zend'),
-(3, 'zend framework'),
-(4, 'css'),
-(5, 'xhtml'),
-(6, 'oop');
+INSERT INTO `tag` (`tag_id`, `tag_word`, `tag_url`) VALUES
+(1, 'php', ''),
+(2, 'zend', ''),
+(3, 'zend framework', ''),
+(4, 'css', ''),
+(5, 'xhtml', ''),
+(6, 'oop', '');
 
 -- --------------------------------------------------------
 
