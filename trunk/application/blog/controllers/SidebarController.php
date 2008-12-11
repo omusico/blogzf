@@ -13,7 +13,7 @@ class Blog_SidebarController extends Zend_Controller_Action
 	public function rightcontentAction()
 	{
         $categories = new Category();
-        $this->view->categories = $categories->enumTree();
+        $this->view->categories = $categories->enumSubTree(1,true);
 
         $posts = new Post();
         $query = $posts->select()->where('post_status = 1')
@@ -31,8 +31,9 @@ class Blog_SidebarController extends Zend_Controller_Action
         
 
         $query = $posts->select()
-        			  ->from('post',array('month' => new Zend_Db_Expr('MONTHNAME(post_created_on)'), 'year' => new Zend_Db_Expr('YEAR(post_created_on)'), 'total' => new Zend_Db_Expr('COUNT(post_id)')))
-                      ->group(array('year','month'));
+        			  ->from('post',array('month' => new Zend_Db_Expr('MONTH(post_created_on)') ,'monthname' => new Zend_Db_Expr('MONTHNAME(post_created_on)'), 'year' => new Zend_Db_Expr('YEAR(post_created_on)'), 'total' => new Zend_Db_Expr('COUNT(post_id)')))
+                      ->group(array('year','month'))
+                      ->order('post_created_on DESC');
 
         $this->view->archivesByMonth = $posts->fetchAll($query);
                 

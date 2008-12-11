@@ -6,24 +6,28 @@
 									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=pink" class="color-pink">Pink</a>
 									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=purple" class="color-purple">Purple</a>
 
-								</div>				
+								</div>	 
 			<div id="page-title">
 				<div class="page-title-content">
-					<h3 class="page-title"><?=$this->page->page_title; ?></h3>
-					 <div class="post-meta-single">
-					   <p><?=$this->page->page_excerpt; ?></p>
+																<h3 class="page-title">Category</h3>
+										<div class="post-meta-single">
+						<div class="small">
+							<p class="small verdana">You can use the search form below to go through the content and find a specific post or page:</p>
+							
+						</div>
 					</div>
 				</div>
 			</div>
 </div>
 <div class="left-content">
-							
-	
-	<div class="post">
-		<p>
-            <?=$this->page->page_content; ?>
-		</p>
-		
+
+
+	<?=$this->partialLoop('post/partial/post.phtml' ,  $this->paginator)?>
+
+											
+	<div class="clearfix pagination bluegray">
+			<?= $this->paginator ?>
 	</div>
+	
 	
 </div>

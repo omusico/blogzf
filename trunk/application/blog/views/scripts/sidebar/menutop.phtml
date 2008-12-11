@@ -1,6 +1,6 @@
 <ul id="navigation" class="clearfix">
-	<li class="current_page_item"><a href="<?=$this->appServer?>" title="My Web Blog">Home</a></li>
-	<li class="page_item page-item-2"><a href="<?=$this->appServer?>/info/about/" title="About">About</a></li>
-    <li class="page_item page-item-50"><a href="<?=$this->appServer?>/info/contact/" title="Contact">Contact</a></li>
-    <li class="page_item page-item-53"><a href="<?=$this->appServer?>/info/extras/" title="Extras">Extras</a></li>
+		<li class="first"><a href="<?=$this->url(array(),'default'); ?>" title="My Web Blog Home">Home</a></li>
+		<li class="page_item"><a href="<?=$this->url(array('name'=>'about'),'page'); ?>" title="About">About</a></li>
+		<li class="page_item "><a href="<?=$this->url(array('name'=>'contact'),'page'); ?>" title="Contact">Contact</a></li>
+		<li class="page_item"><a href="<?=$this->url(array('name'=>'extras'),'page'); ?>" title="Extras">Extras</a></li>
 </ul>
