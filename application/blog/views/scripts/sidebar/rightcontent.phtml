@@ -20,20 +20,24 @@
 	</li>
 	
 	<li><h5>Categories</h5>
+		<ul class="tree">
 		<?php echo $this->NestedTree($this->categories); ?>
+		</ul>
 	</li>								
 	
 	<li><h5>Recent Articles</h5>
 		<ul>
-		    <?php echo $this->partialLoop('partial/recents.phtml', $this->recentPosts); ?>
+		    <?php echo $this->partialLoop('sidebar/partial/recents.phtml', $this->recentPosts); ?>
 	   </ul>
 	<li>
 		<h5>Archives</h5>
- 	    <?php echo $this->partialLoop('partial/archives.phtml', $this->archivesByMonth); ?>
+		<ul>
+ 	    <?php echo $this->partialLoop('sidebar/partial/archives.phtml', $this->archivesByMonth); ?>
+ 	    </ul>
 	</li>
 	<li>
 		<h5>Tags</h5>
-		<p>
+		<p class="cloud">
 			<?php
 			
 			    $tags = $this->cloudTags;
@@ -54,7 +58,7 @@
                 foreach ($tags as $key => $value) {
 
                      $size = $min_size + (($value - $min_qty) * $step);
-                     echo sprintf('<span style="font-size:%s%%">%s</span>', $size, $key);
+                     echo sprintf('<span style="font-size:%s%%"><a href="%s" title="">%s</span></a>', $size, $this->url(array('name'=>$key),'tag'), $key);
               }
 			?>
 		</p>

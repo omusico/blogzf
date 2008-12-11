@@ -1,16 +1,19 @@
-<?php if ($this->pageCount): ?> 
+<?php if ($this->pageCount>1): ?> 
 <div class="paginationControl">
 <!-- Previous page link --> 
 <?php if (isset($this->previous)): ?> 
-  <a href="<?= $this->url(array('page' => $this->previous)); ?>">&lt; Anterior</a> | 
+  <a href="<?= $this->url(array('page' => $this->previous)); ?>">&lt; Anterior</a> 
 <?php else: ?> 
-  <span class="disabled">&lt; Anterior</span> | 
+  <!-- span class="disabled">&lt; Anterior</span--> 
 <?php endif; ?> 
 
 <!-- Numbered page links -->
+
 <?php foreach ($this->pagesInRange as $page): ?> 
   <?php if ($page != $this->current): ?>
-    <a href="<?= $this->url(array('page' => $page)); ?>"><?= $page; ?></a> | 
+  	<span class="extralarge">
+    <a href="<?= $this->url(array('page' => $page)); ?>"><?= $page; ?></a> 
+    </span>
   <?php else: ?>
     <?= $page; ?> | 
   <?php endif; ?>
@@ -20,7 +23,7 @@
 <?php if (isset($this->next)): ?> 
   <a href="<?= $this->url(array('page' => $this->next)); ?>">Siguiente &gt;</a>
 <?php else: ?> 
-  <span class="disabled">Siguiente &gt;</span>
+  <!-- span class="disabled">Siguiente &gt;</span-->
 <?php endif; ?> 
 </div> 
 <?php endif; ?>

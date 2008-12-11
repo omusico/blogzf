@@ -18,7 +18,8 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
   protected $_left = 'lft';
   protected $_right = 'rgt';
   protected $_label = 'label';
-  
+  protected $_url = 'url';
+ 
 
 	function __construct() {
 		parent::__construct();
@@ -219,23 +220,28 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
    * @return array of rows
    */
   function enumTreeExcludeNode($id)  {
-    $data = $this->_dbh->query("SELECT node.*,
+    $data = $this->_dbh->query("SELECT node.{$this->_label} as label, node.{$this->_primary} as id,
                                  (count(parent.{$this->_label})-1) as depth, 
                                  IF((node.{$this->_right} = node.{$this->_left}+1), true, null) as is_leaf, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_left}=node.{$this->_left}-1
                                  ) as is_first, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_right}=node.{$this->_right}+1
                                  ) as is_last
                           FROM {$this->_name} as node, {$this->_name} as parent, {$this->_name} as n
                           WHERE node.{$this->_left} BETWEEN parent.{$this->_left} AND parent.{$this->_right} AND
-                                n.id={$id} AND node.{$this->_left} not BETWEEN n.{$this->_left} AND n.{$this->_right}
-                          GROUP BY node.id
+                                n.{$this->_primary}={$id} AND node.{$this->_left} not BETWEEN n.{$this->_left} AND n.{$this->_right}
+                          GROUP BY node.{$this->_primary}
                           ORDER BY node.{$this->_left} ASC");
-    return $this->_reduce($data);
+    
+                return new Zend_Db_Table_Rowset(array(
+    						'table'=> $this->_name, 
+    						'data' => $this->_reduce($data->fetchAll())
+                )); 
+                          
   }
 
   /**
@@ -244,15 +250,16 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
    * @param integer $id - node identifier
    * @return array of rows
    */
-  function enumSubTree($id)  {
-      $data = $this->_dbh->query("SELECT node.*,
+  function enumSubTree($id, $forest = false)  {
+     
+     $data = $this->_dbh->query("SELECT node.{$this->_url} as url, node.{$this->_label} as label, node.{$this->_primary} as id,
                                    (count(parent.{$this->_label})-1) as depth, 
                                    IF((node.{$this->_right} = node.{$this->_left}+1), true, null) as is_leaf, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_left}=node.{$this->_left}-1
                                  ) as is_first, (
-                                   SELECT IF (n.id, true, null)
+                                   SELECT IF (n.{$this->_primary}, true, null)
                                    FROM {$this->_name} as n
                                    WHERE n.{$this->_right}=node.{$this->_right}+1
                                  ) as is_last
@@ -261,12 +268,20 @@ abstract class Concentre_Db_Nested_Tree extends Zend_Db_Table  {
                                  {$this->_name} as n
                             WHERE node.{$this->_left} BETWEEN parent.{$this->_left} AND
                                   parent.{$this->_right} AND
-                                  n.id = {$id} AND
-                                  node.{$this->_left} BETWEEN n.{$this->_left} AND n.{$this->_right}
-                            GROUP BY node.id
-                            ORDER BY node.{$this->_left} ASC");
+                                  n.{$this->_primary} = {$id} AND ".
+                             
+                             ($forest?
+                             "node.{$this->_left} > n.{$this->_left} AND node.{$this->_left} < n.{$this->_right}":
+                             "node.{$this->_left} BETWEEN n.{$this->_left} AND n.{$this->_right}") .
+                             
+                            " GROUP BY node.{$this->_primary} 
+                             ORDER BY node.{$this->_left} ASC");
+                            
+    return new Zend_Db_Table_Rowset(array(
+    						'table'=> $this->_name, 
+    						'data' => $this->_reduce($data->fetchAll())
+                )); 
 
-    return $this->_reduce($data->fetchAll());
   }
 
   /**

@@ -8,12 +8,12 @@ class Blog_PageController extends Zend_Controller_Action
     public function indexAction()
     {
         
-        $id = $this->getRequest()->getParam('id');
+        $name = $this->getRequest()->getParam('name');
            
         $page = new Page();
         $query = $page->select()
-                       ->where(sprintf("`page_id`='%s'", $id ));
-
+                       ->where(sprintf("`page_url`='%s'", $name ));
+        
         $this->view->page = $page->fetchRow($query);
     }
     
