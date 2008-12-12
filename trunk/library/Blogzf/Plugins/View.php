@@ -49,8 +49,17 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          */
         if ( $request->module == 'admin' ) {
             $layout = $config->site->layout->admin;
+            /**
+             * Agregamos los helpers de Dojo
+             */
             $this->_view->addHelperPath( 'Zend/Dojo/View/Helper/', 'Zend_Dojo_View_Helper' );
-            Zend_Dojo::enableView($this->_view);
+            /**
+             * Ahora habilitamos Zend_Dojo en nuestra vista
+             */
+            Zend_Dojo::enableView( $this->_view );
+            /**
+             * Configuracion de Dojo
+             */
             $this->_view->dojo()->setDjConfigOption( 'parseOnLoad', false );
             $this->_view->dojo()->setDjConfigOption( 'userPlainJson', true );
             Zend_Dojo_View_Helper_Dojo::setUseDeclarative();

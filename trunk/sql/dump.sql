@@ -354,3 +354,26 @@ ALTER TABLE `post_media`
 ALTER TABLE `post_tag`
   ADD CONSTRAINT `fk_post_tag_post` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `post_tag_ibfk_1` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`tag_id`);
+
+
+
+--
+-- Table structure for table `lov`
+--
+
+CREATE TABLE IF NOT EXISTS `lov` (
+  `lov_id` mediumint(10) NOT NULL auto_increment,
+  `type` char(20) NOT NULL,
+  `value` char(40) NOT NULL,
+  PRIMARY KEY  (`lov_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `lov`
+--
+
+INSERT INTO `lov` (`lov_id`, `type`, `value`) VALUES
+(1, 'status', 'publicado'),
+(2, 'status', 'pendiente'),
+(3, 'status', 'borrador'),
+(4, 'status', 'agendado');
