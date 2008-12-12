@@ -11,11 +11,12 @@ date_default_timezone_set('America/Buenos_Aires');
     OBS: ZendFramwork esta fuera de la aplicacion
  */
 set_include_path( 
-    '../'                    . PATH_SEPARATOR .
+    '.'                      . PATH_SEPARATOR .
+	'../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
-	'../application/admin/views'   . PATH_SEPARATOR .
-    '.'                      . PATH_SEPARATOR .
+	'../application/admin/views'. PATH_SEPARATOR .
+	'../application/blog/views'. PATH_SEPARATOR .
     get_include_path());
 /**
  * Carga de clases que sean necesarias
@@ -61,10 +62,10 @@ foreach ($dirs as $dir) {
 
 
 $controller->throwExceptions(true)
-    ->registerPlugin( new Blogzf_Plugins_Config())
-    ->registerPlugin( new Blogzf_Plugins_Layout())
-    ->registerPlugin( new Blogzf_Plugins_View())
-    ->registerPlugin( new Blogzf_Plugins_Backoffice())
+    ->registerPlugin( new Blogzf_Controller_Plugin_Config())
+    ->registerPlugin( new Blogzf_Controller_Plugin_Layout())
+    ->registerPlugin( new Blogzf_Controller_Plugin_View())
+    ->registerPlugin( new Blogzf_Controller_Plugin_Backoffice())
     ->dispatch($request, $response);
 
 //$controller->registerPlugin( new Blogzf_Plugins_Routes());
