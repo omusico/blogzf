@@ -14,6 +14,7 @@ set_include_path(
     '../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
+	'../application/admin/views'   . PATH_SEPARATOR .
     '.'                      . PATH_SEPARATOR .
     get_include_path());
 /**
