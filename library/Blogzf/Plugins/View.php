@@ -30,6 +30,11 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     	$config = Zend_Registry::getInstance()->get( 'config_ini' );
 		$this->_view = $this->_viewRenderer->view;
 		
+		/**
+		 * Agregamos las rutas para las vistas
+		 */
+		$this->_view->addScriptPath('/application/admin/views');
+		$this->_view->addScriptPath('/application/blog/views');
     	/**
          * Url basicas del sistema
          */
