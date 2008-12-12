@@ -10,12 +10,12 @@ class Admin_PostsController extends Blogzf_Controller_Action
                 try {
                     $posts = new Post();
                     $post = $posts->createRow();
-                    $post->title = $postData['title'];
-                    $post->content = $postData['content'];
-                    $post->user_id = Zend_Auth::getInstance()->hasIdentity();
-                    $post->comment = $postData['comment'];
-                    $post->created_date = new Zend_Db_Expr('now()');
-                    $post->status = $postData['status'];
+                    $post->post_title = $postData['title'];
+                    $post->post_content = $postData['content'];
+                    $post->user_id = Zend_Auth::getInstance()->getIdentity();
+                    $post->post_comment = $postData['comment'];
+                    $post->created_on = new Zend_Db_Expr('now()');
+                    $post->post_status = $postData['status'];
                     $post->save();
                     $this->_redirect('/admin/posts/read/');
                 } catch (Zend_Exception $e) {
@@ -23,7 +23,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
                     echo "Message: " . $e->getMessage() . "\n";
                 }
             } else {
-                $form->populate($postsData);
+                $form->populate( $postsData );
             }
         }
         $this->view->form = $form;
