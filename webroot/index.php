@@ -14,9 +14,6 @@ set_include_path(
     '../'                    . PATH_SEPARATOR .
     '../library'             . PATH_SEPARATOR .
     '../application/model'   . PATH_SEPARATOR .
-    '../application/blog/views'   . PATH_SEPARATOR .
-	'../application/admin'   . PATH_SEPARATOR .
-	'../application/admin/views' . PATH_SEPARATOR .
     '.'                      . PATH_SEPARATOR .
     get_include_path());
 /**
@@ -57,10 +54,10 @@ $dirs = new DirectoryIterator('../application/');
 
 foreach ($dirs as $dir) {
     if ($dir->isDir() && !in_array($dir,  array('model','.','..')) ) {
-        $controller->addControllerDirectory('../application/' . $dir->getFilename() .'/controllers', $dir->getFilename());
+        $controller->addControllerDirectory(
+        	'../application/' . $dir->getFilename() .'/controllers', $dir->getFilename());
     }
 }
-
 
 
 $router = $controller->getRouter();
