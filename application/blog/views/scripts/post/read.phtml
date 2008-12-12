@@ -5,8 +5,8 @@
 </div>
 <div id="page-title">
 <div class="page-title-content">
-<h3 class="page-title"><?=$this->post->post_title;?></h3>
-<div class="post-meta-single"><span class="georgia block">Posted in on <?=$this->post->post_created_on;?> in
+<h3 class="page-title"><?=$this->post->title;?></h3>
+<div class="post-meta-single"><span class="georgia block">Posted in on <?=$this->post->created_on;?> in
 							
 							<?=$this->partialLoop('post/partial/categories.phtml', $this->categories);?>
 							
@@ -14,13 +14,13 @@
 							<?=$this->partialLoop('post/partial/tags.phtml', $this->tags);?>
 							</span> </span>
 	<div class="box">
-<?php if ($this->post->post_open_comment) : ?>
+<?php if ($this->post->open_comment) : ?>
 Comments <a href="#respond">are open</a> on this page, you can <a href="#respond">leave a response</a>.
 <?php else: ?>
 Comments are <strong>closed.</strong>
 <?php endif; ?>
-<?php if($this->post->post_open_tb) : ?>
-You may <?php if($this->post->post_open_comment): ?>also<?php endif; ?> leave a <a href="#" rel="trackback">trackback</a> from your site.
+<?php if($this->post->open_tb) : ?>
+You may <?php if($this->post->open_comment): ?>also<?php endif; ?> leave a <a href="#" rel="trackback">trackback</a> from your site.
 <?php endif; ?>
 
 </div>
@@ -34,10 +34,10 @@ You may <?php if($this->post->post_open_comment): ?>also<?php endif; ?> leave a 
 <div class="post-date"><span class="month block"><?=$this->post->month;?></span><span
 	class="day"><?=$this->post->day;?></span></div>
 <p>
-		    <?=$this->post->post_excerpt;?>
+		    <?=$this->post->excerpt;?>
 	    </p>
 <p>
-		    <?=$this->post->post_content;?>
+		    <?=$this->post->content;?>
 		</p>
 
 </div>
@@ -76,7 +76,7 @@ Comments</h3>
 	<br />
 <br />
 
-<?php if ($this->post->post_open_comment) : ?>
+<?php if ($this->post->open_comment) : ?>
 <h3 id="respond" class="post">Leave a Reply</h3>
 
 <?=$this->form;?>
