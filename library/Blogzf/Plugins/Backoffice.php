@@ -16,6 +16,7 @@ class Blogzf_Plugins_Backoffice extends Zend_Controller_Plugin_Abstract
     }
     public function preDispatch (Zend_Controller_Request_Abstract $request)
     {
+        
         $auth = Zend_Auth::getInstance();
         if ( $request->module == 'admin' ) {
             if( !$auth->hasIdentity() && $request->controller != 'index' ) {
@@ -29,9 +30,6 @@ class Blogzf_Plugins_Backoffice extends Zend_Controller_Plugin_Abstract
     {
     }
     public function dispatchLoopShutdown ()
-    {
-    }
-    private function _dataBaseConfig ()
     {
     }
 }
