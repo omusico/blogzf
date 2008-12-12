@@ -45,8 +45,6 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          */
         $this->_view->headTitle()->append( $config->site->title );
         $this->_view->site = $config->site;
-       
-        
         /**
          * Agrego los css para esta pagina que siempre va a ser el mismo. 
          * /layout/nombre_layout/style.css esto es para poder agregar muchos layout. Y no dependan
@@ -73,13 +71,11 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     }
     public function postDispatch (Zend_Controller_Request_Abstract $request)
     {
-        
         if ($this->_view->layout()->isEnabled() ) {
             $this->_view->layout()->sidebar = $this->_view->action( 'rightcontent', 'sidebar', $request->module );
             $this->_view->layout()->footer = $this->_view->action( 'footer', 'sidebar', $request->module  );
             $this->_view->layout()->mentop = $this->_view->action( 'menutop','sidebar', $request->module );
 	    }     
-                                     
     }
     public function dispatchLoopShutdown ()
     {
