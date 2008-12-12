@@ -33,8 +33,8 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
 		/**
 		 * Agregamos las rutas para las vistas
 		 */
-		$this->_view->addScriptPath('/application/admin/views');
 		$this->_view->addScriptPath('/application/blog/views');
+		$this->_view->addScriptPath('/application/admin/views');
     	/**
          * Url basicas del sistema
          */
