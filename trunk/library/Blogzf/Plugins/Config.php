@@ -31,6 +31,10 @@ class Blogzf_Plugins_Config extends Zend_Controller_Plugin_Abstract
         $dataBase = Zend_Db::factory(
             $config->database->db->adapter, 
             $config->database->db->config->toArray());
+            
+        $dataBase->query("SET NAMES 'utf8'");
+        $dataBase->query("SET lc_time_names = 'es_ES'");
+
         Zend_Db_Table::setDefaultAdapter( $dataBase );
         Zend_Registry::set( 'dbAdapter', $dataBase);
     }

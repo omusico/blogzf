@@ -39,6 +39,9 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          * Agrego el titulo de la pagina
          */
         $this->_view->headTitle()->append( $config->site->title );
+        $this->_view->site = $config->site;
+       
+        
         /**
          * Agrego los css para esta pagina que siempre va a ser el mismo. 
          * /layout/nombre_layout/style.css esto es para poder agregar muchos layout. Y no dependan
@@ -49,17 +52,8 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
          */
         if ( $request->module == 'admin' ) {
             $layout = $config->site->layout->admin;
-            /**
-             * Agregamos los helpers de Dojo
-             */
             $this->_view->addHelperPath( 'Zend/Dojo/View/Helper/', 'Zend_Dojo_View_Helper' );
-            /**
-             * Ahora habilitamos Zend_Dojo en nuestra vista
-             */
-            Zend_Dojo::enableView( $this->_view );
-            /**
-             * Configuracion de Dojo
-             */
+            Zend_Dojo::enableView($this->_view);
             $this->_view->dojo()->setDjConfigOption( 'parseOnLoad', false );
             $this->_view->dojo()->setDjConfigOption( 'userPlainJson', true );
             Zend_Dojo_View_Helper_Dojo::setUseDeclarative();
@@ -70,6 +64,13 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
                 ->appendStylesheet( $this->_view->staticServer . 
                 	'layout/'.$layout.'/styles.css' );
 
+
+    }
+    public function postDispatch (Zend_Controller_Request_Abstract $request)
+    {
+        
+        if ($this->_view->layout()->isEnabled() ) {
+            
         $response = $this->getResponse();
         $response->insert( 'sidebar', 
              $this->_view->action( 'rightcontent', 'sidebar', $request->module ));
@@ -77,11 +78,9 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
              $this->_view->action( 'footer', 'sidebar', $request->module  ));
         $response->insert( 'menutop', 
              $this->_view->action( 'menutop','sidebar', $request->module ));
-                
-                
-    }
-    public function postDispatch (Zend_Controller_Request_Abstract $request)
-    {
+		
+        }     
+                                     
     }
     public function dispatchLoopShutdown ()
     {

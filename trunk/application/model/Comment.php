@@ -1,6 +1,6 @@
 <?php
-class Comment extends Zend_Db_Table_Abstract 
+class Comment extends Zend_Db_Table_Abstract
 {
-	protected $_name = 'comment';
-	protected $_primary = 'comment_id';
+    protected $_name = 'comment';
+    protected $_primary = 'comment_id';
 }

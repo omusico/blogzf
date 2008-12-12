@@ -1,32 +1,36 @@
 <div class="clearfix">
-								<div id="colors">
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=teal" class="color-blue">Blue</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=orange" class="color-orange">Orange</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=green" class="color-green">Green</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=pink" class="color-pink">Pink</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=purple" class="color-purple">Purple</a>
+<div id="colors"><a
+	href="#"
+	class="color-blue">Blue</a> <a
+	href="#"
+	class="color-orange">Orange</a> <a
+	href="#"
+	class="color-green">Green</a> <a
+	href="#"
+	class="color-pink">Pink</a> <a
+	href="#"
+	class="color-purple">Purple</a></div>
+<div id="page-title">
+<div class="page-title-content">
+<h3 class="page-title">Tag</h3>
+<div class="post-meta-single">
+<div class="small">
+<p class="small verdana">You can use the search form below to go through
+the content and find a specific post or page:</p>
 
-								</div>	 
-			<div id="page-title">
-				<div class="page-title-content">
-																<h3 class="page-title">Tag</h3>
-										<div class="post-meta-single">
-						<div class="small">
-							<p class="small verdana">You can use the search form below to go through the content and find a specific post or page:</p>
-							
-						</div>
-					</div>
-				</div>
-			</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="left-content">
 							
-	<?=$this->partialLoop('post/partial/post.phtml' ,  $this->paginator)?>
+	<?=$this->partialLoop('post/partial/post.phtml', $this->paginator)?>
 	
 												
 	<div class="clearfix pagination bluegray">
-			<?= $this->paginator ?>
+			<?=$this->paginator?>
 	</div>
-	
-	
+
+
 </div>

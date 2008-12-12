@@ -1,20 +1,16 @@
-<?php 
+<?php
 class Admin_SidebarController extends Zend_Controller_Action
 {
-    public function preDispatch()
+    public function preDispatch ()
+    {}
+    public function menutopAction ()
     {
-    }
-	public function menutopAction()
-	{
-        if( !Zend_Auth::getInstance()->hasIdentity()  ) {
+        if (! Zend_Auth::getInstance()->hasIdentity()) {
             $this->_helper->viewRenderer->setNoRender();
-        } 
-	}
-	public function rightcontentAction()
-	{
-	
-	}
-	public function footerAction()
-	{
-	}
+        }
+    }
+    public function rightcontentAction ()
+    {}
+    public function footerAction ()
+    {}
 }

@@ -1,31 +1,33 @@
-	<div class="post">
-		<div class="post-date"><span class="month block"><?=$this->month; ?></span><span class="day"><?=$this->day; ?></span></div>
-		<h3><?= $this->post_title; ?></h3>
-		<p>
-		   <?php 
-		       if ($this->post_excerpt) {
-		           echo $this->truncateText ($this->post_excerpt,200);
-		       } else {
-		           echo $this->truncateText ($this->post_content,200);
-		       }
-		   ?>
+
+<div class="post">
+<div class="post-date"><span class="month block"><?=$this->month;?></span><span
+	class="day"><?=$this->day;?></span></div>
+<h3><?=$this->post_title;?></h3>
+<p>
+		   <?php
+    if ($this->post_excerpt) {
+        echo $this->truncateText($this->post_excerpt, 200);
+    } else {
+        echo $this->truncateText($this->post_content, 200);
+    }
+    ?>
 		 </p>
-		<div class="post-meta">
-    		<a href="<?=$this->url(array('url' => $this->post_url, 'id' => $this->post_id),'read'); ?>" rel="bookmark" title="Read More of <?=$this->post_title; ?>" class="btn btn-pink">Read More</a> 
-		    <?php switch($this->num_comments) {
-		        case 0:
-		               echo 'no comment';
-		               break;
-		        case 1:
-		               echo sprintf('<a href="%s#comments">1 comment</a>', $this->url(array('url' => $this->post_url, 'id' => $this->post_id),'read'));
-		               break;
-		        default:
-		               echo sprintf('<a href="%s#comments">%s comment</a>', $this->url(array('url' => $this->post_url, 'id' => $this->post_id),'read'), $this->num_comments);
-		        
-		       
-		        }
-		    ?>
+<div class="post-meta"><a
+	href="<?=$this->url(array('url' => $this->post_url , 'id' => $this->post_id), 'blog-read');?>"
+	rel="bookmark" title="Read More of <?=$this->post_title;?>"
+	class="btn btn-pink">Read More</a> 
+		    <?php
+    switch ($this->num_comments) {
+        case 0:
+            echo 'no comment';
+            break;
+        case 1:
+            echo sprintf('<a href="%s#comments">1 comment</a>', $this->url(array('url' => $this->post_url , 'id' => $this->post_id), 'blog-read'));
+            break;
+        default:
+            echo sprintf('<a href="%s#comments">%s comment</a>', $this->url(array('url' => $this->post_url , 'id' => $this->post_id), 'blog-read'), $this->num_comments);
+    }
+    ?>
 		    &nbsp; | &nbsp;  Posted by 
-    		<span class="pink weight-normal"><?=$this->username; ?></span>
-		</div>
-	</div>
+    		<span class="pink weight-normal"><?=$this->username;?></span></div>
+</div>
