@@ -34,12 +34,20 @@ $controller->setParam( 'config', 'config.default.ini' );
 
 $router = $controller->getRouter();
  
-$router->addRoute('blog-archive',  new Zend_Controller_Router_Route('archives/:year/:month', array('module'=>'blog', 'controller'=>'post', 'action' => 'archive' ) ));       
-$router->addRoute('blog-category',  new Zend_Controller_Router_Route('category/:name', array('module'=>'blog', 'controller'=>'post', 'action' => 'category' ) ));       
-$router->addRoute('blog-tag',  new Zend_Controller_Router_Route('tag/:name', array('module'=>'blog', 'controller'=>'post', 'action' => 'tag' ) ));       
-$router->addRoute('blog-read',  new Zend_Controller_Router_Route('read/:url', array('module'=>'blog', 'controller'=>'post', 'action' => 'read' ) ));        
-$router->addRoute('blog-page',  new Zend_Controller_Router_Route('page/:name', array('module'=>'blog', 'controller'=>'page', 'action' => 'index' ) ));       
-$router->addRoute('blog-home',  new Zend_Controller_Router_Route('posts', array('module'=>'blog', 'controller'=>'post', 'action' => 'index' ) ));   
+$router->addRoute('blog-archive',  new Zend_Controller_Router_Route(
+	'archives/:year/:month', array(
+		'module'=>'blog', 'controller'=>'post', 'action' => 'archive' ) ));       
+$router->addRoute('blog-category',  new Zend_Controller_Router_Route(
+	'category/:name', array(
+		'module'=>'blog', 'controller'=>'post', 'action' => 'category' ) ));       
+$router->addRoute('blog-tag',  new Zend_Controller_Router_Route('tag/:name', 
+    array('module'=>'blog', 'controller'=>'post', 'action' => 'tag' ) ));       
+$router->addRoute('blog-read',  new Zend_Controller_Router_Route('read/:url', 
+    array('module'=>'blog', 'controller'=>'post', 'action' => 'read' ) ));        
+$router->addRoute('blog-page',  new Zend_Controller_Router_Route('page/:name', 
+    array('module'=>'blog', 'controller'=>'page', 'action' => 'index' ) ));       
+$router->addRoute('blog-home',  new Zend_Controller_Router_Route('posts', 
+    array('module'=>'blog', 'controller'=>'post', 'action' => 'index' ) ));   
 
 $dirs = new DirectoryIterator('../application/');
 
@@ -51,13 +59,13 @@ foreach ($dirs as $dir) {
 }
 
 
-$controller->throwExceptions(true);
+$controller->throwExceptions(true)
+    ->registerPlugin( new Blogzf_Plugins_Config())
+    ->registerPlugin( new Blogzf_Plugins_Layout())
+    ->registerPlugin( new Blogzf_Plugins_View())
+    ->registerPlugin( new Blogzf_Plugins_Backoffice())
+    ->dispatch($request, $response);
 
-$controller->registerPlugin( new Blogzf_Plugins_Config());
 //$controller->registerPlugin( new Blogzf_Plugins_Routes());
-$controller->registerPlugin( new Blogzf_Plugins_Layout());
-$controller->registerPlugin( new Blogzf_Plugins_View());
-$controller->registerPlugin( new Blogzf_Plugins_Backoffice());
-$controller->dispatch($request, $response);
 
 
