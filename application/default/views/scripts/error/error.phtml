@@ -1,0 +1,9 @@
+<p>
+        <strong><?php echo $this->message; ?></strong>
+</p>
+
+<?php if (isset($this->exception)) { ?>      
+<pre>
+	<?php //var_dump($this->exception->getTrace()); ?>
+</pre>
+<?php } ?>
