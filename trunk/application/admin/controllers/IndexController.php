@@ -7,6 +7,7 @@ class Admin_IndexController extends Zend_Controller_Action
         $this->view->addHelperPath('Blogzf/View/Helper', 'Blogzf_View_Helper_');
         Zend_Controller_Action_HelperBroker::addHelper(new Blogzf_Controller_Action_Helper_BlogzfFlashMessenger());
         $this->_flashMessenger = $this->_helper->getHelper('BlogzfFlashMessenger');
+        $this->baseUrl();
         $form = new forms_Authentication();
         if ($this->_request->isPost()) {
             $credentials = $this->_request->getPost();

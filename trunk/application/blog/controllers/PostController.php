@@ -1,20 +1,16 @@
 <?php
 class Blog_PostController extends Zend_Controller_Action
 {
-    public function init() {
-               $contextSwitch = $this->_helper->getHelper('contextSwitch');
-
-               $contextSwitch->addContext('rss' , array('suffix' => 'rss', 'headers' => array('Content-type' => 'application/rss+xml')  ));
-               $contextSwitch->addContext('atom' , array('suffix' => 'atom', 'headers'=> array('Content-type' => 'application/atom+xml')  ));
-
-               $contextSwitch->addActionContext('read', array( 'atom', 'rss') );
-               $contextSwitch->addActionContext('index', array( 'atom', 'rss') );
-                              
-               $contextSwitch->initContext();
-               $contextSwitch->setAutoJsonSerialization(false);
-
-
-               $this->_currentContext = $contextSwitch->getCurrentContext();
+    public function init() 
+    {
+        $contextSwitch = $this->_helper->getHelper('contextSwitch');
+        $contextSwitch->addContext('rss' , array('suffix' => 'rss', 'headers' => array('Content-type' => 'application/rss+xml')  ));
+        $contextSwitch->addContext('atom' , array('suffix' => 'atom', 'headers'=> array('Content-type' => 'application/atom+xml')  ));
+        $contextSwitch->addActionContext('read', array( 'atom', 'rss') );
+        $contextSwitch->addActionContext('index', array( 'atom', 'rss') );
+        $contextSwitch->initContext();
+        $contextSwitch->setAutoJsonSerialization(false);
+        $this->_currentContext = $contextSwitch->getCurrentContext();
 
     }
     public function preDispatch ()

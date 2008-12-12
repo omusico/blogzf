@@ -1,5 +1,5 @@
 <?php
-class forms_Authentication extends Zend_Form
+class Forms_Authentication extends Zend_Form
 {
     public function __construct ($options = null, $user = null)
     {
