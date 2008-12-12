@@ -3,7 +3,7 @@
  * Plugin para administrar los layout de nuestro sistema. 
  *
  */
-class Blogzf_Plugins_Config extends Zend_Controller_Plugin_Abstract
+class Blogzf_Controller_Plugin_Config extends Zend_Controller_Plugin_Abstract
 {
     public function routeStartup (Zend_Controller_Request_Abstract $request)
     {

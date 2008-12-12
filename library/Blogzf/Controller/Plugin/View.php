@@ -3,7 +3,7 @@
  * Plugin para administrar los layout de nuestro sistema. 
  *
  */
-class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
+class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
 {
     protected $_viewRenderer;
     protected $_view;
@@ -28,8 +28,25 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     	 * Traemo los datos del archivo de configuaracion
     	 */
     	$config = Zend_Registry::getInstance()->get( 'config_ini' );
+    	$auth = Zend_Auth::getInstance();
+    	
 		$this->_view = $this->_viewRenderer->view;
 		
+		/**
+		 * Agregamos unas 
+		 */
+        $this->_view->baseUrl = $request->getBaseUrl();
+        $this->_view->module = $request->getModuleName();
+        $this->_view->controller = $request->getControllerName();
+        $this->_view->action = $request->getActionName();
+
+        $this->_view->hasIdentity = false;
+        
+        if ( $auth->hasIdentity() ) {
+            $this->_view->hasIdentity = true;
+            $this->_view->Identity = $auth->getIdentity();
+        }
+        
 		/**
 		 * Agregamos las rutas para las vistas
 		 */
@@ -71,10 +88,14 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     }
     public function postDispatch (Zend_Controller_Request_Abstract $request)
     {
+        if ($this->_view->module=='default') {
+            return;
+        }
+                
         if ($this->_view->layout()->isEnabled() ) {
-            $this->_view->layout()->sidebar = $this->_view->action( 'rightcontent', 'sidebar', $request->module );
-            $this->_view->layout()->footer = $this->_view->action( 'footer', 'sidebar', $request->module  );
-            $this->_view->layout()->menutop = $this->_view->action( 'menutop','sidebar', $request->module );
+            $this->_view->layout()->sidebar = $this->_view->action( 'rightcontent', 'sidebar', $this->_view->module );
+            $this->_view->layout()->footer = $this->_view->action( 'footer', 'sidebar', $this->_view->module );
+            $this->_view->layout()->menutop = $this->_view->action( 'menutop','sidebar', $this->_view->module );
 	    }     
     }
     public function dispatchLoopShutdown ()
