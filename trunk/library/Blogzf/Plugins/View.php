@@ -70,16 +70,10 @@ class Blogzf_Plugins_View extends Zend_Controller_Plugin_Abstract
     {
         
         if ($this->_view->layout()->isEnabled() ) {
-            
-        $response = $this->getResponse();
-        $response->insert( 'sidebar', 
-             $this->_view->action( 'rightcontent', 'sidebar', $request->module ));
-        $response->insert( 'footer', 
-             $this->_view->action( 'footer', 'sidebar', $request->module  ));
-        $response->insert( 'menutop', 
-             $this->_view->action( 'menutop','sidebar', $request->module ));
-		
-        }     
+            $this->_view->layout()->sidebar = $this->_view->action( 'rightcontent', 'sidebar', $request->module );
+            $this->_view->layout()->footer = $this->_view->action( 'footer', 'sidebar', $request->module  );
+            $this->_view->layout()->mentop = $this->_view->action( 'menutop','sidebar', $request->module );
+	    }     
                                      
     }
     public function dispatchLoopShutdown ()
