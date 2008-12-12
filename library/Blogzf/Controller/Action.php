@@ -14,5 +14,4 @@ class Blogzf_Controller_Action extends Zend_Controller_Action
             new Blogzf_Controller_Action_Helper_BlogzfFlashMessenger());
         $this->_flashMessenger = $this->_helper->getHelper('BlogzfFlashMessenger'); 
     }
-    
 }

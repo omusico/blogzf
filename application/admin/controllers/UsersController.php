@@ -1,5 +1,5 @@
 <?php
-class Admin_UsersController extends Zend_Controller_Action
+class Admin_UsersController extends Blogzf_Controller_Action
 {
     public function createAction ()
     {
