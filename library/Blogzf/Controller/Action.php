@@ -13,5 +13,10 @@ class Blogzf_Controller_Action extends Zend_Controller_Action
         Zend_Controller_Action_HelperBroker::addHelper(
             new Blogzf_Controller_Action_Helper_BlogzfFlashMessenger());
         $this->_flashMessenger = $this->_helper->getHelper('BlogzfFlashMessenger'); 
+        /**
+         * Configuramos el paginador, para que me traiga todos los resultados paginados.
+         */
+        Zend_Paginator::setDefaultScrollingStyle('all');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
     }
 }

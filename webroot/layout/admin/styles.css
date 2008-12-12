@@ -299,5 +299,6 @@ tr th {
 	float: left;
 	padding: 10px;
 }
-
-/* vim: se ts=2 sw=2 ai: */
+table tr th {
+	text-align: left;
+}
