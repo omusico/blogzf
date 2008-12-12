@@ -1,0 +1,38 @@
+<?php
+
+
+                // prepare an array that our feed is based on
+                $feedArray = array(
+                        'title' =>  $this->site->title,
+                        'link' => '/issues/tickets/list/format/atom' ,
+                        'lastUpdate' => null,
+                        'charset' => 'utf-8',
+                        'description' => $this->site->description,
+                        'author' => 'SŽbastien Cramatte',
+                        'email' => 'scramatte@zensoluciones.com',
+                        'copyright' => 'SŽbastien Cramatte, all rights reserved',
+                        'generator' => 'Zend Framework Zend_Feed',
+                        'language' => 'en',
+                        'entries' => array()
+                );
+
+                               
+                foreach ($this->paginator as $row) {
+                        $feedArray['entries'][] = array(
+                                'title' => $row->post_title,
+                                'link' => $this->absUrl(array('url'=> $row->post_url),'blog-read'),
+                                'description' => $row->post_excerpt?$row->post_excerpt:$this->truncateText($row->post_content,200),
+                                'lastUpdate' => strtotime($row->post_updated_on)
+                        );
+                }
+                
+                $feed = Zend_Feed::importArray($feedArray, 'atom');
+
+                foreach ($feed as $entry) {
+                        $element = $entry->summary->getDOM();
+                }
+
+                $feed->send();
+
+
+?>

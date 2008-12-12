@@ -1,13 +1,13 @@
 <?php
-class Admin_PostsController extends Blogzf_Controller_Action     
+class Admin_PostsController extends Blogzf_Controller_Action
 {
-	public function createAction()
-	{
+    public function createAction ()
+    {
         $form = new forms_Posts();
-	    if ( $this->_request->isPost() ) {
-		    $postData = $this->_request->getPost();
-		    if ( $form->isValid( $postData ) ) {
-		        try {
+        if ($this->_request->isPost()) {
+            $postData = $this->_request->getPost();
+            if ($form->isValid($postData)) {
+                try {
                     $posts = new Post();
                     $post = $posts->createRow();
                     $post->title = $postData['title'];
@@ -16,78 +16,77 @@ class Admin_PostsController extends Blogzf_Controller_Action
                     $post->comment = $postData['comment'];
                     $post->created_date = new Zend_Db_Expr('now()');
                     $post->status = $postData['status'];
-    		        $post->save();
-    		        $this->_redirect( '/admin/posts/read/' );
-		        } catch( Zend_Exception $e ) {
-		            echo "Caught exception: " . get_class( $e ) . "\n";
+                    $post->save();
+                    $this->_redirect('/admin/posts/read/');
+                } catch (Zend_Exception $e) {
+                    echo "Caught exception: " . get_class($e) . "\n";
                     echo "Message: " . $e->getMessage() . "\n";
-		        }
-		    } else {
-		        $form->populate( $postsData );
-		    }
-	    }
-	    $this->view->form = $form;
-	}
-	public function readAction()
-	{
-		/**
-		 * Configuramos el paginador, para que me traiga todos los resultados paginados.
-		 */
-		Zend_Paginator::setDefaultScrollingStyle( 'all' );
-		/**
-		 * Este es el tpl que voy a usar como paginador
-		 */
+                }
+            } else {
+                $form->populate($postsData);
+            }
+        }
+        $this->view->form = $form;
+    }
+    public function readAction ()
+    {
+        /**
+         * Configuramos el paginador, para que me traiga todos los resultados paginados.
+         */
+        Zend_Paginator::setDefaultScrollingStyle('all');
+        /**
+         * Este es el tpl que voy a usar como paginador
+         */
         $posts = new Post();
         $query = $posts->select();
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
-        $paginator = new Zend_Paginator( new Zend_Paginator_Adapter_DbSelect( $query ));
-        $paginator->setCurrentPageNumber( $this->_getParam( 'page' ) );
+        $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect($query));
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
         $this->view->paginator = $paginator;
-	}
-	public function updateAction()
-	{
+    }
+    public function updateAction ()
+    {
         $form = new forms_Posts();
         $posts = new Post();
         $postId = (int) $this->_request->getParam('postId', 0);
-        $post = $posts->find( $postId )->current();
-	    if ( $this->_request->isPost() ) {
-		    $postData = $this->_request->getPost();
-		    if ( $form->isValid( $postData ) ) {
-		        try {
+        $post = $posts->find($postId)->current();
+        if ($this->_request->isPost()) {
+            $postData = $this->_request->getPost();
+            if ($form->isValid($postData)) {
+                try {
                     $post->title = $postData['title'];
                     $post->content = $postData['content'];
                     $post->user_id = Zend_Auth::getInstance()->hasIdentity();
                     $post->comment = $postData['comment'];
                     $post->created_date = new Zend_Db_Expr('now()');
                     $post->status = $postData['status'];
-    		        $post->save();
-    		        $this->_redirect( '/admin/posts/read/' );
-		        } catch( Zend_Exception $e ) {
-		            echo "Caught exception: " . get_class( $e ) . "\n";
+                    $post->save();
+                    $this->_redirect('/admin/posts/read/');
+                } catch (Zend_Exception $e) {
+                    echo "Caught exception: " . get_class($e) . "\n";
                     echo "Message: " . $e->getMessage() . "\n";
-		        }
-		    } else {
-		        $form->populate( $postsData );
-		    }
-	    } else {
-            $form->populate( $post->toArray() );
-	    }
-	    
-	    $this->view->form = $form;		
-	}
-	public function deleteAction()
-	{
-        $id = (int)$this->_request->getParam('id', 0);
+                }
+            } else {
+                $form->populate($postsData);
+            }
+        } else {
+            $form->populate($post->toArray());
+        }
+        $this->view->form = $form;
+    }
+    public function deleteAction ()
+    {
+        $id = (int) $this->_request->getParam('id', 0);
         $posts = new Posts();
-        $post = $posts->find( $id )->current();
-        if ( $post !== null ) {
+        $post = $posts->find($id)->current();
+        if ($post !== null) {
             try {
                 $post->delete();
             } catch (Exception $e) {
-                echo "Caught exception: " . get_class( $e ) . "\n";
+                echo "Caught exception: " . get_class($e) . "\n";
                 echo "Message: " . $e->getMessage() . "\n";
             }
         }
         $this->_redirect('/admin/post/reader/');
-	}
+    }
 }

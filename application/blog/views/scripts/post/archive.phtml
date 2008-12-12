@@ -1,40 +1,44 @@
 <div class="clearfix">
-								<div id="colors">
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=teal" class="color-blue">Blue</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=orange" class="color-orange">Orange</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=green" class="color-green">Green</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=pink" class="color-pink">Pink</a>
-									<a href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=purple" class="color-purple">Purple</a>
-
-								</div>	 
-			<div id="page-title">
-				<div class="page-title-content">
-																<h3 class="page-title">Archive for <?=$this->date->get( Zend_Date::MONTH_NAME ); ?>,  <?=$this->date->get( Zend_Date::YEAR ); ?></h3>
-										<div class="post-meta-single">
-						<div class="small">
-							<p class="small verdana">You can use the search form below to go through the content and find a specific post or page:</p>
-							<form method="get" id="searchform" action="#">
+<div id="colors"><a
+	href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=teal"
+	class="color-blue">Blue</a> <a
+	href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=orange"
+	class="color-orange">Orange</a> <a
+	href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=green"
+	class="color-green">Green</a> <a
+	href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=pink"
+	class="color-pink">Pink</a> <a
+	href="http://freethemelayouts.com/blog/wp-content/themes/colorpaper/switcher.php?style=purple"
+	class="color-purple">Purple</a></div>
+<div id="page-title">
+<div class="page-title-content">
+<h3 class="page-title">Archive for <?=$this->date->get(Zend_Date::MONTH_NAME);?>,  <?=$this->date->get(Zend_Date::YEAR);?></h3>
+<div class="post-meta-single">
+<div class="small">
+<p class="small verdana">You can use the search form below to go through
+the content and find a specific post or page:</p>
+<form method="get" id="searchform" action="#">
 
 <div><input type="text" value="" name="s" id="s" class="text" size="40" />
-<input type="submit" id="searchsubmit" value="Search" class="btn submit btn-orange" />
-</div>
+<input type="submit" id="searchsubmit" value="Search"
+	class="btn submit btn-orange" /></div>
 </form>
-						</div>
-					</div>
-				</div>
-			</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="left-content">
 							
 	
-	<?=$this->partialLoop('post/partial/post.phtml' ,  $this->paginator)?>
+	<?=$this->partialLoop('post/partial/post.phtml', $this->paginator)?>
 	
 
 											
 	<div class="clearfix pagination bluegray">
-			<?= $this->paginator ?>
+			<?=$this->paginator?>
 	</div>
-	
-	
+
+
 </div>

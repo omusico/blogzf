@@ -1,82 +1,92 @@
 <div id="logo">
-	<h1><?=$this->title?></h1>
+<h1><?=$this->title?></h1>
 </div>
 
 <ul id="right-content">
-	<li><h5>About</h5>About me. Edit this in the options panel.	</li>
-	<li id="flickr" class="clearfix"><h5>Photo Stream</h5>
-		<!--  div class="flickr_badge_image" id="flickr_badge_image1"><a href="http://www.flickr.com/photos/sutanto/3044290957/">
+	<li>
+	<h5>About</h5>
+	About me. Edit this in the options panel.</li>
+	<li id="flickr" class="clearfix">
+	<h5>Photo Stream</h5>
+	<!--  div class="flickr_badge_image" id="flickr_badge_image1"><a href="http://www.flickr.com/photos/sutanto/3044290957/">
 			<img src="My%20Web%20Blog_files/3044290957_8746d2d20a_s.jpg" alt="A photo on Flickr" title="Fogless in San Francisco" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image2"><a href="http://www.flickr.com/photos/sutanto/3041796159/"><img src="My%20Web%20Blog_files/3041796159_311e412602_s.jpg" alt="A photo on Flickr" title="Notorious Hong Kong Haze" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image3"><a href="http://www.flickr.com/photos/sutanto/3040579996/"><img src="My%20Web%20Blog_files/3040579996_40c4c16b8d_s.jpg" alt="A photo on Flickr" title="Hong Kong Lightshow" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image4"><a href="http://www.flickr.com/photos/sutanto/3036733249/"><img src="My%20Web%20Blog_files/3036733249_d269e5656e_s.jpg" alt="A photo on Flickr" title="MTR Route Map" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image5"><a href="http://www.flickr.com/photos/sutanto/3035749338/"><img src="My%20Web%20Blog_files/3035749338_f5705c35c4_s.jpg" alt="A photo on Flickr" title="Royal Brunei V8-RBP" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image6"><a href="http://www.flickr.com/photos/sutanto/3030225163/"><img src="My%20Web%20Blog_files/3030225163_6be4c27cb6_s.jpg" alt="A photo on Flickr" title="Canon Panorama" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image7"><a href="http://www.flickr.com/photos/sutanto/3030225889/"><img src="My%20Web%20Blog_files/3030225889_692ff032af_s.jpg" alt="A photo on Flickr" title="Cathay Pacific B-HNJ" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image8"><a href="http://www.flickr.com/photos/sutanto/3031063914/"><img src="My%20Web%20Blog_files/3031063914_03c874a874_s.jpg" alt="A photo on Flickr" title="Vietnam Airlines VN-A349" height="75" width="75"></a></div><div class="flickr_badge_image" id="flickr_badge_image9"><a href="http://www.flickr.com/photos/sutanto/3028893110/">
 			<img src="My%20Web%20Blog_files/3028893110_a135ba92a5_s.jpg" alt="A photo on Flickr" title="Scenes from A-Ma Temple #2" height="75" width="75"></a></div>
 			<span style="position: absolute; left: -999em; top: -999em; visibility: hidden;" class="flickr_badge_beacon">
 			<img src="My%20Web%20Blog_files/p.gif" alt="" height="0" width="0"></span-->
 			<?php
-    			/*foreach ($this->flickr as $photo) {
+/*foreach ($this->flickr as $photo) {
                     echo sprintf('<img src="%s" title="%s" width="%s" height="%s" />', $photo->Square->uri, $photo->title, 75,75);
                 }*/
-			
-			?>
+?>
 			
 	</li>
-	
-	<li><h5>Categories</h5>
-		<ul class="tree">
-		<?php echo $this->NestedTree($this->categories); ?>
-		</ul>
-	</li>								
-	
-	<li><h5>Recent Articles</h5>
-		<ul>
-		    <?php echo $this->partialLoop('sidebar/partial/recents.phtml', $this->recentPosts); ?>
-	   </ul>
+
 	<li>
-		<h5>Archives</h5>
-		<ul>
- 	    <?php echo $this->partialLoop('sidebar/partial/archives.phtml', $this->archivesByMonth); ?>
+	<h5>Categories</h5>
+	<ul class="tree">
+		<?php
+echo $this->NestedTree($this->categories);
+?>
+		</ul>
+	</li>
+
+	<li>
+	<h5>Recent Articles</h5>
+	<ul>
+		    <?php
+    echo $this->partialLoop('sidebar/partial/recents.phtml', $this->recentPosts);
+    ?>
+	   </ul>
+	
+	
+	<li>
+	<h5>Archives</h5>
+	<ul>
+ 	    <?php
+    echo $this->partialLoop('sidebar/partial/archives.phtml', $this->archivesByMonth);
+    ?>
  	    </ul>
 	</li>
 	<li>
-		<h5>Tags</h5>
-		<p class="cloud">
+	<h5>Tags</h5>
+	<p class="cloud">
 			<?php
-			
-			    $tags = $this->cloudTags;
-			    
-			    $max_size = 250; 
-                $min_size = 100; 
-                
-                $max_qty = max(array_values($tags));
-                $min_qty = min(array_values($tags));
-
-                $spread = $max_qty - $min_qty;
-                if (0 == $spread) {
-                    $spread = 1;
-                }
-                
-                $step = ($max_size - $min_size)/($spread);
-                
-                foreach ($tags as $key => $value) {
-
-                     $size = $min_size + (($value - $min_qty) * $step);
-                     echo sprintf('<span style="font-size:%s%%"><a href="%s" title="">%s</span></a>', $size, $this->url(array('name'=>$key),'tag'), $key);
-              }
-			?>
+$tags = $this->cloudTags;
+$max_size = 250;
+$min_size = 100;
+$max_qty = max(array_values($tags));
+$min_qty = min(array_values($tags));
+$spread = $max_qty - $min_qty;
+if (0 == $spread) {
+    $spread = 1;
+}
+$step = ($max_size - $min_size) / ($spread);
+foreach ($tags as $key => $value) {
+    $size = $min_size + (($value - $min_qty) * $step);
+    echo sprintf('<span style="font-size:%s%%"><a href="%s" title="">%s</span></a>', $size, $this->url(array('name' => $key), 'blog-tag'), $key);
+}
+?>
 		</p>
 	</li>
-	<li><h5>Search</h5>
-		<ul>
-			<div class="box">
-				<form method="get" id="searchform" action="<?=$this->appServer?>/">
-					<div>
-						<input value="" name="s" id="s" class="text" size="33" type="text"><br/><br/>
-						<input id="searchsubmit" value="Search" class="btn submit btn-green" type="submit">
-					</div>
-				</form>
-			</div>
-		</ul>
+	<li>
+	<h5>Search</h5>
+	<ul>
+		<div class="box">
+		<form method="get" id="searchform" action="<?=$this->appServer?>/">
+		<div><input value="" name="s" id="s" class="text" size="33"
+			type="text"><br />
+		<br />
+		<input id="searchsubmit" value="Search" class="btn submit btn-green"
+			type="submit"></div>
+		</form>
+		</div>
+	</ul>
 	</li>
 </ul>
 
-<br/>
-<a href="<?=$this->appServer?>/?feed=rss2"><img src="My%20Web%20Blog_files/rss.gif" hspace="22" border="0"></a>
-<br/><br/><br/>						
+<br />
+<a href="<?=$this->appServer?>/?feed=rss2"><img
+	src="My%20Web%20Blog_files/rss.gif" hspace="22" border="0"></a>
+<br />
+<br />
+<br />

@@ -1,75 +1,84 @@
 <div class="clearfix">
-								<div id="colors">
-									<a href="#" class="color-blue">Blue</a>
-									<a href="#" class="color-orange">Orange</a>
-									<a href="#" class="color-green">Green</a>
-									<a href="#" class="color-pink">Pink</a>
-									<a href="#" class="color-purple">Purple</a>
-								</div>				
-				<div id="page-title">
-				<div class="page-title-content">
-						<h3 class="page-title"><?=$this->post->post_title; ?></h3>
-						<div class="post-meta-single">
-							<span class="georgia block">Posted in on <?=$this->post->post_created_on; ?> in
+<div id="colors"><a href="#" class="color-blue">Blue</a> <a href="#"
+	class="color-orange">Orange</a> <a href="#" class="color-green">Green</a>
+<a href="#" class="color-pink">Pink</a> <a href="#" class="color-purple">Purple</a>
+</div>
+<div id="page-title">
+<div class="page-title-content">
+<h3 class="page-title"><?=$this->post->post_title;?></h3>
+<div class="post-meta-single"><span class="georgia block">Posted in on <?=$this->post->post_created_on;?> in
 							
-							<?= $this->partialLoop('post/partial/categories.phtml' , $this->categories); ?>
+							<?=$this->partialLoop('post/partial/categories.phtml', $this->categories);?>
 							
-							</span>
-																
-							<span class="tags">
-							<?= $this->partialLoop('post/partial/tags.phtml' , $this->tags); ?>
-							</span>
-							</span>
-							
-							<div class="box">
+							</span> <span class="tags">
+							<?=$this->partialLoop('post/partial/tags.phtml', $this->tags);?>
+							</span> </span>
+	<div class="box">
+<?php if ($this->post->post_open_comment) : ?>
 Comments <a href="#respond">are open</a> on this page, you can <a href="#respond">leave a response</a>.
-You may also leave a <a href="http://freethemelayouts.com/blog/wp-trackback.php?p=50" rel="trackback">trackback</a> from your site.
-						</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
+<?php else: ?>
+Comments are <strong>closed.</strong>
+<?php endif; ?>
+<?php if($this->post->post_open_tb) : ?>
+You may <?php if($this->post->post_open_comment): ?>also<?php endif; ?> leave a <a href="#" rel="trackback">trackback</a> from your site.
+<?php endif; ?>
+
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="left-content">
 
-	<div class="post">
-		<div class="post-date"><span class="month block"><?=$this->post->month; ?></span><span class="day"><?=$this->post->day; ?></span></div>
-		<p>
-		    <?= $this->post->post_excerpt; ?>
+<div class="post">
+<div class="post-date"><span class="month block"><?=$this->post->month;?></span><span
+	class="day"><?=$this->post->day;?></span></div>
+<p>
+		    <?=$this->post->post_excerpt;?>
 	    </p>
-	    <p>
-		    <?= $this->post->post_content; ?>
+<p>
+		    <?=$this->post->post_content;?>
 		</p>
-	
-	</div>
 
-	<?php if ( $this->numcomments = count( $this->comments )): ?>
-	<h3 id="comments" class="post">
-		<span class="orange"><?= $this->numcomments; ?></span> Comments	</h3>
-	
-	<ol class="commentlist">
-	<?php $i=0; foreach ( $this->comments as $comment ): ?>
+</div>
+
+	<?php
+if ($this->numcomments = count($this->comments)) :
+    ?>
+	<h3 id="comments" class="post"><span class="orange"><?=$this->numcomments;?></span>
+Comments</h3>
+
+<ol class="commentlist">
+	<?php
+    $i = 0;
+    foreach ($this->comments as $comment) :
+        ?>
 	
 				<li id="comment-16" class="clearfix alt ">
-				<div class="comment-author">
-					<img src='http://www.gravatar.com/avatar/22726c89a21762fe190cdae51305a367?s=56&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D56&amp;r=G' class='avatar avatar-56' height='56' width='56' />
-					<span class="orange weight-bold verdana block large"><?=$comment->comment_author; ?></span>
-					<span class="small verdana light">on <?=$comment->comment_created_on; ?></span>
-				</div>
-				<div class="comment-text">
-										
-					<span class="medium"><p><?=$comment->comment_content; ?></p></span>
-				</div>
-			</li>
-	<?php endforeach;?>
+	<div class="comment-author"><img
+		src='http://www.gravatar.com/avatar/22726c89a21762fe190cdae51305a367?s=56&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D56&amp;r=G'
+		class='avatar avatar-56' height='56' width='56' /> <span
+		class="orange weight-bold verdana block large"><?=$comment->comment_author;?></span>
+	<span class="small verdana light">on <?=$comment->comment_created_on;?></span>
+	</div>
+	<div class="comment-text"><span class="medium">
+	<p><?=$comment->comment_content;?></p>
+	</span></div>
+	</li>
+	<?php
+    endforeach;
+    ?>
 </ol>
-	<?php endif; ?>
+	
+<?php endif;
+?>
 
-	<br /><br />
- 
+	<br />
+<br />
 
+<?php if ($this->post->post_open_comment) : ?>
 <h3 id="respond" class="post">Leave a Reply</h3>
 
-<?=$this->form; ?>
-	
+<?=$this->form;?>
+<?php endif; ?>
 </div>

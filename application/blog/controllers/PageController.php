@@ -1,21 +1,13 @@
 <?php
 class Blog_PageController extends Zend_Controller_Action
 {
-    public function preDispatch()
+    public function preDispatch ()
+    {}
+    public function indexAction ()
     {
-    }
-        
-    public function indexAction()
-    {
-        
         $name = $this->getRequest()->getParam('name');
-           
         $page = new Page();
-        $query = $page->select()
-                       ->where(sprintf("`page_url`='%s'", $name ));
-        
+        $query = $page->select()->where(sprintf("`page_url`='%s'", $name));
         $this->view->page = $page->fetchRow($query);
     }
-    
-
 }
