@@ -25,7 +25,7 @@ class Blog_PostController extends Zend_Controller_Action
          * Este es el tpl que voy a usar como paginador
          */
         $posts = new Post();
-        $query = $posts->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id')->group('comment.post_id')->where('post_status = 1')->order('post_created_on DESC')->setIntegrityCheck(false);
+        $query = $posts->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post.created_on),1,3)' , 'day' => 'DAY(post.created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id')->group('comment.post_id')->where('post.status = 1')->order('post.created_on DESC')->setIntegrityCheck(false);
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         
         switch ($this->_currentContext) {
@@ -48,7 +48,7 @@ class Blog_PostController extends Zend_Controller_Action
         $request = $this->getRequest();
         $url = $request->getParam('url');
         $post = new Post();
-        $query = $post->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id',array())->group('post.post_id')->where(sprintf("post.post_status = 1 AND post.post_url='%s'", $url))->limit(1)->setIntegrityCheck(false);
+        $query = $post->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post.created_on),1,3)' , 'day' => 'DAY(post.created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id',array())->group('post.post_id')->where(sprintf("post.status = 1 AND post.url='%s'", $url))->limit(1)->setIntegrityCheck(false);
         $post = $post->fetchRow($query);
         $this->view->post = $post;
         
@@ -57,7 +57,7 @@ class Blog_PostController extends Zend_Controller_Action
             $query = $categories->select()->from('post_category')->join('category', 'category.category_id = post_category.category_id')->where(sprintf("post_id='%s'", $post->post_id))->setIntegrityCheck(false);
             $this->view->categories = $categories->fetchAll($query);
             $tags = new Tag();
-            $query = $tags->select()->from('post_tag')->join('tag', 'tag.tag_id = post_tag.tag_id', 'tag_word')->where(sprintf("post_id='%s'", $post->post_id))->setIntegrityCheck(false);
+            $query = $tags->select()->from('post_tag')->join('tag', 'tag.tag_id = post_tag.tag_id', 'word')->where(sprintf("post_id='%s'", $post->post_id))->setIntegrityCheck(false);
             $this->view->tags = $tags->fetchAll($query);
             
             $comments = new Comment();
@@ -74,9 +74,9 @@ class Blog_PostController extends Zend_Controller_Action
                 
                $row = $comments->createRow($values);
                    
-               $row->comment_created_on = new Zend_Db_Expr('NOW()');
-               $row->comment_updated_on = new Zend_Db_Expr('NOW()');
-               $row->comment_ip = $request->getServer('REMOTE_ADDR');
+               $row->created_on = new Zend_Db_Expr('NOW()');
+               $row->updated_on = new Zend_Db_Expr('NOW()');
+               $row->ip = $request->getServer('REMOTE_ADDR');
                $row->post_id =  $post->post_id;
                
                $row->save();
@@ -98,7 +98,7 @@ class Blog_PostController extends Zend_Controller_Action
         $request = $this->getRequest();
         $name = $request->getParam('name');
         $category = new Category();
-        $query = $category->select()->from('category', array('num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('post_category', 'post_category.category_id=category.category_id', array())->join('post', 'post.post_id=post_category.post_id', array('*'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("post_status = 1 AND category.category_url='%s'", $name))->order('post_created_on DESC')->setIntegrityCheck(false);
+        $query = $category->select()->from('category', array('num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post.created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('post_category', 'post_category.category_id=category.category_id', array())->join('post', 'post.post_id=post_category.post_id', array('*'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("post.status = 1 AND category.url='%s'", $name))->order('post.created_on DESC')->setIntegrityCheck(false);
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbTableSelect($query));
         $paginator->setCurrentPageNumber($this->_getParam('page', 1));
@@ -109,7 +109,7 @@ class Blog_PostController extends Zend_Controller_Action
         $request = $this->getRequest();
         $name = $request->getParam('name');
         $tags = new Tag();
-        $query = $tags->select()->from('tag', array('num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('post_tag', 'post_tag.tag_id=tag.tag_id', array())->join('post', 'post.post_id=post_tag.post_id', array('*'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("post_status = 1 AND tag.tag_url='%s'", $name))->order('post_created_on DESC')->setIntegrityCheck(false);
+        $query = $tags->select()->from('tag', array('num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post.created_on),1,3)' , 'day' => 'DAY(post.created_on)'))->join('post_tag', 'post_tag.tag_id=tag.tag_id', array())->join('post', 'post.post_id=post_tag.post_id', array('*'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("post.status = 1 AND tag.url='%s'", $name))->order('post.created_on DESC')->setIntegrityCheck(false);
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbTableSelect($query));
         $paginator->setCurrentPageNumber($this->_getParam('page', 1));
@@ -121,7 +121,7 @@ class Blog_PostController extends Zend_Controller_Action
         $year = $request->getParam('year');
         $month = $request->getParam('month');
         $posts = new Post();
-        $query = $posts->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post_created_on),1,3)' , 'day' => 'DAY(post_created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("post_status = 1 and MONTH(post_created_on)='%s' and YEAR(post_created_on)='%s'", $month, $year))->order('post_created_on DESC')->setIntegrityCheck(false);
+        $query = $posts->select()->from('post', array('*' , 'num_comments' => new Zend_Db_Expr('COUNT(comment_id)') , 'month' => 'SUBSTRING(MONTHNAME(post.created_on),1,3)' , 'day' => 'DAY(post.created_on)'))->join('users', 'users.user_id=post.user_id', 'username')->joinleft('comment', 'comment.post_id=post.post_id', array())->group('post.post_id')->where(sprintf("status = 1 and MONTH(post.created_on)='%s' and YEAR(post.created_on)='%s'", $month, $year))->order('post.created_on DESC')->setIntegrityCheck(false);
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
         $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbTableSelect($query));
         $paginator->setCurrentPageNumber($this->_getParam('page', 1));
