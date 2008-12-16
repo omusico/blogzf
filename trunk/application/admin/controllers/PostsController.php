@@ -1,6 +1,15 @@
 <?php
 class Admin_PostsController extends Blogzf_Controller_Action
 {
+    public function readAction ()
+    {
+        $posts = new Post();
+        $select = $posts->select();
+        $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect( $select ));
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        
+        $this->view->paginator = $paginator;
+    }
     public function createAction ()
     {
         $form = new forms_Posts();
@@ -27,14 +36,6 @@ class Admin_PostsController extends Blogzf_Controller_Action
             }
         }
         $this->view->form = $form;
-    }
-    public function readAction ()
-    {
-        $posts = new Post();
-        $select = $posts->select();
-        $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect( $select ));
-        $paginator->setCurrentPageNumber($this->_getParam('page'));
-        $this->view->paginator = $paginator;
     }
     public function updateAction ()
     {
