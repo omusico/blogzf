@@ -1,8 +1,3 @@
-<?php 
-
-print_r($this->getModel( 'post' )->fetchAll()->toArray());exit;
-
-?>
 <div class="main">
     <h2>Posts</h2>
     
@@ -19,8 +14,6 @@ print_r($this->getModel( 'post' )->fetchAll()->toArray());exit;
     			<th>Id</th>
     			<th>Title</th>
     			<th>Autor</th>
-    			<th>Categorias</th>
-    			<th>Tags</th>
     			<th>Fecha</th>
     			<th>Acciones</th>
     		</tr>
@@ -33,8 +26,6 @@ print_r($this->getModel( 'post' )->fetchAll()->toArray());exit;
 	        <tr class=<?= ($i%2==0?'"even clickable"':'"odd clickable"') ?>">
     			<td><?=$post["post_id"]?></td>
     			<td><?=$post["title"]?></td>
-    			<td><?=$post["user_id"]?></td>
-    			<td><?=$post["user_id"]?></td>
     			<td><?=$post["user_id"]?></td>
     			<td><?=$post["created_on"]?></td>
     			<td>
