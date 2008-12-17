@@ -72,14 +72,23 @@ class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
          */
         if ( $request->module == 'admin' ) {
             $layout = $config->site->layout->admin;
+            $this->_view->headScript()
+                   ->appendFile( $this->_view->staticServer . 'layout/'.$layout.'/scripts/mootools-1.2-core.js' )
+                   ->appendFile( $this->_view->staticServer . 'layout/'.$layout.'/scripts/mootools-1.2-more.js' )
+                   ->appendFile( $this->_view->staticServer . 'layout/'.$layout.'/scripts/source/Utilities/mocha.js.php' )
+                   ->appendFile( $this->_view->staticServer . 'layout/'.$layout.'/scripts/mocha-init.js' );
+            
+            /*
             $this->_view->addHelperPath( 'Zend/Dojo/View/Helper/', 'Zend_Dojo_View_Helper' );
             Zend_Dojo::enableView($this->_view);
             $this->_view->dojo()->setDjConfigOption( 'parseOnLoad', false );
             $this->_view->dojo()->setDjConfigOption( 'userPlainJson', true );
             Zend_Dojo_View_Helper_Dojo::setUseDeclarative();
+			*/
         } else {
             $layout = $config->site->layout->default;
         }
+
         $this->_view->headLink()
                 ->appendStylesheet( $this->_view->staticServer . 
                 	'layout/'.$layout.'/styles.css' );
