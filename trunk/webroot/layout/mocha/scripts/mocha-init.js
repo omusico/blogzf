@@ -54,7 +54,7 @@ initializeWindows = function(){
 		new MochaUI.Window({
 			id: 'ajaxpage',
 			loadMethod: 'xhr',
-			contentURL: 'pages/lipsum.html',
+			contentURL: '/layout/mocha/pages/lipsum.html',
 			width: 340,
 			height: 150
 		});
@@ -67,7 +67,7 @@ initializeWindows = function(){
 	}	
 	
 	MochaUI.jsonWindows = function(){
-		var url = 'data/json-windows-data.js';
+		var url = '/layout/mocha/data/json-windows-data.js';
 		var request = new Request.JSON({
 			url: url,
 			method: 'get',
@@ -88,12 +88,12 @@ initializeWindows = function(){
 			id: 'youtube',
 			title: 'YouTube in Iframe',
 			loadMethod: 'iframe',
-			contentURL: 'pages/youtube.html',
+			contentURL: '/layout/mocha/pages/youtube.html',
 			width: 340,
 			height: 280,
 			resizeLimit: {'x': [330, 2500], 'y': [250, 2000]},
 			toolbar: true,
-			toolbarURL: 'pages/youtube-tabs.html',
+			toolbarURL: '/layout/mocha/pages/youtube-tabs.html',
 			contentBgColor: '#000'
 		});
 	}
@@ -109,7 +109,7 @@ initializeWindows = function(){
 			id: 'slideshare',
 			title: 'Slideshare in Iframe',
 			loadMethod: 'iframe',
-			contentURL: 'pages/slideshare.html',
+			contentURL: '/layout/mocha/pages/slideshare.html',
 			width: 415,
 			height: 355,
 			resizeLimit:  {'x': [330, 2500], 'y': [250, 2000]},
@@ -128,11 +128,11 @@ initializeWindows = function(){
 			id: 'parametrics',
 			title: 'Window Parametrics',
 			loadMethod: 'xhr',
-			contentURL: 'plugins/parametrics/index.html',
+			contentURL: '/layout/mocha/plugins/parametrics/index.html',
 			onContentLoaded: function(){
 				if ( !MochaUI.parametricsScript == true ){
 					new Request({
-						url: 'plugins/parametrics/scripts/parametrics.js',
+						url: '/layout/mocha/plugins/parametrics/scripts/parametrics.js',
 						method: 'get',
 						onSuccess: function() {
 							MochaUI.addRadiusSlider.delay(10); // Delay is for IE6
@@ -169,11 +169,11 @@ initializeWindows = function(){
 			title: 'Canvas Clock',
 			addClass: 'transparent',
 			loadMethod: 'xhr',
-			contentURL: 'plugins/coolclock/index.html?t=' + new Date().getTime(),
+			contentURL: '/layout/mocha/plugins/coolclock/index.html?t=' + new Date().getTime(),
 			onContentLoaded: function(){
 				if ( !MochaUI.clockScript == true ){
 					new Request({
-						url: 'plugins/coolclock/scripts/coolclock.js?t=' + new Date().getTime(),
+						url: '/layout/mocha/plugins/coolclock/scripts/coolclock.js?t=' + new Date().getTime(),
 						method: 'get',
 						onSuccess: function() {
 							if (Browser.Engine.trident) {
@@ -229,7 +229,7 @@ initializeWindows = function(){
 			id: 'windowevents',
 			title: 'Window Events',
 			loadMethod: 'xhr',
-			contentURL: 'pages/events.html',
+			contentURL: '/layout/mocha/pages/events.html',
 			onContentLoaded: function(windowEl){
 				MochaUI.notification('Window content was loaded.');
 			},
@@ -270,7 +270,7 @@ initializeWindows = function(){
 			id: 'containertest',
 			title: 'Container Test',
 			loadMethod: 'xhr',
-			contentURL: 'pages/lipsum.html',
+			contentURL: '/layout/mocha/pages/lipsum.html',
 			container: 'pageWrapper',
 			width: 340,
 			height: 150,
@@ -290,7 +290,7 @@ initializeWindows = function(){
 			id: 'iframetest',
 			title: 'Iframe Tests',
 			loadMethod: 'iframe',
-			contentURL: 'pages/iframetest.html'
+			contentURL: '/layout/mocha/pages/iframetest.html'
 		});
 	}
 	if ($('iframetestLinkCheck')) {
@@ -306,7 +306,7 @@ initializeWindows = function(){
 			id: id,
 			title: 'Accordian',
 			loadMethod: 'xhr',
-			contentURL: 'pages/accordian-demo.html',
+			contentURL: '/layout/mocha/pages/accordian-demo.html',
 			width: 300,
 			height: 200,
 			scrollbars: false,
@@ -354,7 +354,7 @@ initializeWindows = function(){
 			id: 'nocanvas',
 			title: 'No Canvas',
 			loadMethod: 'xhr',
-			contentURL: 'pages/lipsum.html',
+			contentURL: '/layout/mocha/pages/lipsum.html',
 			addClass: 'no-canvas',
 			width: 305,
 			height: 175,
@@ -411,13 +411,13 @@ initializeWindows = function(){
 		new MochaUI.Window({
 			id: 'builder',
 			title: 'Window Builder',
-			icon: 'images/icons/page.gif',
+			icon: '/layout/mocha/images/icons/page.gif',
 			loadMethod: 'xhr',
-			contentURL: 'plugins/windowform/',
+			contentURL: '/layout/mocha/plugins/windowform/',
 			onContentLoaded: function(){
 				if ( !MochaUI.windowformScript == true ){
 					new Request({
-						url: 'plugins/windowform/scripts/Window-from-form.js',
+						url: '/layout/mocha/plugins/windowform/scripts/Window-from-form.js',
 						method: 'get',
 						onSuccess: function() {
 							$('newWindowSubmit').addEvent('click', function(e){
@@ -467,12 +467,12 @@ initializeWindows = function(){
 			id: 'features',
 			title: 'Features',
 			loadMethod: 'xhr',
-			contentURL: 'pages/features-layout.html',
+			contentURL: '/layout/mocha/pages/features-layout.html',
 			width: 305,
 			height: 175,
 			resizeLimit: {'x': [275, 2500], 'y': [125, 2000]},
 			toolbar: true,
-			toolbarURL: 'pages/features-tabs.html'
+			toolbarURL: '/layout/mocha/pages/features-tabs.html'
 		});
 	}
 	if ($('featuresLinkCheck')){
@@ -487,7 +487,7 @@ initializeWindows = function(){
 				id: 'faq',
 				title: 'FAQ',
 				loadMethod: 'xhr',
-				contentURL: 'pages/faq.html',
+				contentURL: '/layout/mocha/pages/faq.html',
 				width: 750,
 				height: 350
 			});
@@ -504,7 +504,7 @@ initializeWindows = function(){
 				id: 'docs',
 				title: 'Documentation',
 				loadMethod: 'xhr',
-				contentURL: 'pages/docs.html',
+				contentURL: '/layout/mocha/pages/docs.html',
 				width: 750,
 				height: 350,
 				padding: [10,10,10,10,10]
@@ -522,7 +522,7 @@ initializeWindows = function(){
 				id: 'resources',
 				title: 'Resources',
 				loadMethod: 'xhr',
-				contentURL: 'pages/resources.html',
+				contentURL: '/layout/mocha/pages/resources.html',
 				width: 300,
 				height: 275,
 				x: 20,
@@ -541,7 +541,7 @@ initializeWindows = function(){
 				id: 'help',
 				title: 'Support',
 				loadMethod: 'xhr',
-				contentURL: 'pages/support.html',
+				contentURL: '/layout/mocha/pages/support.html',
 				width: 320,
 				height: 320,
 				x: 20,
@@ -560,7 +560,7 @@ initializeWindows = function(){
 			id: 'contribute',
 			title: 'Contribute',
 			loadMethod: 'xhr',
-			contentURL: 'pages/contribute.html',
+			contentURL: '/layout/mocha/pages/contribute.html',
 			width: 320,
 			height: 320,
 			x: 20,
@@ -579,11 +579,11 @@ initializeWindows = function(){
 			id: 'about',
 			title: 'MochaUI',
 			loadMethod: 'xhr',
-			contentURL: 'pages/about.html',
+			contentURL: '/layout/mocha/pages/about.html',
 			type: 'modal2',
 			width: 350,
 			height: 195,
-			contentBgColor: '#e5e5e5 url(images/logo2.gif) left 3px no-repeat',
+			contentBgColor: '#e5e5e5 url(/layout/mocha/images/logo2.gif) left 3px no-repeat',
 			padding: { top: 43, right: 12, bottom: 10, left: 12 },
 			scrollbars:  false
 		});
@@ -646,16 +646,16 @@ window.addEvent('domready', function(){
 		id: 'files-panel',
 		title: 'File View',
 		loadMethod: 'xhr',
-		contentURL: 'pages/file-view.html',
+		contentURL: '/layout/mocha/pages/file-view.html',
 		column: 'sideColumn1',
 		onContentLoaded: function(){
 			if ( !MochaUI.treeScript == true ){
 				new Request({
-					url: 'plugins/tree/scripts/tree.js',
+					url: '/layout/mocha/plugins/tree/scripts/tree.js',
 					method: 'get',
 					onSuccess: function() {
-						buildTree('tree1');
 						MochaUI.treeScript = true;
+						buildTree('tree1');
 					}.bind(this)
 				}).send();
 			}
@@ -666,7 +666,7 @@ window.addEvent('domready', function(){
 		id: 'panel2',
 		title: 'Panel',
 		loadMethod: 'xhr',
-		contentURL: 'pages/lipsum.html',
+		contentURL: '/layout/mocha//layout/mocha/pages/lipsum.html',
 		column: 'sideColumn1',
 		height: 300
 	});
@@ -675,11 +675,11 @@ window.addEvent('domready', function(){
 		id: 'panel3',
 		title: 'Panel',
 		loadMethod: 'xhr',
-		contentURL: 'pages/lipsum.html',
+		contentURL: '/layout/mocha/pages/lipsum.html',
 		column: 'sideColumn1',
 		height: 140,
 		footer: true,
-		footerURL: 'pages/toolbox-demo.html'
+		footerURL: '/layout/mocha/pages/toolbox-demo.html'
 	});
 
 	// Add panels to main column	
@@ -687,7 +687,7 @@ window.addEvent('domready', function(){
 		id: 'mainPanel',
 		title: 'Lorem Ipsum',
 		loadMethod: 'xhr',
-		contentURL: 'pages/lipsum.html',
+		contentURL: '/layout/mocha/pages/lipsum.html',
 		column: 'mainColumn',
 		panelBackground: '#fff'
 	});
@@ -696,7 +696,7 @@ window.addEvent('domready', function(){
 		id: 'panel1',
 		title: 'Panel',
 		loadMethod: 'xhr',
-		contentURL: 'pages/lipsum.html',
+		contentURL: '/layout/mocha/pages/lipsum.html',
 		column: 'mainColumn',
 		height: 200
 	});
@@ -706,20 +706,20 @@ window.addEvent('domready', function(){
 	new MochaUI.Panel({
 		id: 'help-panel',
 		loadMethod: 'xhr',
-		contentURL: 'pages/overview.html',
+		contentURL: '/layout/mocha/pages/overview.html',
 		column: 'sideColumn2',
-		tabsURL: 'pages/panel-tabs.html'
+		tabsURL: '/layout/mocha/pages/panel-tabs.html'
 	});
 
 	new MochaUI.Panel({
 		id: 'tips-panel',
 		title: 'Tips',
 		loadMethod: 'xhr',
-		contentURL: 'pages/tips.html',
+		contentURL: '/layout/mocha/pages/tips.html',
 		column: 'sideColumn2',
 		height: 140,
 		footer: true,
-		footerURL: 'pages/toolbox-demo.html'
+		footerURL: '/layout/mocha/pages/toolbox-demo.html'
 	});
 
 	MochaUI.Modal = new MochaUI.Modal();

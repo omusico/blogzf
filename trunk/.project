@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>blogzf</name>
+	<name>blogzf.dev</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -11,7 +11,7 @@
 			<arguments>
 				<dictionary>
 					<key>LaunchConfigHandle</key>
-					<value>&lt;project&gt;/.externalToolBuilders/org.eclipse.php.core.PhpIncrementalProjectBuilder.launch</value>
+					<value>&lt;project&gt;/.externalToolBuilders/org.eclipse.php.core.PhpIncrementalProjectBuilder (1).launch</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
