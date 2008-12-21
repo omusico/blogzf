@@ -103,6 +103,7 @@ class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
                 
         if ($this->_view->layout()->isEnabled() ) {
             $this->_view->layout()->sidebar = $this->_view->action( 'rightcontent', 'sidebar', $this->_view->module );
+            $this->_view->layout()->header = $this->_view->action( 'header', 'sidebar', $this->_view->module );
             $this->_view->layout()->footer = $this->_view->action( 'footer', 'sidebar', $this->_view->module );
             $this->_view->layout()->menutop = $this->_view->action( 'menutop','sidebar', $this->_view->module );
 	    }     
