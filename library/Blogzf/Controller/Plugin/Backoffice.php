@@ -16,7 +16,7 @@ class Blogzf_Controller_Plugin_Backoffice extends Zend_Controller_Plugin_Abstrac
     }
     public function preDispatch (Zend_Controller_Request_Abstract $request)
     {
-        
+        /*
         $auth = Zend_Auth::getInstance();
         if ( $request->module == 'admin' ) {
             if( !$auth->hasIdentity() && $request->controller != 'index' ) {
@@ -24,7 +24,7 @@ class Blogzf_Controller_Plugin_Backoffice extends Zend_Controller_Plugin_Abstrac
             } elseif ( $auth->hasIdentity()  && $request->controller == 'index' ) {
                 header('Location: /admin/dashboard/');
             }
-        }
+        }*/
     }
     public function postDispatch ( Zend_Controller_Request_Abstract $request )
     {
