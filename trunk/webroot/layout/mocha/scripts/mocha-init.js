@@ -634,12 +634,6 @@ window.addEvent('domready', function(){
 		resizeLimit: [100, 300]
 	});
 
-	new MochaUI.Column({
-		id: 'sideColumn2',
-		placement: 'right',	
-		width: 220,		
-		resizeLimit: [195, 300]
-	});
 
 	// Add panels to first side column
 	new MochaUI.Panel({
@@ -662,27 +656,7 @@ window.addEvent('domready', function(){
 		}
 	});
 
-	new MochaUI.Panel({
-		id: 'panel2',
-		title: 'Panel',
-		loadMethod: 'xhr',
-		contentURL: '/layout/mocha//layout/mocha/pages/lipsum.html',
-		column: 'sideColumn1',
-		height: 300
-	});
-
-	new MochaUI.Panel({
-		id: 'panel3',
-		title: 'Panel',
-		loadMethod: 'xhr',
-		contentURL: '/layout/mocha/pages/lipsum.html',
-		column: 'sideColumn1',
-		height: 140,
-		footer: true,
-		footerURL: '/layout/mocha/pages/toolbox-demo.html'
-	});
-
-	// Add panels to main column	
+		// Add panels to main column	
 	new MochaUI.Panel({
 		id: 'mainPanel',
 		title: 'Lorem Ipsum',
@@ -692,35 +666,6 @@ window.addEvent('domready', function(){
 		panelBackground: '#fff'
 	});
 
-	new MochaUI.Panel({
-		id: 'panel1',
-		title: 'Panel',
-		loadMethod: 'xhr',
-		contentURL: '/layout/mocha/pages/lipsum.html',
-		column: 'mainColumn',
-		height: 200
-	});
-
-	// Add panels to second side column
-	
-	new MochaUI.Panel({
-		id: 'help-panel',
-		loadMethod: 'xhr',
-		contentURL: '/layout/mocha/pages/overview.html',
-		column: 'sideColumn2',
-		tabsURL: '/layout/mocha/pages/panel-tabs.html'
-	});
-
-	new MochaUI.Panel({
-		id: 'tips-panel',
-		title: 'Tips',
-		loadMethod: 'xhr',
-		contentURL: '/layout/mocha/pages/tips.html',
-		column: 'sideColumn2',
-		height: 140,
-		footer: true,
-		footerURL: '/layout/mocha/pages/toolbox-demo.html'
-	});
 
 	MochaUI.Modal = new MochaUI.Modal();
 	

@@ -1,6 +1,10 @@
 <?php
 class Admin_PostsController extends Blogzf_Controller_Action
 {
+    public function preDispatch()
+    {
+        $this->_helper->layout->disableLayout();
+    }
     public function readAction ()
     {
         $posts = new Post();

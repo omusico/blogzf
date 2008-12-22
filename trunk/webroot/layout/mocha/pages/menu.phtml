@@ -1,7 +1,7 @@
 <ul id="tree1" class="tree">
 	<li class="folder f-open root"><span>Post</span>
 		<ul>
-			<li id="newPost" class="doc"><span><a>Crear</a></span></li>
+			<li id="newPost" class="doc"><span><a>Crears</a></span></li>
 			<li id="readPost" class="doc"><span><a>Ver</a></span></li>
 		</ul>
 	</li>
@@ -18,7 +18,7 @@
 		MochaUI.updateContent({
 			'element': $('mainPanel'),
 			'loadMethod': 'xhr',
-			'url': '/admin/post/create/',
+			'url': '/admin/posts/create/',
 			'title': 'Crear un nuevo post',
 			'padding': { top: 8, right: 8, bottom: 8, left: 8 }
 		});
@@ -29,7 +29,7 @@
 		MochaUI.updateContent({
 			'element': $('mainPanel'),
 			'loadMethod': 'iframe',
-			'url': '/admin/post/read/',
+			'url': '/admin/posts/read/',
 			'title': 'Listado de post',
 			'padding': { top: 0, right: 0, bottom: 0, left: 0 }
 		});
