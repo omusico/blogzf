@@ -6,6 +6,7 @@
 class Blogzf_Controller_Action extends Zend_Controller_Action
 {
     protected $_flashMessenger;
+    protected $_user;
     public function init()
     {
         parent::init();
@@ -18,5 +19,10 @@ class Blogzf_Controller_Action extends Zend_Controller_Action
          */
         Zend_Paginator::setDefaultScrollingStyle('all');
         Zend_View_Helper_PaginationControl::setDefaultViewPartial('/paginator/all.phtml');
+        /**
+         * Por ahora hardocdeamos esto, despues esto va a ser un objeto user, con todos los datos del usuario logueado
+         */
+        $this->_user = new stdClass();
+        $this->_user->id = 1;//Zend_Auth::getInstance()->getIdentity();
     }
 }
