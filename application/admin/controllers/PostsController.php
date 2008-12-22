@@ -23,12 +23,12 @@ class Admin_PostsController extends Blogzf_Controller_Action
                 try {
                     $posts = new Post();
                     $post = $posts->createRow();
-                    $post->post_title = $postData['title'];
-                    $post->post_content = $postData['content'];
-                    $post->user_id = Zend_Auth::getInstance()->getIdentity();
-                    $post->post_comment = $postData['comment'];
+                    $post->title = $postData['title'];
+                    $post->content = $postData['content'];
+                    $post->user_id = $this->_user->id;
+                    $post->open_comment = $postData['comment'];
                     $post->created_on = new Zend_Db_Expr('now()');
-                    $post->post_status = $postData['status'];
+                    $post->status = $postData['status'];
                     $post->save();
                     $this->_redirect('/admin/posts/read/');
                 } catch (Zend_Exception $e) {
@@ -53,9 +53,8 @@ class Admin_PostsController extends Blogzf_Controller_Action
                 try {
                     $post->title = $postData['title'];
                     $post->content = $postData['content'];
-                    $post->user_id = Zend_Auth::getInstance()->hasIdentity();
-                    $post->comment = $postData['comment'];
-                    $post->created_date = new Zend_Db_Expr('now()');
+                    $post->open_comment = $postData['comment'];
+                    $post->update_on = new Zend_Db_Expr('now()');
                     $post->status = $postData['status'];
                     $post->save();
                     $this->_redirect('/admin/posts/read/');
@@ -74,7 +73,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
     public function deleteAction ()
     {
         $id = (int) $this->_request->getParam('id', 0);
-        $posts = new Posts();
+        $posts = new Post();
         $post = $posts->find($id)->current();
         if ($post !== null) {
             try {
