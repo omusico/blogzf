@@ -1,6 +1,11 @@
 <?php
 class Admin_IndexController extends Blogzf_Controller_Action
 {
+    public function preDispatch()
+    {
+        parent::preDispatch();
+        $this->_helper->layout->setLayout('admin/login');
+    }
     public function indexAction ()
     {
         $form = new forms_Authentication();
