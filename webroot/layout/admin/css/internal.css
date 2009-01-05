@@ -1,8 +1,4 @@
 
-
-@import url(global.css);
-
-
 html { 
   height:     100%; 
   margin-bottom:    0.01em; 
@@ -54,7 +50,7 @@ body {
   z-index:        1;
   background:    transparent url(/universal/images/manager/manager-page-left.png) 18px 0px no-repeat;
   position: absolute;
-  top: 205px;
+  top: 50px;
   left: 0px;
  }
 
