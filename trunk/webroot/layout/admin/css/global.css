@@ -260,24 +260,24 @@ input.button, input.button[disabled] { font-size: 12px; padding: 2px 20px 3px 20
 input.button-important { font-size: 12px; padding: 2px 20px 3px 20px; -moz-outline: 0; font-weight: bold; } 
 
 input.input-calendar {
-    background: #ffffff url(/universal/images/calendar.png) 98% 50% no-repeat;
+    background: #ffffff url(../images/calendar.png) 98% 50% no-repeat;
     cursor: pointer;
 }
 
 input.input-categories {
-    background: #ffffff url(/universal/images/category.png) 98% 50% no-repeat;
+    background: #ffffff url(../images/category.png) 98% 50% no-repeat;
     cursor: pointer;
     padding-right: 24px;
 }
 
 a.input-calendar {
-    background: #ffffff url(/universal/images/calendar-tiny.png) 0% 50% no-repeat;
+    background: #ffffff url(../images/calendar-tiny.png) 0% 50% no-repeat;
     padding-left: 15px;
     cursor: pointer;
 }
 
 a.input-calendar.input-selected-forced {
-    background: #ffffff url(/universal/images/calendar-tiny-focused.png) 0% 50% no-repeat;
+    background: #ffffff url(../images/calendar-tiny-focused.png) 0% 50% no-repeat;
 		color: #7f8fa0 !important;
     background-color: #f9f9f9;
     -moz-outline: 0;
@@ -354,27 +354,27 @@ a.multiselect-option-selected:hover {
 
 /* --- segment boxes ------------------------------------------------------------- */
 .errorSegmentBox {
-		background: #BD4700 url(/universal/images/util/box_bottom_left.gif) no-repeat bottom left; 
+		background: #BD4700 url(../images/box_bottom_left.gif) no-repeat bottom left; 
 		color: #fff;
 }
 
 .errorSegmentBox .segmentBoxIcon {
 		background: transparent
-				url(/universal/images/manager/error-box-icon.jpg) no-repeat 3px 2px;
+				url(../images/error-box-icon.jpg) no-repeat 3px 2px;
 		width: 32px;
 		height: 32px;
 		float: left;
 }
 
 .warningSegmentBox {
-		background: #BDBB00 url(/universal/images/util/box_bottom_left.gif)
+		background: #BDBB00 url(../images/box_bottom_left.gif)
 				no-repeat bottom left;
 		color: #fff;
 }
 
 .warningSegmentBox .segmentBoxIcon {
 		background: transparent
-				url(/universal/images/manager/warning-box-icon.jpg) no-repeat 3px
+				url(../images/warning-box-icon.jpg) no-repeat 3px
 				0px;
 		width: 32px;
 		height: 32px;
@@ -382,14 +382,14 @@ a.multiselect-option-selected:hover {
 }
 
 .updateSegmentBox {
-		background: #5C8A00 url(/universal/images/util/box_bottom_left.gif)
+		background: #5C8A00 url(../images/box_bottom_left.gif)
 				no-repeat bottom left;
 		color: #fff;
 }
 
 .updateSegmentBox .segmentBoxIcon {
 		background: transparent
-				url(/universal/images/manager/update-box-icon.jpg) no-repeat 3px
+				url(../images/update-box-icon.jpg) no-repeat 3px
 				-1px;
 		width: 32px;
 		height: 32px;
@@ -407,14 +407,14 @@ A.segmentBoxLink:hover {
 }
 
 .informationSegmentBox {
-		background: #054077 url(/universal/images/util/box_bottom_left.gif)
+		background: #054077 url(../images/box_bottom_left.gif)
 				no-repeat bottom left;
 		color: #fff;
 }
 
 .informationSegmentBox .segmentBoxIcon {
 		background: transparent
-				url(/universal/images/manager/information-box-icon.jpg) no-repeat
+				url(../images/information-box-icon.jpg) no-repeat
 				3px 1px;
 		width: 32px;
 		height: 32px;
@@ -422,7 +422,7 @@ A.segmentBoxLink:hover {
 }
 
 .segmentBox {
-		background: #EFF3EB url(/universal/images/util/box_bottom_left.gif)
+		background: #EFF3EB url(../images/box_bottom_left.gif)
 				no-repeat bottom left;
 }
 
@@ -436,33 +436,33 @@ A.segmentBoxLink:hover {
 }
 
 .segmentBoxTitle {
-		background: transparent url(/universal/images/util/box_top_right.gif)
+		background: transparent url(../images/box_top_right.gif)
 				no-repeat top right;
 }
 
 .segmentBoxHeader {
-		background: transparent url(/universal/images/util/box_top_left.gif)
+		background: transparent url(../images/box_top_left.gif)
 				no-repeat top left;
 		height: 9px;
 		line-height: 9px;
 }
 
 .segmentBoxContent {
-		background: transparent url(/universal/images/util/box_bottom_right.gif)
+		background: transparent url(../images/box_bottom_right.gif)
 				no-repeat bottom right;
 		padding: 12px;
 		padding-top: 4px;
 }
 
 .segmentBoxContentWide {
-		background: transparent url(/universal/images/util/box_bottom_right.gif)
+		background: transparent url(../images/box_bottom_right.gif)
 				no-repeat bottom right;
 		padding: 18px;
 		padding-top: 4px;
 }
 
 .segmentBoxContentThin {
-		background: transparent url(/universal/images/util/box_bottom_right.gif)
+		background: transparent url(../images/box_bottom_right.gif)
 				no-repeat bottom right;
 		padding: 4px;
 		padding-top: 4px;
@@ -482,26 +482,26 @@ A.segmentBoxLink:hover {
 
 .objectBox {
 		background: #F6F6F6
-				url(/universal/images/util/box_bottom_left_border.gif) no-repeat
+				url(../images/box_bottom_left_border.gif) no-repeat
 				bottom left;
 }
 
 .objectBoxSelected {
 		background: #F3F7EE
-				url(/universal/images/util/box_bottom_left_border.gif) no-repeat
+				url(../images/box_bottom_left_border.gif) no-repeat
 				bottom left;
 }
 
 .objectBoxTitle {
 		background: transparent
-				url(/universal/images/util/box_top_right_border.gif) no-repeat top
+				url(../images/box_top_right_border.gif) no-repeat top
 				right;
 		margin-left: 6px;
 }
 
 .objectBoxHeader {
 		background: transparent
-				url(/universal/images/util/box_top_left_border.gif) no-repeat top
+				url(../images/box_top_left_border.gif) no-repeat top
 				left;
 		height: 12px;
 		line-height: 12px;
@@ -509,7 +509,7 @@ A.segmentBoxLink:hover {
 
 .objectBoxContent {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				url(../images/box_bottom_right_border.gif) no-repeat
 				bottom right;
 		padding: 12px;
 		padding-top: 0px;
@@ -517,7 +517,7 @@ A.segmentBoxLink:hover {
 
 .objectBoxContentWide {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				url(../images/box_bottom_right_border.gif) no-repeat
 				bottom right;
 		padding: 20px;
 		padding-top: 2px;
@@ -526,7 +526,7 @@ A.segmentBoxLink:hover {
 
 .objectBoxContentThin {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				url(../images/box_bottom_right_border.gif) no-repeat
 				bottom right;
 		padding: 4px;
 		padding-top: 0px;
@@ -541,26 +541,26 @@ A.segmentBoxLink:hover {
 
 .contentBox {
 		background: #F6F6F6
-				url(/universal/images/util/box_bottom_left_lightborder.gif)
+				url(../images/box_bottom_left_lightborder.gif)
 				no-repeat bottom left;
 }
 
 .contentBoxSelected {
 		background: #EFF3EB
-				url(/universal/images/util/box_bottom_left_lightborder.gif)
+				url(../images/box_bottom_left_lightborder.gif)
 				no-repeat bottom left;
 }
 
 .contentBoxTitle {
 		background: transparent
-				url(/universal/images/util/box_top_right_lightborder.gif) no-repeat
+				url(../images/box_top_right_lightborder.gif) no-repeat
 				top right;
 		margin-left: 6px;
 }
 
 .contentBoxHeader {
 		background: transparent
-				url(/universal/images/util/box_top_left_lightborder.gif) no-repeat
+				url(../images/box_top_left_lightborder.gif) no-repeat
 				top left;
 		height: 12px;
 		line-height: 12px;
@@ -568,7 +568,7 @@ A.segmentBoxLink:hover {
 
 .contentBoxContent {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				url(../images/box_bottom_right_lightborder.gif)
 				no-repeat bottom right;
 		padding: 12px;
 		padding-top: 0px;
@@ -576,7 +576,7 @@ A.segmentBoxLink:hover {
 
 .contentBoxContentWide {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				url(../images/box_bottom_right_lightborder.gif)
 				no-repeat bottom right;
 		padding: 20px;
 		padding-top: 2px;
@@ -585,7 +585,7 @@ A.segmentBoxLink:hover {
 
 .contentBoxContentThin {
 		background: transparent
-				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				url(../images/box_bottom_right_lightborder.gif)
 				no-repeat bottom right;
 		padding: 4px;
 		padding-top: 0px;
@@ -617,7 +617,7 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-title {
-		background: url(/universal/images/helptip-bg-300.png) top left;
+		background: url(../images/helptip-bg-300.png) top left;
 		padding: 15px;
 		font-size: 14px;
 		font-weight: bold;
@@ -626,7 +626,7 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-text {
-    background: url(/universal/images/helptip-bg-300.png) bottom left;
+    background: url(../images/helptip-bg-300.png) bottom left;
     font-size: 11px;
     line-height: 14px;
     font-family: Arial, Verdana, Helvetica, sans-serif;
@@ -644,14 +644,14 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-container-wide .helptip-title-wrapper {
-    background: url(/universal/images/helptip-bg-500.png) top left;
+    background: url(../images/helptip-bg-500.png) top left;
 }
 .helptip-container-wide .helptip-title  {
     background: transparent;
 }
 
 .helptip-container-wide .helptip-text {
-		background: url(/universal/images/helptip-bg-500.png) bottom left;
+		background: url(../images/helptip-bg-500.png) bottom left;
 }
 
 
@@ -671,12 +671,12 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-style-dialog .helptip-title-wrapper {
-    background: transparent url(/universal/images/helptip-bg-330.png) top left;
+    background: transparent url(../images/helptip-bg-330.png) top left;
     padding: 3px;
 }
 
 .helptip-style-dialog .helptip-title {
-    background: transparent url(/universal/images/helptip-warning.png) 5px 5px no-repeat;
+    background: transparent url(../images/helptip-warning.png) 5px 5px no-repeat;
     padding: 15px 15px 8px 50px;
     font-size: 14px;
     font-weight: bold;
@@ -684,7 +684,7 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-style-dialog .helptip-text {
-    background: transparent url(/universal/images/helptip-bg-330.png) bottom left;
+    background: transparent url(../images/helptip-bg-330.png) bottom left;
     padding: 0 15px 20px 53px;
     font-size: 11px !important;
     letter-spacing: 0px !important;
@@ -707,13 +707,13 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-style-dialog-wide .helptip-title-wrapper {
-    background: transparent url(/universal/images/helptip-bg-400.png) top
+    background: transparent url(../images/helptip-bg-400.png) top
         left;
     padding: 3px;
 }
 
 .helptip-style-dialog-wide .helptip-title {
-    background: transparent url(/universal/images/helptip-warning.png) 5px
+    background: transparent url(../images/helptip-warning.png) 5px
         5px no-repeat;
     padding: 15px 15px 8px 50px;
     font-size: 14px;
@@ -722,7 +722,7 @@ A.segmentBoxLink:hover {
 }
 
 .helptip-style-dialog-wide .helptip-text {
-    background: transparent url(/universal/images/helptip-bg-400.png) bottom
+    background: transparent url(../images/helptip-bg-400.png) bottom
         left;
     padding: 0 15px 20px 53px;
     font-size: 11px !important;
@@ -735,7 +735,7 @@ A.segmentBoxLink:hover {
 }
 
 a.button {
-    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right;
+    background: transparent url(../images/button-a.png) no-repeat scroll top right;
     color: #151515 !important;
     display: block;
     float: left;
@@ -752,7 +752,7 @@ a.button-important {
 }
 
 a.button span {
-    background: transparent url(/universal/images/button/button-span.png) no-repeat;
+    background: transparent url(../images/button-span.png) no-repeat;
     display: block;
     line-height: 14px !important;
     padding: 5px 0 5px 18px !important;
@@ -770,7 +770,7 @@ a.button:active span {
 }
 
 a.button-disabled {
-    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right;
+    background: transparent url(../images/button-a.png) no-repeat scroll top right;
     color: #777777 !important;
     display: block;
     float: left;
@@ -782,7 +782,7 @@ a.button-disabled {
     text-decoration: none !important;
 }
 a.button-disabled span {
-    background: transparent url(/universal/images/button/button-span.png) no-repeat;
+    background: transparent url(../images/button-span.png) no-repeat;
     display: block;
     line-height: 14px !important;
     padding: 5px 0 5px 18px !important;
@@ -794,21 +794,21 @@ a.button-disabled span {
 .managerHelpObject {
   display:    block; 
   padding-left:     24px; 
-  background:     url(/universal/images/help-bullet.png) left top no-repeat; 
+  background:     url(../images/help-bullet.png) left top no-repeat; 
   line-height:    16px;
 }
 
 .managerInformationObject {
   display:    block; 
   padding-left:     24px; 
-  background:     url(/universal/images/info-bullet.png) left top no-repeat; 
+  background:     url(../images/info-bullet.png) left top no-repeat; 
   line-height:    16px;
 }
 
 .managerAlertObject {
   display:    block;  
   padding-left:     24px; 
-  background:     url(/universal/images/alert-bullet.png) left top no-repeat; 
+  background:     url(../images/alert-bullet.png) left top no-repeat; 
   line-height:    16px;
 }
 

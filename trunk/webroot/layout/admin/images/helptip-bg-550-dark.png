@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="home page, web host, webhost, home, homepage, webpage, square space, squarespace, website, site maker, site builder, website maker, website builder, publishing, personal publishing, personal website, weblog, blog, web log">
+  <meta name="description" content="Squarespace.  A new way of thinking about website publishing.">
+  <meta name="copyright" content="(c) 2003-2004 Squarespace, Inc.">
+
+  <meta name="MSSmartTagsPreventParsing" content="true">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+
+  <link rel="shortcut icon" href="http://pablofmorales.squarespace.com/universal/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" type="text/css" href="helptip-bg-550-dark_files/service.css" title="default">
+
+  <script type="text/javascript" src="helptip-bg-550-dark_files/yahoo-min.js"></script>
+  <script type="text/javascript" src="helptip-bg-550-dark_files/dom-min.js"></script>
+  <script type="text/javascript" src="helptip-bg-550-dark_files/event-min.js"></script>
+  <script type="text/javascript" src="helptip-bg-550-dark_files/animation-min.js"></script>
+  <script type="text/javascript" src="helptip-bg-550-dark_files/global.js"></script>
+
+  <title>Squarespace - Service Not Found</title>
+
+</head><script style="display: none;" id="_firebugConsoleInjector" type="text/javascript">/* See license.txt for terms of usage */
+function _FirebugConsole()
+{
+    this.init = function()
+    {
+        var commands = ["log", "debug", "info", "warn", "error", "assert", "dir",
+            "dirxml", "trace", "group", "groupEnd", "groupCollapsed",
+            "time", "timeEnd", "profile", "profileEnd", "count"];
+
+        // Create console API
+        for (var i=0; i<commands.length; i++)
+        {
+            var command = commands[i];
+            this[command] = new Function(
+                "return window.console.notifyFirebug(arguments, '" + command + "', 'firebugAppendConsole');");
+        }
+
+        // Initialize DOM element for communication betwen the web-page a chrome.
+        this.getFirebugElement();
+    },
+
+    this.notifyFirebug = function(objs, methodName, eventId)
+    {
+        var element = this.getFirebugElement();
+
+        var event = document.createEvent("Events");
+        event.initEvent(eventId, true, false);
+
+        this.userObjects = [];
+        for (var i=0; i<objs.length; i++)
+            this.userObjects.push(objs[i]);
+
+        var length = this.userObjects.length;
+        element.setAttribute("methodName", methodName);
+        element.dispatchEvent(event);
+
+        //dump("FirebugConsole dispatched event "+methodName+"\n");
+        var result;
+        if (element.getAttribute("retValueType") == "array")
+            result = [];
+
+        if (!result && this.userObjects.length == length+1)
+            return this.userObjects[length];
+
+        for (var i=length; i<this.userObjects.length && result; i++)
+            result.push(this.userObjects[i]);
+
+        return result;
+    };
+
+    this.getFirebugElement = function()
+    {
+        var element = document.getElementById("_firebugConsole");
+        if (!element)
+        {
+            element = document.createElementNS("http://www.w3.org/1999/xhtml","html:div"); // NS for XML/svg
+            element.setAttribute("id", "_firebugConsole");
+            element.firebugIgnore = true;
+            element.setAttribute("style", "display:none");
+
+            var self = this;
+            element.addEventListener("firebugCommandLine", function(event)
+            {
+                var element = event.target;
+                var expr = element.getAttribute("expr"); // see commandLine.js
+                self.evaluate(expr);
+            }, true);
+
+            document.documentElement.appendChild(element);
+        }
+        return element;
+    };
+
+    // ***********************************************************************
+    // Console API
+
+    this.__defineGetter__("firebug", function(){
+        return this.getFirebugElement().getAttribute("FirebugVersion");
+    });
+
+    this.evaluate = function(expr)
+    {
+        try
+        {
+            var result = top.eval(expr);
+            if (typeof result != "undefined")
+                this.notifyFirebug([result], "evaluated", "firebugAppendConsole");
+        }
+        catch(exc)
+        {
+            var result = exc;
+            result.source = expr;
+            this.notifyFirebug([result], "evaluateError", "firebugAppendConsole");
+        }
+    };
+}
+//window.dump("============================>>>> Setting _firebug <<<< ====================================\n");
+window._firebug =  new _FirebugConsole();
+//window.dump("============================>>>> Set _firebug "+window._firebug+" "+window._FirebugConsole+" <<<< ====================================\n");
+//for (var p in window.firebug)
+//    window.dump(p+"="+window.console[p]+"\n");
+window._firebug.init();
+</script><div FirebugVersion="1.2.1" style="display: none;" id="_firebugConsole"></div><body>
+
+<table style="width: 100%; height: 100%;" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr><td style="background: transparent url(/universal/images/service/service-template-top.jpg) repeat-x scroll left bottom; height: 50px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&nbsp;</td></tr>
+
+  <tr><td style="background: rgb(40, 40, 40) none repeat scroll 0% 0%; text-align: left; padding-top: 50px; padding-bottom: 50px; padding-left: 160px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+
+    
+      <div style="text-align: left; margin-bottom: 15px; padding-bottom: 15px; margin-left: -55px;">
+        <a href="http://www.squarespace.com/"><img src="helptip-bg-550-dark_files/service-template-logo.jpg"></a>
+      </div>
+
+    
+          <h2>Service Not Found</h2>
+    
+
+    <div id="content">
+
+
+  The page <strong>/universal/images/manager/helptip-bg-550-dark.png</strong> could not be found in our service directory.
+
+  <br><br>
+We recommend using the navigation bar to get back on track within our
+site. If you feel you have reached this page in error, please contact a
+site operator. Thank you! </div>
+
+    <ul id="navLinks">
+      <li><strong> <a href="javascript:history.go(-1);">Go Back »</a></strong></li>
+      <li><a href="http://www.squarespace.com/contact/">Contact Squarespace »</a></li>
+      <li><a href="http://www.squarespace.com/">Return to the Squarespace Front Page »</a></li>
+    </ul>
+
+    <div id="footer">
+      Copyright © 2003-2009, Squarespace Inc. unless otherwise noted.  All rights reserved.<br>
+      <a href="http://www.squarespace.com/">Squarespace</a> |
+      <a href="http://www.squarespace.com/terms">Terms of Service</a> |
+      <a href="http://www.squarespace.com/privacy">Privacy Policy</a>
+    
+
+
+  </div></td></tr>
+  <tr><td style="background: transparent url(/universal/images/service/service-template-bottom.jpg) repeat-x scroll left top; height: 1200px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&nbsp;</td></tr>
+
+
+
+</tbody></table>
+
+</body></html>
