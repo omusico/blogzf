@@ -7,26 +7,10 @@
         <?= $this->headTitle() ?>
         <?= $this->headLink() ?>
         <?= $this->headScript() ?>	
-      	<script type="text/javascript" src="js/tmp/yahoo-dom-event-animation.js"></script>
-    	<script type="text/javascript" src="js/tmp/global.js"></script>
-    	<script type="text/javascript">
-    	// 	<![CDATA[
-        Squarespace.Constants.WEBSITE_TITLE =  "Your Site Name"; 
-    	// ]]>
-      	</script>
-        <title>Your Site Name - Guest Login </title>
+        <title>Administrador de Blogzf</title>
 	</head>
 	
 	<body>
-
-        <script type="text/javascript">
-        YAHOO.util.Event.onDOMReady(function() {
-        if (document.location.href.indexOf("SSLogoutOk=true") != -1) {
-          new Squarespace.FixedPositionTip("Logout Successful", "You have been successfully logged out.", { xMargin: 15, yMargin: 15, icon: "/universal/images/helptip-info.png", orientation: "upper-right", viewportFixed: true, autoHide: 1800 }).show();
-        }
-        });
-        YAHOO.util.Event.addListener(document, "keyup", function (e) { if (!e) { e = event; } if (e.keyCode == 27) { document.location.href = "/login/?returnUrl=%2Fdisplay%2Fconfiguration%2FAccountPricing"; } });
-        </script>
 		
 		<div id="canvasWrapper">
 			<div id="canvas">
@@ -37,12 +21,12 @@
 								<ul class="content-navigation">
 									<li class="module" id="navigationTop-moduleContentWrapper3115585">
 										<div id="navigationTop-moduleContent3115585">
-											<a id="navigationTop-moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
+											<a id="navigationTop-moduleLink3115585" class="" href="#"><span>Home</span></a>
 										</div>
 									</li>
 									<li class="module" id="navigationTop-moduleContentWrapper3115586">
 										<div id="navigationTop-moduleContent3115586">
-											<a id="navigationTop-moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
+											<a id="navigationTop-moduleLink3115586" class="" href="#"><span>About Blogzf</span></a>
 										</div>
 									</li>
 								</ul>
@@ -51,7 +35,7 @@
 						</div>
 					    <div id="bannerAreaWrapper">
 					    	<div id="bannerArea">
-								<h1 id="siteTitle"><a href="http://pablofmorales.squarespace.com/">Your Site Name</a></h1>
+								<h1 id="siteTitle"><a href="http://pablofmorales.blogzf.com/">Administrador de Blogzf</a></h1>
 						    </div>
 						</div>
 					<div id="navigationBottom">
@@ -59,12 +43,12 @@
 							<ul class="content-navigation">
 								<li class="module" id="navigationBottom-moduleContentWrapper3115585">
 									<div id="navigationBottom-moduleContent3115585">
-										<a id="navigationBottom-moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
+										<a id="navigationBottom-moduleLink3115585" class="" href="#"><span>Home</span></a>
 									</div>
 								</li>
 								<li class="module" id="navigationBottom-moduleContentWrapper3115586">
 									<div id="navigationBottom-moduleContent3115586">
-										<a id="navigationBottom-moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
+										<a id="navigationBottom-moduleLink3115586" class="" href="#"><span>About Blogzf</span></a>
 									</div>
 								</li>
 							</ul>
@@ -91,12 +75,12 @@
                                                                     <ul class="content-navigation">
                                                                         <li class="module" id="moduleContentWrapper3115585">
                                                                         	<div id="moduleContent3115585">
-                                                                                <a id="moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
+                                                                                <a id="moduleLink3115585" class="" href="#"><span>Home</span></a>
                                                                             </div>
 																		</li>
 																		<li class="module" id="moduleContentWrapper3115586">
                                                                             <div id="moduleContent3115586">
-                                                                                <a id="moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
+                                                                                <a id="moduleLink3115586" class="" href="#"><span>About Blogzf</span></a>
                                                                             </div>
 																		</li>
 																	</ul>
@@ -116,12 +100,12 @@
 																	<ul class="content-navigation">
 																		<li class="module" id="moduleContentWrapper3115587">
                                                                             <div id="moduleContent3115587">
-                                                                            	<a id="moduleLink3115587" class="" href="http://pablofmorales.squarespace.com/links/"><span>Links</span></a>
+                                                                            	<a id="moduleLink3115587" class="" href="http://pablofmorales.blogzf.com/links/"><span>Links</span></a>
                                                                             </div>
 																		</li>
                                                                         <li class="module" id="moduleContentWrapper3115588">
                                                                         	<div id="moduleContent3115588">
-                                                                        		<a id="moduleLink3115588" class="" href="http://pablofmorales.squarespace.com/login/?returnUrl=%2Fdisplay%2Fconfiguration%2FAccountPricing"><span>Login</span></a>
+                                                                        		<a id="moduleLink3115588" class="" href="http://pablofmorales.blogzf.com/login/?returnUrl=%2Fdisplay%2Fconfiguration%2FAccountPricing"><span>Login</span></a>
                                                                         	</div>
                                                                         </li>
                                                                     </ul>
@@ -140,8 +124,8 @@
                                         				        <div class="content-passthrough">
                                         				        	<div id="moduleContentWrapper3115589" class="passthrough-block">
                                         				        		<div id="moduleContent3115589">
-                                          									<div id="squarespace-powered">
-                                            									<a onclick="this.target='new';" href="http://www.squarespace.com/?associateTag=pablofmorales"><img src="AccountPricing_files/sstiny-button.png" alt="Powered by Squarespace"></a>
+                                          									<div id="blogzf-powered">
+                                            									<a onclick="this.target='new';" href="http://www.blogzf.com/?associateTag=pablofmorales"><img src="AccountPricing_files/sstiny-button.png" alt="Powered by Blogzf"></a>
                                           									</div>
                                         								</div>
                                         							</div>
