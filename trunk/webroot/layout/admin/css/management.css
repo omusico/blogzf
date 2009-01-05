@@ -1,0 +1,984 @@
+/* ------------------------------------------------------------------------------------------------
+
+   squarespace management system css definitions
+
+------------------------------------------------------------------------------------------------ */
+
+@media screen {
+
+#siteNoticeArea {
+
+}
+
+#siteNoticeAreaWrapper {
+    position:           fixed;
+    left:               0px;
+    top:                0px;
+    z-index:            4950;
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none !important;
+    text-decoration:    none !important;
+    text-align:         left !important;
+    font-size:          9px !important; 
+    font-style:   normal !important;
+    line-height:        11px !important;
+    letter-spacing:   normal !important;
+    color:    #F2F2F2 !important;
+    width:    100%;
+    height: 42px;
+    background:   #353535;
+}
+
+
+#siteMemberNoticeAreaWrapper {
+    position:           fixed;
+    top:    0px;
+    right:    0px;
+    z-index:            4950;
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none !important;
+    text-decoration:    none !important;
+    text-align:         left !important;
+    font-size:          9px !important; 
+    font-style:   normal !important;
+    line-height:        11px !important; 
+    letter-spacing:   normal !important;
+    color:    #F2F2F2 !important;
+    min-width:    210px;
+    background: #353535 !important;
+}
+  
+#noticeAreaLogin a { 
+    padding:    8px 11px 11px 46px;
+    float:    left;
+    background:   transparent url(/layout/managementSystems/gray/website-manager.png) no-repeat 2px 1px;
+    margin-left:  4px;
+    display:    block;
+    -moz-outline: 0;
+}
+ 
+  
+.noticeAreaManagerLogo { float: left; padding: 0; }
+.noticeAreaManagerLink { float: left; height: 42px; } 
+.noticeAreaManagerLink a { color: #f2f2f2; -moz-outline: 0; background-position: 4px 4px; background-repeat: no-repeat; padding: 0 6px 0 38px; height: 42px; display: block;  }
+.noticeAreaManagerLink a:hover { color: white; background-position: 4px -30px; }
+#noticeAreaManagerLink-configure a { background-image: url(/layout/managementSystems/gray/manager-icon-configure.png); }
+#noticeAreaManagerLink-user a { background-image: url(/layout/managementSystems/gray/manager-icon-user.png); }
+#noticeAreaManagerLink-return a { background-image: url(/layout/managementSystems/gray/manager-icon-return.png); }
+.noticeAreaManagerLink a div { font-size: 11px; font-family: Arial; padding: 15px 6px 0 0; } 
+
+#noticeAreaMode-preview a { width: 120px; }
+  
+#noticeAreaManagerLink-logout a { padding-left: 0px; }
+#noticeAreaManagerLink-logout a div { padding: 5px 0 5px 10px; margin-top: 10px; border-left: 1px dotted #555; }
+  
+.management-strip {  color: #f2f2f2; position: absolute; overflow: hidden; left: 0px; top: 42px; display: block; line-height: 17px; }
+.management-strip .outerWrapper { background: url(/universal/images/manager/manager-bg.png) top left repeat-x; height: 230px; }
+.management-strip .innerWrapper { background: url(/universal/images/manager/manager-big-brand.png) 98% 0% no-repeat; padding: 25px 0 25px 0; height: 230px; } 
+.management-strip .innerContent { width: 1300px; } 
+   
+.management-strip .management-section { float: left; padding-right: 15px; letter-spacing: 0px; margin-right: 15px; border-right: 1px dotted #303030; width: 122px; height: 108px; text-align: left !important; }
+.management-strip .management-section-short { width: 200px; }
+  
+.management-strip .management-section-last { border-right: 0px;  }
+.management-strip .management-section .section-title { height: 25px; font: 13px Arial; font-size: 13px; padding: 0px 0px 5px 6px; }
+.management-strip .management-section a { width: 114px; -moz-outline: 0; text-transform: none !important; border-bottom: 0px !important; text-decoration: none !important; line-height: 16px !important; font: 11px Arial !important; color: #c9c9c9 !important; display: block; padding: 3px 3px 3px 6px !important; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+.management-strip .management-section-short a { float: left; width: 88px; }
+  
+.management-strip .management-section a:hover { color: #ffffff; border-bottom: 0px !important;  background: #151515; }
+.management-strip .management-section .active-section { color: #ffffff; background: #050505; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+.management-strip #manager-return-button { -moz-outline: 0; background: url(/universal/images/manager/manager-back-button.png) 0px 0px no-repeat; display: block; height: 62px; width: 47px; }  
+.management-strip #manager-return-button:hover {  background-position: 0px -62px; } 
+  
+  
+#member-management-strip .outerWrapper { padding: 20px 0 25px 0; }
+#member-management-strip .management-section { float: left; padding-left: 20px; paddig-top: 20px; margin-right: 15px; width: 160px; height: 140px;  }
+#member-management-strip .management-section a { width: 160px;  } 
+  
+   
+  
+   
+#noticeAreaLogin a:hover {
+    background:   transparent url(/layout/managementSystems/gray/website-manager.png) no-repeat 2px -37px;
+}
+
+#noticeAreaProfileSection {
+    padding:    8px 11px 11px 46px;
+    float:    left;
+    background:   transparent url(/layout/managementSystems/gray/user.png) no-repeat 2px 1px;
+    margin-left:  4px;
+} 
+  
+#noticeAreaReturnToSite a { 
+    padding:    8px 11px 11px 46px;
+    float:    left;
+    background:   transparent url(/layout/managementSystems/gray/user-website.png) no-repeat 2px 1px;
+    margin-left:  4px;
+    display:    block;
+    -moz-outline: 0;
+}
+#noticeAreaReturnToSite a:hover {
+    background:   transparent url(/layout/managementSystems/gray/user-website.png) no-repeat 2px -37px;
+}
+
+#noticeAreaContentSubscribed {
+    padding:    8px 11px 11px 46px;
+    float:    left;
+    background:   transparent url(/layout/managementSystems/gray/subscription-on.png) no-repeat 2px 1px;
+    margin-left:  4px;
+}
+
+#noticeAreaContentUnSubscribed {
+    padding:    8px 11px 11px 46px;
+    float:    left;
+    background:   transparent url(/layout/managementSystems/gray/subscription-off.png) no-repeat 2px 1px;
+    margin-left:  4px;
+}
+
+.noticeAreaWarning a {
+    padding:    8px 11px 11px 46px;
+    float:    right;
+    background:   transparent url(/layout/managementSystems/gray/warning.png) no-repeat 2px 1px;
+    margin-left:  4px;
+    display:    block;
+    -moz-outline: 0;
+}
+
+.noticeAreaWarning a:hover {
+    background:   transparent url(/layout/managementSystems/gray/warning.png) no-repeat 2px -37px;
+}
+
+.noticeAreaHelp a {
+    padding:    8px 11px 11px 28px;
+    float:    right;
+    background:   transparent url(/layout/managementSystems/gray/help.png) no-repeat 2px 1px;
+    margin-left:  4px;
+    display:    block;
+    -moz-outline: 0; 
+}
+
+.noticeAreaHelp a:hover {
+    background:   transparent url(/layout/managementSystems/gray/help.png) no-repeat 2px -37px;
+} 
+
+#noticeAreaMode-preview a {
+    background:   transparent url(/layout/managementSystems/gray/configure-preview.png) no-repeat 2px 1px;
+}
+#noticeAreaMode-preview a:hover, #noticeAreaMode-preview.active-mode a {
+    background:   transparent url(/layout/managementSystems/gray/configure-preview.png) no-repeat 2px -37px;
+}
+ 
+#noticeAreaMode-style a { 
+    background:   transparent url(/layout/managementSystems/gray/configure-style.png) no-repeat 2px 1px;
+}
+#noticeAreaMode-style a:hover, #noticeAreaMode-style.active-mode a {
+    background:   transparent url(/layout/managementSystems/gray/configure-style.png) no-repeat 2px -37px;
+}
+  
+#noticeAreaMode-structure a {
+    background:   transparent url(/layout/managementSystems/gray/configure-structure.png) no-repeat 2px 1px;
+} 
+#noticeAreaMode-structure a:hover, #noticeAreaMode-structure.active-mode a {
+    background:   transparent url(/layout/managementSystems/gray/configure-structure.png) no-repeat 2px -37px;
+}
+  
+#noticeAreaMode-content a {
+    background:   transparent url(/layout/managementSystems/gray/configure-content.png) no-repeat 2px 1px;
+}
+#noticeAreaMode-content a:hover, #noticeAreaMode-content.active-mode a {
+    background:   transparent url(/layout/managementSystems/gray/configure-content.png) no-repeat 2px -37px;
+}
+  
+#noticeAreaIcon-help {
+    height: 54px;
+    width: 54px; 
+    position: absolute;
+    display:    block;
+    -moz-outline: 0;  
+}
+
+#noticeAreaIcon-help {
+    background:   transparent url(/layout/managementSystems/gray/configure-help.png) no-repeat 0px 0px;
+}
+#noticeAreaIcon-help:hover, #noticeAreaIcon-help.active-mode {
+    background:   transparent url(/layout/managementSystems/gray/configure-help.png) no-repeat 0px -53px;
+}
+  
+.noticeAreaConfigure {
+    display:  block; 
+    float:     right; 
+    height:   42px;
+    width:    50px;
+}
+  
+.noticeAreaConfigure a {
+    padding:        8px 11px 11px 44px;
+    margin-left:    4px;
+    display:        block;
+    -moz-outline:   0;
+}
+
+#siteNoticeAreaLogo {
+    background:         transparent url(/universal/images/manager/squarespace-logo.png) no-repeat 0px 2px;
+    height:             40px;
+    width:              160px;
+    padding-right:      20px;
+    display:            inline;
+    float:              right;
+    cursor:             pointer;
+}
+ 
+
+/* ---- inline management links ---------------------------------------------------------------- */
+
+.adminLinkTableWrapper, .structureLinkTableWrapper {
+    clear:   both;
+    display: none;
+    line-height:        20px !important;
+    height:             20px;
+}
+
+.adminLinkTable {
+    clear:   both;
+    display: none;
+    line-height:        20px !important;
+} 
+
+.adminSegmentBoxBegin {
+    background:         transparent url(/layout/managementSystems/gray/admin-left.png) no-repeat bottom left;
+    line-height:        20px !important;
+    width:              16px !important;
+}
+
+.adminSegmentBoxContent {
+    background:         transparent url(/layout/managementSystems/gray/admin-middle.png) repeat-x bottom left;
+    line-height:        20px !important;
+    color:              white !important;
+    text-align:         left !important;
+    padding-right:      2px !important;
+}
+
+.adminSegmentBoxEnd {
+    background:         transparent url(/layout/managementSystems/gray/admin-right.png) no-repeat bottom right;
+    line-height:        20px !important;
+    width:              6px !important;
+}
+ 
+.adminContentMessage {
+    padding: 1em 0 1em 0;
+    clear: both;
+}
+
+/* ---- link coloring -------------------------------------------------------------------------- */
+
+.adminSegmentBoxContent, .adminSegmentBoxBegin, .adminSegmentBoxEnd {
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none !important;
+    text-decoration:    none !important;
+    color:              #F2F2F2 !important;
+    background-color: transparent !important;
+    border:   0 !important;
+    font-weight:  normal !important;
+    font-style:   normal !important;
+    font-size:    10px !important;
+    letter-spacing: 0 !important;
+    line-height:  auto !important;
+}
+
+.adminSegmentBoxContent a:link, .adminSegmentBoxContent a:visited, .adminSegmentBoxContent a:active {
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none  !important;
+    text-decoration:    none  !important;
+    color:              #F2F2F2 !important;
+    background-color: transparent !important;
+    border:   0 !important;
+    font-weight:  normal !important;
+    font-style:   normal !important;
+    font-size:    10px !important;
+    letter-spacing: 0 !important;
+    line-height:  auto !important;
+}
+
+.adminSegmentBoxContent a:hover {
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none  !important;
+    text-decoration:    none !important;
+    color:              white !important;
+    background-color: transparent !important;
+    border:   0 !important;
+    font-weight:  normal !important;
+    font-style:   normal !important;
+    font-size:    10px !important;
+    letter-spacing: 0 !important;
+    line-height:  auto !important;
+}
+
+#siteNoticeArea a:link, #siteNoticeArea a:visited, #siteNoticeArea a:active, #siteMemberNoticeArea a:link, #siteMemberNoticeArea a:visited, #siteMemberNoticeArea a:active {
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none !important;
+    text-decoration:    none !important;
+    color:              #F2F2F2 !important;
+    background-color: transparent !important;
+    border:   0 !important;
+    font-weight:  normal !important;
+    font-style:   normal !important;
+    font-size:    10px !important;
+    letter-spacing: 0 !important;
+}
+
+#siteNoticeArea a:hover, #siteMemberNoticeArea a:hover {
+    font-family:  Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+    text-transform: none !important;
+    text-decoration:    none !important;
+    color:              white !important;
+    background-color: transparent !important;
+    border:   0 !important;
+    font-weight:  normal !important;
+    font-style:   normal !important;
+    font-size:    10px !important;
+    letter-spacing: 0 !important;
+}
+
+
+/* --- framewindow elements ------------------------------------------------------- */
+
+  
+a.button {
+    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right !important;
+    color: #151515 !important;
+    display: block;
+    float: left;
+    font: 12px arial, sans-serif !important;
+    height: 24px !important;
+    line-height: 18px  !important;
+    margin-right: 6px !important;
+    padding: 0 16px 0 0 !important;
+    text-decoration: none !important;
+    border: 0 !important;
+}
+
+a.button-important {
+    font-weight: bold !important; 
+}
+
+a.button span {
+    background: transparent url(/universal/images/button/button-span.png) no-repeat !important;
+    display: block;
+    line-height: 14px !important;
+    padding: 5px 0 5px 18px !important;
+    letter-spacing: 0px !important;
+}
+ 
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    -moz-outline: 0;
+}
+ 
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px !important;
+}
+    
+a.button-disabled {
+    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right;
+    color: #777777 !important;
+    display: block;
+    float: left;
+    font: 12px arial, sans-serif !important;
+    height: 24px !important;
+    line-height: 18px  !important;
+    margin-right: 6px !important;
+    padding: 0 16px 0 0 !important;
+    text-decoration: none !important;
+}
+a.button-disabled span {
+    background: transparent url(/universal/images/button/button-span.png) no-repeat;
+    display: block;
+    line-height: 14px !important;
+    padding: 5px 0 5px 18px !important;
+}
+  
+  
+.adminEditingControlsTitle { font-weight: bold !important; padding-bottom: 8px !important; font-size: 14px !important; font-family: Arial !important; letter-spacing: -1px !important; line-height: 18px !important; }
+.adminEditingControlTitle { font-weight: bold; padding-bottom: 4px; padding-top: 4px; font-size: 9px; color: white !important; }
+.adminEditingControlText { width: 298px; background: white !important; color: #303030 !important; border: 1px solid #484848 !important; font-family: Tahoma !important; font-size: 9px !important; padding: 3px !important;  }
+.adminEditingControlTextarea { width: 298px; background: white !important; color: #303030 !important; height: 35px !important; border: 1px solid #484848 !important; font-family: Tahoma !important; font-size: 9px !important; padding: 3px !important;  }
+.adminEditingControlCheckbox { padding: 0 !important; margin: 0 !important; }
+
+ 
+.content-editable .content-draggable-element { 
+  border:     1px dotted #ccc;
+  cursor:     move;
+}
+.content-editable .content-dragged-element {
+  border:     1px dotted #D56400;
+  opacity:    .75; filter:alpha(opacity=75);
+}
+.content-editable .content-draggable-boundary {
+  height:     10px;
+  list-style-type:  none;
+  background:     transparent;
+}
+.content-editable .structure-draggable-boundary {
+  display:    none;
+}
+
+.structure-editable .structure-draggable-element {
+  border:     1px dotted #ccc;
+  cursor:     move;
+}
+.structure-editable .structure-dragged-element {
+  border:     1px dotted #D56400;
+  opacity:    .75; filter:alpha(opacity=75);
+}
+.structure-editable .structure-draggable-boundary {
+  height:     10px;
+  list-style-type:  none;
+  background:     transparent;
+}
+.structure-editable .content-draggable-boundary {
+  display:    none;
+}
+
+.site-preview .structure-draggable-boundary, .site-preview .content-draggable-boundary, .site-preview .empty-list-notice {
+  display:    none;
+}
+
+.structure-editable .empty-list-notice, .content-editable .empty-list-notice {
+  padding-bottom: 15px;
+  font-size: 11px;
+}
+
+.structure-no-content-notice, .content-no-content-notice {
+  display: none;
+}
+.structure-editable .structure-no-content-notice {
+  display: block;
+}
+.content-editable .content-no-content-notice {
+  display: block;
+}
+  
+  
+.hovering-strip-focused { border: 1px solid #434343 !important; }  
+
+.helptip-container {
+    width: 300px;
+    color: white;
+    z-index: 1000;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}
+
+.helptip-title-wrapper {
+    color: white;
+}
+
+.helptip-title {
+    background: url(/universal/images/helptip-bg-300.png) top left;
+    padding: 15px;
+    font-size: 14px;
+    color: white !important;
+    font-weight: bold;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    letter-spacing: -1px;
+    display: block;
+    height: 14px;
+}
+
+.helptip-text {
+    background: url(/universal/images/helptip-bg-300.png) bottom left;
+    font-size: 11px;
+    line-height: 14px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    padding: 0 15px 15px 15px;
+}
+    
+.helptip-style-dialog {
+  width:      330px;
+  color:      white;
+  z-index:    1000;
+  position:   absolute;
+  top: 0;
+  left: 0;
+  display:    none;
+  font-family:    Arial, Verdana, Helvetica, sans-serif  !important;
+  line-height: normal !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.helptip-style-dialog .helptip-title-wrapper {
+  background: transparent  url(/universal/images/helptip-bg-330.png) top left;
+  padding: 3px;
+}
+
+.helptip-style-dialog .helptip-title {
+  background: transparent url(/universal/images/helptip-warning.png) 5px 5px no-repeat;
+  padding: 15px 15px 8px 50px;
+  font-size:    14px;
+  font-weight:    bold;
+  letter-spacing:   -1px;
+  text-align: left !important;
+}
+
+.helptip-style-dialog .helptip-text {
+  background:  transparent url(/universal/images/helptip-bg-330.png) bottom left;
+  padding:    0 15px 20px 53px;
+  font-size:    11px !important;
+  letter-spacing: 0px !important;
+  text-align: left !important;
+}
+  
+#management-container-frame {
+  position: relative;
+  top: -10px;
+  left: -72px;
+  border: 0px;
+}
+
+#management-container-tabs {
+  float: right;
+}
+
+#management-container {
+  color: white;
+  background: #252525 !important;
+  text-align: left !important;
+  border: 0 !important;
+  font-family: Arial !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  line-height: 1em !important;
+}
+
+#management-container-header {
+  padding:    20px 20px 20px 72px !important;
+  font-size:    16px !important;
+  line-height:    18px !important;
+  font-weight:    bold !important;
+  font-family:    Arial, Verdana, Helvetica, sans-serif !important;
+  letter-spacing:   -1px !important;
+}
+
+.management-container-subtitle {
+  font-size:    11px !important;
+  line-height:    12px !important;
+  padding-top: 3px !important;
+  font-weight: normal !important;
+  letter-spacing: 0px !important;
+  color: #B6B6B6 !important;
+}
+  
+  
+#appearance-container-frame {
+  position: relative;
+  top: -10px;
+  left: -72px;
+  border: 0px;
+}
+
+#appearance-container-tabs, #help-container-tabs {
+  position: relative;
+  top: -33px;
+  left: 200px;
+}
+
+.appearance-container {
+  color: white;
+  background: #252525 !important;
+  text-align: left !important;
+  border: 0 !important;
+  font-family: Arial !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  line-height: 1em !important;
+}
+
+.appearance-container-header {
+  padding:    20px 20px 20px 72px !important;
+  font-size:    16px !important;
+  line-height:    18px !important;
+  font-weight:    bold !important;
+  font-family:    Arial, Verdana, Helvetica, sans-serif !important;
+  letter-spacing:   -1px !important;
+  color: white !important;
+}
+
+.appearance-container-subtitle {
+  font-size:    11px !important;
+  line-height:    12px !important;
+  padding-top: 3px !important;
+  font-weight: normal !important;
+  letter-spacing: 0px !important;
+  color: #B6B6B6 !important;
+  height: 12px;
+  overflow: hidden;
+}
+  
+a.appearance-container-link {
+  -moz-outline: 0;
+  color: #9F9F9F !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    16px !important;
+  font-weight: bold !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: -1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+a.appearance-container-link:hover {
+  -moz-outline: 0;
+  color: white !important;
+background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    16px !important;
+font-weight: bold !important;
+line-height: 1em !important;
+font-style: normal !important;
+text-transform: none !important;
+letter-spacing: -1px !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+a.appearance-container-link-selected, a.appearance-container-link-selected:hover {
+  -moz-outline: 0;
+  color: white !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    16px !important;
+font-weight: bold !important;
+line-height: 1em !important;
+font-style: normal !important;
+text-transform: none !important;
+letter-spacing: -1px !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+  
+a.video-container-link {
+  -moz-outline: 0;
+  color: #9F9F9F !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    14px !important;
+  font-weight: bold !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: -1px !important;
+  margin: 0 !important;
+  padding: 0 15px 0 0 !important;
+}
+a.video-container-link:hover {
+  -moz-outline: 0;
+  color: white !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    14px !important;
+  font-weight: bold !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: -1px !important;
+  margin: 0 !important;
+  padding: 0 15px 0 0 !important;
+}
+a.video-container-link-selected, a.video-container-link-selected:hover {
+  -moz-outline: 0;
+  color: white !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-family: Arial !important;
+  font-size:    14px !important;
+  font-weight: bold !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: -1px !important;
+  margin: 0 !important;
+  padding: 0 15px 0 0 !important;
+}
+  
+
+.configuration-container-error-text {
+  color: #ffeea0;
+}
+  
+.configuration-container {
+  color:      white;
+  z-index:    12000;
+  position:   absolute; 
+  display:    none;
+}
+.configuration-container .configuration-container-frame {
+  height:     420px;
+  border:     0;
+  visibility:   hidden;
+}
+.configuration-container #configuration-container-title-wrapper {
+  text-align:   left !important;
+}
+.configuration-container #configuration-container-title {
+  padding:    20px 20px 20px 72px;
+  font-size:    16px;
+  line-height:    18px;
+  font-weight:    bold;
+  font-family:    Arial, Verdana, Helvetica, sans-serif;
+  letter-spacing:   -1px;
+  text-align:   left !important;
+}
+.configuration-container .configuration-container-subtitle {
+  font-size:    9px;
+  line-height:    12px;
+  text-align:   left !important;
+}
+.configuration-container .configuration-container-text {
+  padding:    0 15px 15px 15px;
+}
+.configuration-container #configuration-container-frame-wrapper {
+  background:   #252525;
+  height:     1px;
+  overflow:     hidden;
+  border:     0;
+}
+.configuration-container .configuration-container-footer {
+  line-height:    3px;
+  font-size:    1px;
+  overflow:   hidden;
+  height:     3px;
+  text-align:   left !important;
+}
+.configuration-container #configuration-container-footer-buttons {
+  padding:    20px 20px 17px 20px;
+  line-height:    16px;
+  font-size:    14px;
+  height: 26px;
+}
+
+.configuration-container-w600 {
+  width:      600px;
+}  
+.configuration-container-w600 .configuration-container-frame {
+  width:      600px; 
+}
+.configuration-container-w600 #configuration-container-frame-wrapper {
+  width:      600px;
+}
+.configuration-container-w600 .configuration-container-footer {
+  background:   url(/universal/images/helptip-bg-600.png) bottom left;
+}
+.configuration-container-w600 #configuration-container-title-wrapper {
+  width:        600px;
+  background:   url(/universal/images/helptip-bg-600.png) top left;
+}
+.configuration-container-w600 #configuration-container-text {
+  background:   url(/universal/images/helptip-bg-600.png) bottom left;
+}
+  
+  
+.configuration-container-w750 {
+  width:      750px;
+}  
+.configuration-container-w750 .configuration-container-frame {
+  width:      750px; 
+}
+.configuration-container-w750 #configuration-container-frame-wrapper {
+  width:      750px;
+}
+.configuration-container-w750 .configuration-container-footer {
+  background:   url(/universal/images/helptip-bg-750.png) bottom left;
+}
+.configuration-container-w750 #configuration-container-title-wrapper {
+  width:        750px;
+  background:   url(/universal/images/helptip-bg-750.png) top left;
+}
+.configuration-container-w750 #configuration-container-text {
+  background:   url(/universal/images/helptip-bg-750.png) bottom left;
+}
+  
+.helptip-style-dialog-wide {
+    width: 400px;
+    color: white;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    font-family: Arial, Verdana, Helvetica, sans-serif !important;
+    line-height: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.helptip-style-dialog-wide .helptip-title-wrapper {
+    background: transparent url(/universal/images/helptip-bg-400-pointer.png) top
+        left;
+    padding: 20px 3px 3px 3px;
+}
+
+.helptip-style-dialog-wide .helptip-title {
+    background: transparent url(/universal/images/helptip-warning.png) 5px
+        5px no-repeat;
+    padding: 15px 15px 8px 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.helptip-style-dialog-wide .helptip-text {
+    background: transparent url(/universal/images/helptip-bg-400.png) bottom
+        left;
+    padding: 0 15px 20px 53px;
+    font-size: 11px !important;
+    letter-spacing: 0px !important;
+}
+  
+.page-element-disabled {
+    opacity: .5; filter:alpha(opacity=50);
+}
+
+.conditionallyVisibleContainer {
+    opacity: .5; filter:alpha(opacity=50); 
+}
+  
+.configuration-container-tabs {
+  float: right;
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+a.configuration-container-tab {
+    background: transparent url(/universal/images/manager/tab-a-active.png) no-repeat scroll top right !important;
+    color: #efefef !important;
+    display: block;
+    margin-right: 8px;
+    font: 13px arial, sans-serif !important;
+    height: 30px !important;
+    line-height: 24px  !important; 
+    margin-right: 6px !important;
+    padding: 0 10px 0 0 !important;
+    text-decoration: none !important;
+    -moz-outline: 0;
+    border: 0 !important;
+    float: right;
+}
+
+a.configuration-container-tab span {
+    background: transparent url(/universal/images/manager/tab-span-active.png) no-repeat !important;
+    display: block; 
+    line-height: 20px !important;
+    padding: 5px 0 5px 12px !important;
+    letter-spacing: -1px !important;
+    -moz-outline: 0;
+}
+  
+a.configuration-container-tab-inactive { 
+    background: transparent url(/universal/images/manager/tab-a-inactive.png) no-repeat scroll top right !important;
+    color: #999 !important;
+    display: block;
+    font: 13px arial, sans-serif !important;
+    height: 30px !important;
+    line-height: 24px  !important; 
+    margin-right: 6px !important;
+    padding: 0 10px 0 0 !important;
+    text-decoration: none !important;
+    -moz-outline: 0;
+    border: 0 !important;
+    float: right;
+}
+
+a.configuration-container-tab-inactive span {
+    background: transparent url(/universal/images/manager/tab-span-inactive.png) no-repeat !important;
+    display: block; 
+    line-height: 20px !important;
+    padding: 5px 0 5px 12px !important;
+    letter-spacing: -1px !important;
+    -moz-outline: 0;
+}   
+  
+.squarespace-selector-dialog .file-select-left-column { float: left; width: 120px; text-align: right; padding-right: 20px; margin-top: -2px; color: #ddd; font-family: 'Lucida Sans Unicode','Lucida Grande',Tahoma,sans-serif; font-size: 12px; line-height: 1.8em;}
+.squarespace-selector-dialog .file-select-right-column { float: left; font: 11px Arial; color: #ddd; line-height: 16px; }
+.squarespace-selector-dialog #squarespace-file-select-url { width: 300px; } 
+.squarespace-selector-dialog #squarespace-file-select-description { width: 165px; }
+.squarespace-selector-dialog .file-select-block { float: left; padding: 0 0 15px 20px; }
+.squarespace-selector-dialog .file-select-location-strip { height: 220px; padding: 20px 0 0 0; background: #101010; }
+.squarespace-selector-dialog a.file-select-category-option { -moz-outline: 0; display: block; text-align: right; color: #aaa; margin-bottom: 5px; background: transparent !important; text-decoration: none !important; border: 0 !important; } 
+.squarespace-selector-dialog a.file-select-category-option:hover { color: #fff; border: 0 !important; } 
+.squarespace-selector-dialog .file-select-title { color: #eee; font: 16px Arial; font-weight: bold; letter-spacing: -1px; background: transparent url('/universal/images/manager/dialog-create-link.png') 18px 13px no-repeat; padding: 14px 0 14px 54px; }
+.squarespace-selector-dialog .file-select-title-strip { background: transparent url('/universal/images/helptip-bg-550-dark.png') top left no-repeat;  } 
+.squarespace-selector-dialog .file-select-button-strip { background: transparent url('/universal/images/helptip-bg-550-dark.png') bottom left no-repeat; }
+.squarespace-selector-dialog .file-select-field-title { color: #eee; font: 10px Arial; font-weight: bold; padding: 0 0 2px 0; }
+.squarespace-selector-dialog .file-select-field-text { margin-bottom: 6px; }
+.squarespace-selector-dialog .file-select-category-active { color: #fff !important; }
+.squarespace-selector-dialog .file-select-button-strip { padding: 15px 0 0 15px; height: 40px; clear: both; }
+.squarespace-selector-dialog { position: absolute; top: 42px; left: 0px; width: 550px; z-index: 10000; overflow: hidden; text-align: left; }
+.squarespace-selector-dialog strong { color: white; }
+  
+  
+.configuration-container-image-tabs {
+  float: right;
+  width: 400px;
+  height: 54px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+  
+ a.configuration-container-image-tab {
+    color: #efefef !important;
+    display: block;
+    margin-right: 8px;
+    font: 13px arial, sans-serif !important;
+    line-height: 24px  !important; 
+    margin-right: 6px !important;
+    padding: 0 0 0 0 !important;
+    text-decoration: none !important;
+    -moz-outline: 0;
+    border: 0 !important;
+    float: right;
+    background-position: 0 -54px;
+}
+  
+a.configuration-container-image-tab-inactive { 
+    color: #999 !important;
+    display: block;
+    font: 13px arial, sans-serif !important;
+    line-height: 24px  !important; 
+    margin-right: 6px !important;
+    padding: 0 0 0 0 !important;
+    text-decoration: none !important;
+    -moz-outline: 0;
+    border: 0 !important;
+    float: right;
+    background-position: 0 0;
+}
+  
+}

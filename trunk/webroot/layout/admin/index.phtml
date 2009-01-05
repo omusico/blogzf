@@ -1,436 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-	<head>
-        <!-- 302319 -->
-        
-        <meta name="description" content="Squarespace.  A new way of thinking about website publishing." />
-        <meta name="copyright" content="Copyright &copy; 2003-2008, Squarespace Inc. unless otherwise noted.  All rights reserved." />
-        
-        <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        
-        <meta name="MSSmartTagsPreventParsing" content="true" />
-        
-        <link rel="shortcut icon" href="/universal/favicon.ico" type="image/x-icon"/>
-        
-        
-        <link rel="stylesheet" type="text/css" href="/universal/styles/internal.css?CE=11" title="default"/>
-        <link type="text/css" rel="stylesheet" href="/display/management.css?styleId=30&amp;CE=11"/>
-        
-        <script type="text/javascript" src="/universal/yui/yahoo-dom-event/yahoo-dom-event-animation.js?CE=11"></script>
-        <script type="text/javascript" src="/universal/yui/yahoo-dom-event/yahoo-get-dragdrop-connection.js?CE=11"></script>
-        
-        <script type="text/javascript" src="/universal/scripts/global.js?CE=11"></script>
-        <script type="text/javascript" src="/universal/scripts/squarespace-editing-ui.js?CE=11"></script>
-        
-        
-        
-        
-        <script type="text/javascript">
-
-            var SS_INPUT_FORM_STATE = "";
-            Squarespace.Constants.WEBSITE_TITLE = "Your Site Name";
-            Squarespace.Constants.MANAGER_RETURN_URL = "/";
-            
-            YAHOO.util.Event.addListener(window, "keyup", function(e) { if (!e) { e = event; } if (e.keyCode == 27) { document.location.href = '/'; } });
-        
-            YAHOO.util.Event.onDOMReady(function() {
-        
-              
-              setTimeout(function() {
-                var anim = new YAHOO.util.Anim("squarespaceClosableNotice", { height: { to: 0 } }, .4, YAHOO.util.Easing.easeOutStrong);
-                anim.onStart.subscribe(function() {
-                  YAHOO.util.Dom.setStyle("squarespaceClosableNotice", "overflow", "hidden");
-                });
-                anim.onComplete.subscribe(function() {
-                  YAHOO.util.Dom.setStyle("squarespaceClosableNotice", "display", "none"); 
-                }); 
-                anim.animate();
-              }, 5000);
-        
-              Squarespace.Form.manageFormEffects("dataform");
-              
-              Squarespace.Management.initializeMenu();
-              
-                    
-                        
-              
-              D.setStyle("manager-top-bar", "opacity", 0);
-              var fadeIn = (document.referrer && document.referrer.indexOf("/configuration/") == -1);
-        
-              Squarespace.Management.show(true, fadeIn);
-              
-            });
-        
-            new Squarespace.HelpTip("secureSessionIcon", "Encrypted Connection (128-bit SSL)", "You are 
-                    	currently accessing Squarespace under an SSL secured connection.  Your current 
-                    	session is encrypted with 128-bit encryption and measures have been taken to 
-                    	ensure your session cookies have not been exposed to the internet.  You may 
-                    	process billing transactions and change other sensitive information from this session.");
-
-		</script>
-		<title>Squarespace - Configuration - Member Accounts</title> 
-	</head>
-
-	<body class="yui-skin-sam">
-
-        <div id="manager-top-bar-wrapper">
-    		<div id="manager-top-bar">
-    			<span class="info-block" style="font-size: 16px; margin-top: -2px; font-family: Arial;">
-    				<a  href="http://pablofmorales.squarespace.com"  >Your Site Name</a>
-         		</span>
-                <span class="info-block">You are 
-                    <a href="/display/configuration/CreateOrModifyMemberAccount?accountId=448091">[Your Name Here]</a>
-                    / <a href="/process/Logout?returnUrl=%2F">Logout</a>
-                </span> 
-                <span class="info-block-final">
-                	<a href="/display/configuration/AccountPricing">This trial account expires in 14 days. <strong>Click Here to Upgrade &raquo;</strong></a>
-                </span>
-                <span class="info-block-rhs-final">
-    	            This is <a href="javascript:Squarespace.Interaction.managerAbout();">Squarespace</a> V5
-                </span> 
-    		</div>
-    	</div>
-
-		<div id="pageContainerWrapper">
-			<div id="pageContainer">
-  				<div id="pageContent">
-				    <div id="pageHeaderTitle" >Member Accounts</div>
-					
-					<div id="pageBody">
-						<form name="dataform">
-                            <script type="text/javascript">
-                            
-                            function doConfirmRemoveMember(accountId) {
-                              Squarespace.ConfirmationDialog.show("Remove Account?", "Are you sure you wish to remove this account?", function() {
-                                document.location.href = "/process/configuration/RemoveMemberAccount?accountId=" + accountId + "&filter=none&startWithFilter=any&stateFilter=active";
-                              });
-                            }
-                            
-                            function doConfirmSweepRemoval() {
-                              Squarespace.ConfirmationDialog.show("Remove Accounts?", "Are you sure you wish to remove these accounts?", function() {
-                                document.location.href = "/process/configuration/RemoveMultipleMemberAccounts?filter=none&startWithFilter=any&stateFilter=active";
-                              });
-                            }
-                            
-                            </script>
-							
-							<div id="tutorials">
-
-                                <div id="tutorialBlock">
-                                    <div class="taskTitle">Who has access to my website?</div>
-                                    <div class="taskDescription">Member accounts are logins to your website.  When an individual accesses your website using one of the accounts defined here, they 
-                                    	will be given permissions according to the audience you set for them.<br/><br/>Your site owner account is also set up in this area.
-                                    </div>
-                                </div>
-
-                                <div id="tutorialBlock">
-                                    <div class="taskTitle">How can I add an editor to my website?</div>
-                                    <div class="taskDescription">First, you would use the 'Audiences' tab above in order to create a new group for
-										editors on your website.  You would then use the 'Audience Permissions' tab to give your new group permissions 
-										to edit various sections of your site.  Finally, you would return to this page and place a member account in 
-										the new editor audience you've created.
-									</div>
-                                </div>
-    
-    							<div class="disableOption">
-    								<a href="/display/configuration/InterfacePreferences">Disable Tutorial Mode &raquo;</a>
-    							</div>
-    						</div>
-        					<div id="sectionDescription">
-        					    The accounts below represent logins to your website.  Once a user identified his or herself with one of the below
-            					logins, he or she will be granted the permissions that correspond to his or her audience.
-        						<div class="topic-info-stats-line">
-        					    	<div class="main">
-                						Your site currently has 1  user account. <span class="extra">(1  editor  and 0  members) </span>
-        							</div>
-              						
-              						<div class="details">Your current package permits up to 5 editors and 25 members.</div>
-            					</div>
-        					</div>
-
-         					<div style="text-align: right;">
-        					    <div style="text-transform: lowercase;">members in
-              						<a  style="font-weight: bold;"  href="/display/configuration/MemberAccounts?filter=none">any</a> |
-                  					<a  href="/display/configuration/MemberAccounts?filter=audience-642719">The Public</a>|
-               						<a  href="/display/configuration/MemberAccounts?filter=audience-642720">Website Owners</a>
-                      			</div>
-        					<div>starting with
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=a">a</a> |  
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=b">b</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=c">c</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=d">d</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=e">e</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=f">f</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=g">g</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=h">h</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=i">i</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=j">j</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=k">k</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=l">l</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=m">m</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=n">n</a> |
-                  				<a  href="/display/configuration/MemberAccounts?filter=none&sort=login-ASC&startWithFilter=z">z</a>         
-                  			</div>
-        					
-        					<div>which are
-              					<a  style="font-weight: bold;"  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&sort=login-ASC&stateFilter=active">active</a> |
-          						<a  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&sort=login-ASC&stateFilter=unconfirmed">unconfirmed</a> |
-              					<a  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&sort=login-ASC&stateFilter=disabled">disabled</a>
-            				</div>
-        				</div>
-        				
-        				<div class="subsectionContentBlock">
-        					<table id="memberAccountList" class="standardList" style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
-        
-                                <thead>
-                                    <tr>
-                                        <td>&nbsp</td>
-                                        <td nowrap="nowrap"><a   class="sortLink sortLinkASC"   href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&stateFilter=active&sort=login-DESC">Login</a></td>
-                                        <td nowrap="nowrap"><a  class="sortLink"  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&stateFilter=active&sort=displayName-ASC">Display As</a></td>
-                                        <td nowrap="nowrap"><a  class="sortLink"  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&stateFilter=active&sort=lastLogin-DESC">Last Login</a></td>
-                                        <td nowrap="nowrap"><a  class="sortLink"  href="/display/configuration/MemberAccounts?filter=none&startWithFilter=any&stateFilter=active&sort=audience-DESC">Audience</a></td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </thead>
-        						
-        						<tr>
-                              		<td style="padding: 6px; text-align: center;"><img src="/universal/images/manager/user-editor-small.png"></td>
-        							<td nowrap="nowrap" style="width: 100px;"><a href="/display/configuration/CreateOrModifyMemberAccount?accountId=448091&filter=none&startWithFilter=any">pablofmorales</a> <span class="optionalTextNotice">(Editor)</span></td>
-                            		<td nowrap="nowrap" style="width: 125px;"><a href="/display/configuration/CreateOrModifyMemberAccount?accountId=448091&filter=none&startWithFilter=any">[Your Name Here]</a></td>
-                  					<td nowrap="nowrap" style="width: 125px;"> 2m ago  </td>
-                  					<td nowrap="nowrap" style="width: 125px; padding: 2px 5px 2px;">
-                                  		<select style="width: 120px;">
-                        					<option value="-">Owner</option>
-        								</select>
-                          			</td>
-                  					<td class="actionCell" nowrap="nowrap">
-                                		<a href="/display/configuration/CreateOrModifyMemberAccount?accountId=448091&filter=none&startWithFilter=any&stateFilter=active">modify</a>
-                  					</td>
-                				</tr>
-        					</table>
-                            <script type="text/javascript">
-                              function updateMemberAudience(accountId, audienceId) {
-                                document.location.href = "/process/configuration/SetMemberAudience?accountId=" + accountId + "&audienceId=" + audienceId + "&filter=none&startWithFilter=any&stateFilter=active";
-                              }
-                            </script>
-        				</div>
-                        <div class="footerButtons">
-                        	<input style="width: 200px;" class="button" type="button" value="Global Email List" onclick="return Squarespace.Form.smartLocation('dataform', '/display/configuration/ShowAudienceEmailList');"/> &nbsp;&nbsp;
-                        	<input  id="addAccountButton" style="width: 200px;" class="button" type="button" onclick="return Squarespace.Form.smartLocation('dataform', '/display/configuration/CreateOrModifyMemberAccount');" value="Create Account">
-                        </div>
-        			</form>
-        			<br class="clearer"/>
-        	        <div id="pageFooter">
-        	            <div><strong>This is Squarespace Version 5.</strong>  Copyright &copy; 2003-2008, Squarespace Inc. unless otherwise noted.  All rights reserved.</div>
-                    <div>
-         	        	<a onclick="this.target='new';" href="http://www.squarespace.com/">Squarespace.com</a> &nbsp;&nbsp;
-                      	<a onclick="this.target='new';" href="http://www.squarespace.com/terms">Terms of Service</a> &nbsp;&nbsp;
-                      	<a onclick="this.target='new';" href="http://www.squarespace.com/privacy">Privacy Policy</a> &nbsp;
-                    </div>
-        		</div>
-        	</div>
-		</div>
-	</div>
-</div>
-
-
-</body>
-
-</html>
-
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
-    	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    	<meta name="Robots" content="index,follow"> 
-        <?= $this->headMeta() ?>
+	    <?= $this->headMeta() ?>
         <?= $this->headTitle() ?>
         <?= $this->headLink() ?>
         <?= $this->headScript() ?>	
-      	<script type="text/javascript" src="js/tmp/yahoo-dom-event-animation.js"></script>
-    	<script type="text/javascript" src="js/tmp/global.js"></script>
-    	<script type="text/javascript">
-    	// 	<![CDATA[
-        Squarespace.Constants.WEBSITE_TITLE =  "Your Site Name"; 
-    	// ]]>
-      	</script>
-        <title>Your Site Name - Guest Login </title>
+		
+        <link rel="shortcut icon" href="http://pablofmorales.squarespace.com/universal/favicon.ico" type="image/x-icon">
+        
+        <link rel="stylesheet" type="text/css" href="Domain_files/internal.css" title="default">
+        <link type="text/css" rel="stylesheet" href="Domain_files/management.css">
+        
+        <title>Squarespace - Configuration - Custom Domain</title> 
 	</head>
 	
-	<body>
+	<body class="yui-skin-sam">
 
-        <script type="text/javascript">
-        YAHOO.util.Event.onDOMReady(function() {
-        if (document.location.href.indexOf("SSLogoutOk=true") != -1) {
-          new Squarespace.FixedPositionTip("Logout Successful", "You have been successfully logged out.", { xMargin: 15, yMargin: 15, icon: "/universal/images/helptip-info.png", orientation: "upper-right", viewportFixed: true, autoHide: 1800 }).show();
-        }
-        });
-        YAHOO.util.Event.addListener(document, "keyup", function (e) { if (!e) { e = event; } if (e.keyCode == 27) { document.location.href = "/login/?returnUrl=%2Fdisplay%2Fconfiguration%2FAccountPricing"; } });
-        </script>
-		
-		<div id="canvasWrapper">
-			<div id="canvas">
-  				<div id="pageHeaderWrapper">
-  					<div id="pageHeader">
-						<div id="navigationTop">
-							<div id="navigationTop-sectionContent1593260" class="horizontalNavigationBar">
-								<ul class="content-navigation">
-									<li class="module" id="navigationTop-moduleContentWrapper3115585">
-										<div id="navigationTop-moduleContent3115585">
-											<a id="navigationTop-moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
-										</div>
-									</li>
-									<li class="module" id="navigationTop-moduleContentWrapper3115586">
-										<div id="navigationTop-moduleContent3115586">
-											<a id="navigationTop-moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
-										</div>
-									</li>
-								</ul>
-								<br class="clearer">
+        <div id="manager-top-bar-wrapper">
+            <div style="opacity: 1;" id="manager-top-bar">
+             
+                 <span class="info-block" style="font-size: 16px; margin-top: -2px; font-family: Arial;">
+                 	<a href="http://pablofmorales.squarespace.com/">Your Site Name</a>
+                 </span>
+                 <span class="info-block">You are 
+                 	<a href="http://pablofmorales.squarespace.com/display/configuration/CreateOrModifyMemberAccount?accountId=448091">[Your Name Here]</a> /
+                    <a href="http://pablofmorales.squarespace.com/process/Logout?returnUrl=%2F">Logout</a>
+                 </span> 
+                 <span class="info-block-final">
+					<a href="http://pablofmorales.squarespace.com/display/configuration/AccountPricing">This trial account expires in 8 days. <strong>Click Here to Upgrade »</strong></a>
+                 </span>
+                 <span class="info-block-rhs-final">
+                 	This is <a href="javascript:Squarespace.Interaction.managerAbout();">Squarespace</a> V5
+                 </span> 
+            </div>
+        </div>
+
+        <div id="pageContainerWrapper">
+	        <div id="pageContainer">
+  				<div id="pageContent">
+
+                <div id="pageHeaderTitle">Custom Domain</div>
+				<div id="pageBody">
+					<form method="post" name="dataform" action="/process/configuration/UpdateDomain">
+						<div style="overflow: hidden; height: 0px; display: none;" id="squarespaceClosableNotice">
+                        	<div class="updateSegmentBox">
+                            	<div class="segmentBoxHeader">
+                            		<div class="segmentBoxTitle">&nbsp;</div>
+                            	</div>
+                            	<div class="segmentBoxContent">
+                                	<div class="segmentBoxIcon"></div>
+                              		<div class="segmentBoxText">
+                                		<strong>Your domain mapping has been added.</strong>  Please ensure your CNAME records are set up properly for this domain.  Valid CNAME
+                                		records are required for this mapping to function properly.
+                              		</div>
+	                            </div>
+                          	</div>
+                    	</div>
+    					
+    					<div id="squarespaceStaticNotice">
+      						<div class="informationSegmentBox">
+        						<div class="segmentBoxHeader">
+        							<div class="segmentBoxTitle">&nbsp;</div>
+        						</div>
+        						<div class="segmentBoxContent">
+                                    <div class="segmentBoxIcon"></div>
+                                    <div class="segmentBoxText">
+								    	<div class="segmentBoxImportantText">Suggestion: Add Multiple Domain Forms</div>
+										You may also wish to add a mapping for other forms of your domain. For
+										example, if you have added 'www.example.com' to be mapped, you may also
+										wish to add 'example.com' (no www) to be mapped (or vice versa). These
+										two independent records should be established at your registrar also. <br><br>
+										<input onclick="document.location = '/process/configuration/UpdateDomain?virtualHost=dominio.com';" class="button" style="width: 280px; height: 30px;" value="Add the domain 'dominio.com' also »" type="button"> &nbsp;
+          							</div>
+								</div>
+                            </div>
+                        </div>
+    					
+    					<div id="tutorials">
+      						<div id="tutorialBlock">
+        						<div class="taskTitle">What if I need more help setting up?</div>
+       							<div class="taskDescription">You'll
+                                    need to create a pointer that points your domain to our system. Our FAQ
+                                    contains extensive information related to how to set this pointer up. <a target="_blank" style="font-weight: bold;" href="http://manual.squarespace.com/faq/domain-setup/">Click here to read more »</a>
+                                </div>
 							</div>
-						</div>
-					    <div id="bannerAreaWrapper">
-					    	<div id="bannerArea">
-								<h1 id="siteTitle"><a href="http://pablofmorales.squarespace.com/">Your Site Name</a></h1>
-						    </div>
-						</div>
-					<div id="navigationBottom">
-						<div id="navigationBottom-sectionContent1593260" class="horizontalNavigationBar">
-							<ul class="content-navigation">
-								<li class="module" id="navigationBottom-moduleContentWrapper3115585">
-									<div id="navigationBottom-moduleContent3115585">
-										<a id="navigationBottom-moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
-									</div>
-								</li>
-								<li class="module" id="navigationBottom-moduleContentWrapper3115586">
-									<div id="navigationBottom-moduleContent3115586">
-										<a id="navigationBottom-moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
-									</div>
-								</li>
-							</ul>
-							<br class="clearer">
-						</div>
-					</div>
+   							<div class="disableOption"><a href="http://pablofmorales.squarespace.com/display/configuration/InterfacePreferences">Disable Tutorial Mode »</a></div>
+   						</div>
+  						<div id="sectionDescription">
+                            <strong>Custom domain settings provide a way for you to completely hide the squarespace.com domain your site visitors.</strong>
+                            For example, instead of having your site appear at
+                            http://pablofmorales.squarespace.com/, you could point your own domain
+                            to Squarespace, and have your visitors go directly to
+                            http://www.mysite.com/. The steps for setting up your domain are as
+                            follows: <br/><br/>
+    						
+    						<table class="smallFeatureTable">
+      							<tbody>
+      								<tr>
+      									<td class="leftTD">Purchase</td>
+      									<td style="padding-bottom: 15px;">The first step in using a custom domain is purchasing one.  In order to do this, you should use a domain registrar.  <a href="http://www.nettica.com/" target="new">We currently recommend Nettica for new domain registrations.</a></td>
+      								</tr>
+      								<tr>
+      									<td class="leftTD">Point</td>
+      									<td style="padding-bottom: 15px;">
+                                            Step two is telling your new domain to send traffic to our new servers.
+                                            Within your registrar's advanced setup interface, create a CNAME record
+                                            that points <strong>www.yourdomain.com</strong> to <strong>www.squarespace.com</strong>. 
+                                            Please note that it can take <strong>up to 24 hours</strong> for the pointing process to take place.  Please be patient as your pointer spreads throughout the internet.
+                                            <br><br>
+                                            <strong style="font-size: 12px;"><a target="new" href="http://manual.squarespace.com/">NOTE: Our User Manual contains illustrated setup guides for most popular registrars »</a></strong>
+      									</td>
+      								</tr>
+      								<tr>
+      									<td class="leftTD">Claim</td>
+      									<td>The final step is to claim your domains on our system.  Below, type in the domains that you would like to use with this website.</td>
+      								</tr>
+    							</tbody>
+    						</table>
+  						</div>
+    					
+    					<div class="subsectionContentBlock">
+      						<table class="standardList" style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+        						<thead>
+          							<tr>
+                                        <td>&nbsp;</td>
+                                        <td style="text-align: left; cursor: help;" id="domainHelp" nowrap="nowrap">Domain <span class="managerLinkTitleHelp">?</span></td>
+                                        <td style="text-align: left;" nowrap="nowrap">External URL Example</td>
+                                        <td style="text-align: center; cursor: help;" id="primaryHelp" nowrap="nowrap">Primary <span class="managerLinkTitleHelp">?</span></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                	<tr>
+                                    	<td><img alt="Domain Mapping" src="Domain_files/domain-mapping.png"></td>
+                                    	<td><strong>www.dominio.com</strong></td>
+                                        <td><a href="http://www.dominio.com/" target="_blank">http://www.dominio.com/</a></td>
+                                        <td style="text-align: center;"><strong>yes</strong></td>
+                                        <td style="text-align: center;" nowrap="nowrap">
+                                        	<a href="javascript:doConfirmRemoveMapping(33348);">remove</a> / 
+                                        	<a href="javascript:doCheckDNS('www.dominio.com');">check setup</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td style="border: 0pt none ; padding-top: 15px;"></td>
+                                      	<td style="border-bottom: 0px none; padding-top: 15px;" colspan="3">
+  											<div id="virtualHost_title" style="margin-bottom: 4px;">
+      											Enter a new domain to map (no http://):
+											</div>
+            								<input maxlength="50" name="virtualHost" id="virtualHost" class="text" style="width: 260px;" type="input" />
+										</td>
+          								<td style="border-bottom: 0px none; padding-top: 15px;" nowrap="nowrap">&nbsp;</td>
+        							</tr>
+      							</tbody>
+      						</table>
+    					</div>
+                        <div class="footerButtons">
+                        	<input style="width: 200px;" class="button" onclick="return Squarespace.Form.smartSubmit('dataform');" value="Add Mapping" type="submit">
+                        </div>
+					</form>
 				</div>
 			</div>
-			<div id="pageBodyWrapper">
-				<div id="pageBody">
-					<div id="sidebar1Wrapper" class="verticalNavigationBarWrapper">
-						<div class="iw-vnb1">
-							<div class="iw-vnb2">
-								<div class="iw-vnb3">
-									<div class="iw-vnb4">
-										<div id="sidebar1" class="verticalNavigationBar">
-											<div id="sectionContent1593260" class="sectionWrapper promotedContainer">
-												<div class="iw-s1">
-													<div class="iw-s2">
-														<div class="iw-s3">
-															<div class="iw-s4">
-																<div class="section">
-																	<div class="caption">Top</div> 
-                                                                    <ul class="content-navigation">
-                                                                        <li class="module" id="moduleContentWrapper3115585">
-                                                                        	<div id="moduleContent3115585">
-                                                                                <a id="moduleLink3115585" class="" href="http://pablofmorales.squarespace.com/journal/"><span>Journal</span></a>
-                                                                            </div>
-																		</li>
-																		<li class="module" id="moduleContentWrapper3115586">
-                                                                            <div id="moduleContent3115586">
-                                                                                <a id="moduleLink3115586" class="" href="http://pablofmorales.squarespace.com/about-me/"><span>About Me</span></a>
-                                                                            </div>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div id="sectionContent1593261" class="sectionWrapper">
-												<div class="iw-s1">
-													<div class="iw-s2">
-														<div class="iw-s3">
-															<div class="iw-s4">
-																<div class="section">
-														    		<div class="caption">Navigation</div> 
-																	<ul class="content-navigation">
-																		<li class="module" id="moduleContentWrapper3115587">
-                                                                            <div id="moduleContent3115587">
-                                                                            	<a id="moduleLink3115587" class="" href="http://pablofmorales.squarespace.com/links/"><span>Links</span></a>
-                                                                            </div>
-																		</li>
-                                                                        <li class="module" id="moduleContentWrapper3115588">
-                                                                        	<div id="moduleContent3115588">
-                                                                        		<a id="moduleLink3115588" class="" href="http://pablofmorales.squarespace.com/login/?returnUrl=%2Fdisplay%2Fconfiguration%2FAccountPricing"><span>Login</span></a>
-                                                                        	</div>
-                                                                        </li>
-                                                                    </ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-                                            <div id="sectionContent1593262" class="sectionWrapper">
-                                            	<div class="iw-s1">
-                                            		<div class="iw-s2">
-                                            			<div class="iw-s3">
-                                            				<div class="iw-s4">
-                                            					<div class="section">
-                                        				        <div class="content-passthrough">
-                                        				        	<div id="moduleContentWrapper3115589" class="passthrough-block">
-                                        				        		<div id="moduleContent3115589">
-                                          									<div id="squarespace-powered">
-                                            									<a onclick="this.target='new';" href="http://www.squarespace.com/?associateTag=pablofmorales"><img src="AccountPricing_files/sstiny-button.png" alt="Powered by Squarespace"></a>
-                                          									</div>
-                                        								</div>
-                                        							</div>
-                                        						</div>
-                                        					</div>
-                                        				</div>
-                                        			</div>
-                                        		</div>
-                                        	</div>
-                                        </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-  				
-  				<div id="sidebar2Wrapper" class="verticalNavigationBarWrapper">
-  					<div class="iw-vnb1">
-  						<div class="iw-vnb2">
-  							<div class="iw-vnb3">
-  								<div class="iw-vnb4">
-  									<div id="sidebar2" class="verticalNavigationBar"></div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-				</div>
-			
-    			<div id="contentWrapper">
-    				<div id="content">
-    					<div id="messages"><?=$this->blogzfFlashMessenger()?></div>
-					    <?= $this->layout()->content ?>
-					</div> <!-- Content -->
-    			</div>
-    		</div> <!-- Page Body -->
-			
-			<div id="pageFooterWrapper">
-				<div id="pageFooter">
-                    want to edit this footer? Enter structure mode by clicking the cube
-                    icon in the upper right. Then press 'edit website footer' next to this
-                    text. 
-                </div>
-           	</div>
-  
-  			</div>
-  		</div> <!-- Canvas -->
+		</div>
 	</body>
 </html>

@@ -1,0 +1,878 @@
+/* --- base elements ------------------------------------------------------- */
+
+html {
+		height: 100%;
+		width: 100%;
+}
+
+img {
+		border-width: 0px;
+}
+
+ul {
+		margin: 0px;
+		padding: 0px;
+		padding-left: 2em;
+}
+
+body {
+		font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+		font-size: 8pt;
+		color: #4C4C4C;
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		height: 100%;
+}
+
+tr {
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+}
+
+td {
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+}
+
+A:link,A:visited,A:active {
+		color: #0D385C;
+		background-color: transparent;
+		text-decoration: none;
+}
+
+A:hover {
+		color: #4B6D8A;
+		background-color: transparent;
+		text-decoration: none;
+}
+
+h1 {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 16pt;
+		font-weight: normal;
+		margin-top: 0;
+		margin-bottom: 10px;
+}
+
+h2 {
+		font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+		color: black;
+		background-color: transparent;
+		font-size: 12pt;
+		font-weight: bold;
+		margin-top: 0;
+		margin-bottom: 8px;
+}
+
+h3 {
+		font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+		font-size: 1.4em;
+		font-weight: bold;
+		color: #4C4C4C;
+		background-color: transparent;
+		margin: 0;
+}
+
+h4 {
+		font-size: .8em;
+		font-weight: normal;
+		margin: 0;
+}
+
+select {
+		font-family: Arial, Tahoma, Verdana, Helvetica;
+		font-size: 11px;
+		border: 2px solid #cfcfcf;
+		padding: 2px;
+		width: 120px;
+		background: #fff;
+		width: 300px;
+		margin-bottom: 2px;
+}
+
+textarea {
+		width: 300px;
+		height: 100px;
+		font-family: Courier;
+		font-size: 11px;
+		border: 2px solid #cfcfcf;
+		color: #202020;
+		background-color: #ffffff;
+		padding: 0 0 0 3px;
+}
+
+input.text {
+		font-family: Arial, Tahoma, Verdana, Helvetica; 
+		font-size: 11px;
+		border: 2px solid #cfcfcf;
+		padding: 4px;
+		width: 300px;
+		color: #202020;
+		background-color: #ffffff;
+		margin-bottom: 2px;
+}
+
+.input-with-error {
+		border: 2px solid #9B0000 !important;
+}
+
+input.text-inline {
+		font-family: Arial, Tahoma, Verdana, Helvetica;
+		font-size: 11px;
+		width: 280px;
+		color: #202020;
+		background: #ffffff;
+		margin: 0;
+		border: 0;
+		padding: 0;
+}
+
+.empty-input-frame {
+		background: white;
+		border: 2px solid #cfcfcf;
+		font-size: 11px;
+		color: black;
+		overflow: auto;
+}
+
+.empty-input-frame-inner {
+		padding: 14px;
+}
+
+.input-selected, input.input-selected-forced {
+    border: 2px solid #7f8fa0 !important;
+    color: #101010 !important;
+    background-color: #ffffff !important;
+    -moz-outline: 0px !important;
+}
+
+.input-title-selected {
+		color: black !important;
+}
+
+.input-description {
+		width: 340px;
+		padding-top: 15px;
+}
+
+.checkbox-title {
+		width: 340px;
+		display: block;
+		padding-bottom: 2px;
+		border-bottom: 1px solid transparent;
+}
+
+.checkbox-heading {
+		font-family: Arial, Tahoma, Verdana, Helvetica;
+		font-size: 11px;
+		line-height: 16px;
+		color: #606060;
+		font-weight: bold;
+		cursor: pointer;
+}
+
+.checkbox-description {
+		font-family: Arial, Tahoma, Verdana, Helvetica;
+		font-size: 10px;
+		line-height: 13px;
+		color: #808080;
+		cursor: pointer;
+}
+
+.checkbox-element {
+		vertical-align: top;
+		padding: 0;
+		margin: 0;
+		width: 1%
+}
+
+.checkbox-option-active {
+		color: #000000 !important;
+}
+
+.checkbox-option-active .checkbox-heading {
+		color: #000000 !important;
+}
+
+.checkbox-option-active .checkbox-description {
+		color: #505050 !important;
+}
+
+.checkbox-title-selected {
+		border-bottom: 1px dotted #7f8fa0;
+}
+
+/*
+input.button {
+		font-family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+		font-size: 10px;
+		line-height: 10px;
+		font-weight: bold;
+		margin-top: 10px;
+		padding: 3px 5px 3px 5px;
+		margin: 0px;
+		height: 26px;
+		color: #444444;
+}
+
+input.file {
+		font-family: Verdana, Helvetica, sans-serif;
+		font-size: 10px;
+		margin-top: 5px;
+		padding: 3px;
+		width: 300px;
+}
+
+input.fileButton {
+		font-size: 10px;
+		margin-top: 5px;
+}
+
+input[type="file"] {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 10px;
+    width: auto;
+}
+
+input[type="file"]>input[type="text"] {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8px;
+}
+
+input[type="file"]>input[type="button"] {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8px;
+}
+
+.button-selected {
+    border: 2px solid #7f8fa0 !important;
+    -moz-outline: 0px !important;
+}
+
+input.button, input.button[disabled] { color: #444444; background: #f3f3f3; border-bottom: 1px solid #999999; border-right: 1px solid #999999; border-top: 1px solid #CCCCCC; border-left: 1px solid #CCCCCC; } input.button[disabled] { color: #9F9F9F; }
+
+*/
+
+input.button, input.button[disabled] { font-size: 12px; padding: 2px 20px 3px 20px; -moz-outline: 0; }
+input.button-important { font-size: 12px; padding: 2px 20px 3px 20px; -moz-outline: 0; font-weight: bold; } 
+
+input.input-calendar {
+    background: #ffffff url(/universal/images/calendar.png) 98% 50% no-repeat;
+    cursor: pointer;
+}
+
+input.input-categories {
+    background: #ffffff url(/universal/images/category.png) 98% 50% no-repeat;
+    cursor: pointer;
+    padding-right: 24px;
+}
+
+a.input-calendar {
+    background: #ffffff url(/universal/images/calendar-tiny.png) 0% 50% no-repeat;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+a.input-calendar.input-selected-forced {
+    background: #ffffff url(/universal/images/calendar-tiny-focused.png) 0% 50% no-repeat;
+		color: #7f8fa0 !important;
+    background-color: #f9f9f9;
+    -moz-outline: 0;
+}
+
+optgroup {
+		font-family: Arial, Tahoma, Verdana, Helvetica;
+		font-size: 8pt;
+}
+
+ul {
+		list-style-type: square; /* naturally. */
+}
+
+.clearer {
+		clear: both;
+		line-height: 0;
+		height: 0;
+}
+
+.squarespace-multiselect {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: Tahoma;
+  border-top: 1px solid #eee; 
+}
+
+.squarespace-multiselect .title {
+  padding: 12px 10px 8px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #202020; 
+}
+
+.squarespace-multiselect a:link, .squarespace-multiselect a:hover, .squarespace-multiselect a:visited {
+  display: block;
+  padding: 5px 8px 5px 14px;
+  font-size: 11px;
+  color: #404040;
+  -moz-outline: 0;
+}
+.squarespace-multiselect a:hover {
+  color: #000;
+  background-color: #f6f6f6;
+  -moz-outline: 0;
+}
+  
+a.multiselect-option-selected {
+  background-color: #778675;
+  color: #fff !important;
+}
+
+a.multiselect-option-selected:hover {
+  background-color: #667364;
+  color: #fff !important;
+}
+
+.multiselect-options {
+  height: 200px;
+  overflow-y: scroll;
+}
+  
+/* --- help tip styles ------------------------------------------------------------- */
+.helpLink {
+		text-decoration: none;
+		border-bottom: 1px dashed #516E48;
+		cursor: help;
+}
+
+.helpLinkInvisible {
+		text-decoration: none;
+		cursor: help;
+}
+
+/* --- segment boxes ------------------------------------------------------------- */
+.errorSegmentBox {
+		background: #BD4700 url(/universal/images/util/box_bottom_left.gif) no-repeat bottom left; 
+		color: #fff;
+}
+
+.errorSegmentBox .segmentBoxIcon {
+		background: transparent
+				url(/universal/images/manager/error-box-icon.jpg) no-repeat 3px 2px;
+		width: 32px;
+		height: 32px;
+		float: left;
+}
+
+.warningSegmentBox {
+		background: #BDBB00 url(/universal/images/util/box_bottom_left.gif)
+				no-repeat bottom left;
+		color: #fff;
+}
+
+.warningSegmentBox .segmentBoxIcon {
+		background: transparent
+				url(/universal/images/manager/warning-box-icon.jpg) no-repeat 3px
+				0px;
+		width: 32px;
+		height: 32px;
+		float: left;
+}
+
+.updateSegmentBox {
+		background: #5C8A00 url(/universal/images/util/box_bottom_left.gif)
+				no-repeat bottom left;
+		color: #fff;
+}
+
+.updateSegmentBox .segmentBoxIcon {
+		background: transparent
+				url(/universal/images/manager/update-box-icon.jpg) no-repeat 3px
+				-1px;
+		width: 32px;
+		height: 32px;
+		float: left;
+}
+
+A.segmentBoxLink:link,A.segmentBoxLink:visited,A.segmentBoxLink:active {
+		color: #f4f4f4;
+		text-decoration: none;
+}
+
+A.segmentBoxLink:hover {
+		color: #ffffff;
+		text-decoration: none;
+}
+
+.informationSegmentBox {
+		background: #054077 url(/universal/images/util/box_bottom_left.gif)
+				no-repeat bottom left;
+		color: #fff;
+}
+
+.informationSegmentBox .segmentBoxIcon {
+		background: transparent
+				url(/universal/images/manager/information-box-icon.jpg) no-repeat
+				3px 1px;
+		width: 32px;
+		height: 32px;
+		float: left;
+}
+
+.segmentBox {
+		background: #EFF3EB url(/universal/images/util/box_bottom_left.gif)
+				no-repeat bottom left;
+}
+
+.segmentBoxImportantText {
+		font-size: 16px;
+		line-height: 14px;
+		font-family: Arial;
+		margin-bottom: 14px;
+		letter-spacing: -1px;
+		font-weight: bold;
+}
+
+.segmentBoxTitle {
+		background: transparent url(/universal/images/util/box_top_right.gif)
+				no-repeat top right;
+}
+
+.segmentBoxHeader {
+		background: transparent url(/universal/images/util/box_top_left.gif)
+				no-repeat top left;
+		height: 9px;
+		line-height: 9px;
+}
+
+.segmentBoxContent {
+		background: transparent url(/universal/images/util/box_bottom_right.gif)
+				no-repeat bottom right;
+		padding: 12px;
+		padding-top: 4px;
+}
+
+.segmentBoxContentWide {
+		background: transparent url(/universal/images/util/box_bottom_right.gif)
+				no-repeat bottom right;
+		padding: 18px;
+		padding-top: 4px;
+}
+
+.segmentBoxContentThin {
+		background: transparent url(/universal/images/util/box_bottom_right.gif)
+				no-repeat bottom right;
+		padding: 4px;
+		padding-top: 4px;
+}
+
+.segmentBoxText {
+		margin-left: 44px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-right: 20px;
+		height: 1%;
+}
+
+.segmentBoxText .significantText {
+		color: white;
+}
+
+.objectBox {
+		background: #F6F6F6
+				url(/universal/images/util/box_bottom_left_border.gif) no-repeat
+				bottom left;
+}
+
+.objectBoxSelected {
+		background: #F3F7EE
+				url(/universal/images/util/box_bottom_left_border.gif) no-repeat
+				bottom left;
+}
+
+.objectBoxTitle {
+		background: transparent
+				url(/universal/images/util/box_top_right_border.gif) no-repeat top
+				right;
+		margin-left: 6px;
+}
+
+.objectBoxHeader {
+		background: transparent
+				url(/universal/images/util/box_top_left_border.gif) no-repeat top
+				left;
+		height: 12px;
+		line-height: 12px;
+}
+
+.objectBoxContent {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				bottom right;
+		padding: 12px;
+		padding-top: 0px;
+}
+
+.objectBoxContentWide {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				bottom right;
+		padding: 20px;
+		padding-top: 2px;
+		padding-bottom: 16px;
+}
+
+.objectBoxContentThin {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_border.gif) no-repeat
+				bottom right;
+		padding: 4px;
+		padding-top: 0px;
+}
+
+.objectBoxText {
+		margin-left: 44px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-right: 20px;
+}
+
+.contentBox {
+		background: #F6F6F6
+				url(/universal/images/util/box_bottom_left_lightborder.gif)
+				no-repeat bottom left;
+}
+
+.contentBoxSelected {
+		background: #EFF3EB
+				url(/universal/images/util/box_bottom_left_lightborder.gif)
+				no-repeat bottom left;
+}
+
+.contentBoxTitle {
+		background: transparent
+				url(/universal/images/util/box_top_right_lightborder.gif) no-repeat
+				top right;
+		margin-left: 6px;
+}
+
+.contentBoxHeader {
+		background: transparent
+				url(/universal/images/util/box_top_left_lightborder.gif) no-repeat
+				top left;
+		height: 12px;
+		line-height: 12px;
+}
+
+.contentBoxContent {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				no-repeat bottom right;
+		padding: 12px;
+		padding-top: 0px;
+}
+
+.contentBoxContentWide {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				no-repeat bottom right;
+		padding: 20px;
+		padding-top: 2px;
+		padding-bottom: 16px;
+}
+
+.contentBoxContentThin {
+		background: transparent
+				url(/universal/images/util/box_bottom_right_lightborder.gif)
+				no-repeat bottom right;
+		padding: 4px;
+		padding-top: 0px;
+}
+
+.contentBoxText {
+		margin-left: 44px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-right: 20px;
+}
+
+.codeBlock {
+		border: 1px solid #ccc;
+		padding: 15px;
+		margin-bottom: 2em;
+		width: 460px;
+		overflow: scroll;
+}
+
+.helptip-container {
+		width: 300px;
+		opacity: 0; filter: alpha(opacity=0);  
+		color: white;
+		z-index: 1000;
+		position: absolute;
+		cursor: pointer;
+		display: none;
+}
+
+.helptip-title {
+		background: url(/universal/images/helptip-bg-300.png) top left;
+		padding: 15px;
+		font-size: 14px;
+		font-weight: bold;
+		font-family: Arial, Verdana, Helvetica, sans-serif;
+		letter-spacing: -1px;
+}
+
+.helptip-text {
+    background: url(/universal/images/helptip-bg-300.png) bottom left;
+    font-size: 11px;
+    line-height: 14px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    padding: 0 15px 15px 15px;
+}
+
+.helptip-container-wide {
+		width: 500px;
+		opacity: 0; filter: alpha(opacity=0);
+		color: white;
+		z-index: 1000;
+		position: absolute;
+		cursor: pointer;
+		display: none;
+}
+
+.helptip-container-wide .helptip-title-wrapper {
+    background: url(/universal/images/helptip-bg-500.png) top left;
+}
+.helptip-container-wide .helptip-title  {
+    background: transparent;
+}
+
+.helptip-container-wide .helptip-text {
+		background: url(/universal/images/helptip-bg-500.png) bottom left;
+}
+
+
+.helptip-style-dialog {
+    width: 330px;
+    opacity: 0; filter: alpha(opacity=0);
+    color: white;
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    font-family: Arial, Verdana, Helvetica, sans-serif !important;
+    line-height: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.helptip-style-dialog .helptip-title-wrapper {
+    background: transparent url(/universal/images/helptip-bg-330.png) top left;
+    padding: 3px;
+}
+
+.helptip-style-dialog .helptip-title {
+    background: transparent url(/universal/images/helptip-warning.png) 5px 5px no-repeat;
+    padding: 15px 15px 8px 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.helptip-style-dialog .helptip-text {
+    background: transparent url(/universal/images/helptip-bg-330.png) bottom left;
+    padding: 0 15px 20px 53px;
+    font-size: 11px !important;
+    letter-spacing: 0px !important;
+}
+
+
+.helptip-style-dialog-wide {
+    width: 400px;
+    opacity: 0; filter: alpha(opacity=0);
+    color: white;
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    font-family: Arial, Verdana, Helvetica, sans-serif !important;
+    line-height: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.helptip-style-dialog-wide .helptip-title-wrapper {
+    background: transparent url(/universal/images/helptip-bg-400.png) top
+        left;
+    padding: 3px;
+}
+
+.helptip-style-dialog-wide .helptip-title {
+    background: transparent url(/universal/images/helptip-warning.png) 5px
+        5px no-repeat;
+    padding: 15px 15px 8px 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.helptip-style-dialog-wide .helptip-text {
+    background: transparent url(/universal/images/helptip-bg-400.png) bottom
+        left;
+    padding: 0 15px 20px 53px;
+    font-size: 11px !important;
+    letter-spacing: 0px !important;
+}
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+a.button {
+    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right;
+    color: #151515 !important;
+    display: block;
+    float: left;
+    font: 12px arial, sans-serif !important;
+    height: 24px !important;
+    line-height: 18px  !important;
+    margin-right: 6px !important;
+    padding: 0 16px 0 0 !important;
+    text-decoration: none !important;
+}
+
+a.button-important {
+    font-weight: bold !important; 
+}
+
+a.button span {
+    background: transparent url(/universal/images/button/button-span.png) no-repeat;
+    display: block;
+    line-height: 14px !important;
+    padding: 5px 0 5px 18px !important;
+}
+
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    -moz-outline: 0;
+}
+
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px !important;
+}
+
+a.button-disabled {
+    background: transparent url(/universal/images/button/button-a.png) no-repeat scroll top right;
+    color: #777777 !important;
+    display: block;
+    float: left;
+    font: 12px arial, sans-serif !important;
+    height: 24px !important;
+    line-height: 18px  !important;
+    margin-right: 6px !important;
+    padding: 0 16px 0 0 !important;
+    text-decoration: none !important;
+}
+a.button-disabled span {
+    background: transparent url(/universal/images/button/button-span.png) no-repeat;
+    display: block;
+    line-height: 14px !important;
+    padding: 5px 0 5px 18px !important;
+}
+
+
+/* ---- standard help objects ------------------------------------------- */
+
+.managerHelpObject {
+  display:    block; 
+  padding-left:     24px; 
+  background:     url(/universal/images/help-bullet.png) left top no-repeat; 
+  line-height:    16px;
+}
+
+.managerInformationObject {
+  display:    block; 
+  padding-left:     24px; 
+  background:     url(/universal/images/info-bullet.png) left top no-repeat; 
+  line-height:    16px;
+}
+
+.managerAlertObject {
+  display:    block;  
+  padding-left:     24px; 
+  background:     url(/universal/images/alert-bullet.png) left top no-repeat; 
+  line-height:    16px;
+}
+
+.miniNoticeWrapper { 
+  border: 1px solid #ccc; padding: 12px; margin-bottom: 1em; background: #f9f9f9; color: #434343;
+}
+
+
+/* ---- standard help objects ------------------------------------------- */
+
+.cleanInput { 
+  display:    none; 
+  border:     1px solid #ccc !important;
+  padding:    2px !important;
+}
+
+.editNotice {
+  color:      gray;
+  font-size:    9px; 
+  font-family:    Tahoma;
+  font-weight:    normal;
+}
+
+.editedText {
+  font-weight:    bold;
+}
+
+
+
+/* lists ------------------------------- */
+
+.standardList {
+}
+
+.standardList td {
+  padding-left:     5px;
+  padding-bottom:   4px;
+  padding-top:    4px;
+  border-bottom:    1px solid #DDDDDD;
+}
+
+.standardList thead td {
+  background:   #404040;
+  color:      #e7e7e7;
+  font-family:    Arial, 'Trebuchet MS';  
+  font-size:    14px; 
+  font-weight:    bold;
+  letter-spacing:   -1px; 
+  padding:    6px 0 5px 5px; 
+}
+
+.standardList .actionCell {
+  text-align:     right; 
+  padding-right:    12px;
+}
+
+.standardList table td {
+  padding-left:     0px;
+  padding-bottom:   0px;
+  padding-top:    0px;
+  border-bottom:    0px;
+}
+
+.standardList thead a.sortLink:link, .standardList thead a.sortLink:visited, .standardList thead a.sortLink:active { color: #e7e7e7; } 
+.standardList thead a.sortLink:hover { color: #ffffff; }
+
+
