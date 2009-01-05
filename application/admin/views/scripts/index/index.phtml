@@ -1,125 +1,39 @@
-    	<script type="text/javascript" src="AccountPricing_files/sha1.js"></script>
-        <script type="text/javascript" src="AccountPricing_files/storable-fields.js"></script>
-        
-        <script type="text/javascript">
-        // <![CDATA[
-        
-        YAHOO.util.Event.onDOMReady(function() {
-          if (YAHOO.env.ua.ie <= 6 && YAHOO.env.ua.ie != 0) {
-            YAHOO.util.Dom.get("login-form").innerHTML = YAHOO.util.Dom.get("login-form").innerHTML + "<div style=\"padding-top: 15px;\">" + Squarespace.Constants.BROWSER_UPGRADE_WARN + "</div>";
-          }
-        });
-        
-        YAHOO.util.Event.addListener(window, "load", function() {
-        
-          document.getElementById("storedFieldControls").style.display = (Squarespace.StorableFields.isDataSaved("username") ? "inline" : "none");
-        
-                  Squarespace.StorableFields.recall("username", "password");
-          
-        
-          if (document.dataform.username.value.length > 0) {
-            document.getElementById("password").focus();
-          } else {
-            document.getElementById("username").focus();
-          }
-        
-                  document.getElementById("rememberPassword").checked = Squarespace.StorableFields.isFieldStored("password");
-          
-        
-          updateStorableFields();
-        
-        });
-        
-        function updateStorableFields() {
-        
-          Squarespace.StorableFields.save("username");
-        
-          if (document.getElementById("rememberPassword").checked) {
-            Squarespace.StorableFields.save("password");
-          } else {
-            Squarespace.StorableFields.forget("password");
-          }
-        
-        }
-        
-        function forgetLogin() {
-
-        	Squarespace.StorableFields.forget("username", "password");
-        
-            document.getElementById("rememberPassword").checked = false;
-            document.getElementById("storedFieldControls").style.display = "none";
-        
-        }
-        
-        function encryptPassword() {
-        
-          if (document.getElementById("password").value.length > 0) {
-            document.getElementById("encryptedPassword").value = b64_sha1( document.getElementById("password").value );
-          }
-        
-        }
-        
-        // ]]>
-        </script>
 		<div id="login-form" class="form-body">
 			<form style="margin: 0px;" method="post" name="dataform" action="<?=$this->appServer?>/admin/">
-				<input id="encryptedPassword" name="encryptedPassword" value="" type="hidden">
-				<input name="loginStyle" value="regular" type="hidden">
-				<input name="SS_CHAIN_TO_ACTION" value="http://pablofmorales.squarespace.com/display/configuration/AccountPricing" type="hidden"> 
-				<input name="relogin" value="true" type="hidden">
-				<h2 class="document-title">Website Login</h2>
+				<h2 class="document-title">Backoffice Login</h2>
 				<div class="body">
-                    Identify yourself with this website. All requests to log into this
-                    website are logged. Repeated failed login attempts will result in lock
-                    out. 
+                    Para entrar al backoffice usted necesita autenticarse. 
                 </div>
-
-                <script type="text/javascript">
-
-                if (YAHOO.env.ua.ie < 6 && YAHOO.env.ua.gecko < 1.8 && YAHOO.env.ua.webkit < 418) {
-                    document.write("<div class=\"notice-box\" style=\"margin-bottom: 2em;\">");
-                    document.write("<h3>Web Browser Support Warning<\/h3><br\/>");
-                    document.write("Your web browser is: " + navigator.userAgent);
-                    document.write("<br\/><br\/>Your browser was not recognized as one of our supported browsers.  You may attempt to use your current browser, but you will most likely experience problems accessing various parts of the application. <br\/><br\/>We recommend using the latest version of Firefox, Internet Explorer 6, Internet Explorer 7, Safari, or Camino to access this site.");
-                    document.write("<\/h3><\/div>");
-                }
-				</script>
 				
-				<div style="margin-bottom: 2em;" class="error-text">
-					You are attempting to access a resource on this site which is restricted.
-                    Please login below. After re-logging in, you will be automatically
-                    directed to the page you were attempting to access.<br/>
-                </div>
-                
-                <input name="relogin" value="true" type="hidden">
             	<div class="fieldContainer">
             		<div class="fieldTitle">
                        Login: 
                        <a id="storedFieldControls" class="fieldAugmentedLink" style="display: none;" href="javascript:forgetLogin();">(forget stored information)</a>
                     </div>
-                    <input tabindex="2" class="text" value="" id="username" name="username" type="text">
+                    <input tabindex="1" class="text" value="" id="username" name="username" type="text">
             	</div>
-            </form>
+            
 
-            <div class="fieldContainer">
-            	<div class="fieldTitle">
-                	Password: 
-                    <a class="fieldAugmentedLink" href="http://pablofmorales.squarespace.com/display/RecoverPassword">(I forgot my password)</a>
-            	</div>
-            	<input tabindex="3" class="text" onkeypress="if (event.keyCode == 13) { updateStorableFields(); encryptPassword(); document.dataform.submit(); return false; } return true;" onchange="encryptPassword();" id="password" name="password" type="password">
-            </div>
-
-            <div class="fieldContainer">
-        
-            <input style="float: left;" id="rememberPassword" name="rememberPassword" onclick="updateStorableFields();" type="checkbox">
-            <div style="float: left; margin-left: 10px;">
-            	<label for="rememberPassword">Remember Password</label>
-            	<div class="fieldAugmentedLink">WARNING: Password stored in plain text within browser.</div>
-            </div>
-		</div>
-		<div class="fieldContainer">
-			<input tabindex="4" class="button submit-button" id="submitButton" style="margin-top: 2em;" value="Login" onclick="updateStorableFields(); encryptPassword(); document.dataform.submit();" type="button" />
-		</div>
+                <div class="fieldContainer">
+                	<div class="fieldTitle">
+                    	Password: 
+                        <a class="fieldAugmentedLink" href="http://pablofmorales.squarespace.com/display/RecoverPassword">(I forgot my password)</a>
+                	</div>
+                	<input tabindex="2" class="text" id="password" name="password" type="password">
+                </div>
+    
+                <div class="fieldContainer">
+            
+                <input style="float: left;" id="rememberPassword" name="rememberPassword" type="checkbox">
+                <div style="float: left; margin-left: 10px;">
+                	<label for="rememberPassword">Remember Password</label>
+                	<div class="fieldAugmentedLink">WARNING: Password stored in plain text within browser.</div>
+                </div>
+    		</div>
+    		<div class="fieldContainer">
+    			<input tabindex="3" class="button submit-button" id="submitButton" style="margin-top: 2em;" value="Login" type="submit" />
+    		</div>
+    	</form>
 	</div>
 </div>
 <script type="text/javascript">
