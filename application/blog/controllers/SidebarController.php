@@ -6,6 +6,8 @@ class Blog_SidebarController extends Zend_Controller_Action
         $this->view->title = 'Blog ZF';
     }
     public function menutopAction ()
+    {}    
+    public function headerAction ()
     {}
     public function rightcontentAction ()
     {
