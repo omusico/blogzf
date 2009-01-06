@@ -17,6 +17,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
     }
     public function createAction ()
     {
+        $this->view->moduleName = 'Crear Post';
         $form = new forms_Posts();
         if ($this->_request->isPost()) {
             $postData = $this->_request->getPost();
@@ -44,6 +45,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
     }
     public function updateAction ()
     {
+        $this->view->moduleName = 'Actualizar el post ' . $this->_request->getParam('postId', 0);
         $form = new forms_Posts();
         $posts = new Post();
         $postId = (int) $this->_request->getParam('postId', 0);
