@@ -73,7 +73,7 @@ class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
         if ( $request->module == 'admin' ) {
             $layout = $config->site->layout->admin;
             $this->_view->headScript()
-                   ->appendFile( $this->_view->staticServer . 'js/mootools/mootools-core.js' );
+                ->appendFile( $this->_view->staticServer . 'js/mootools/mootools-core.js' );
             /*
             $this->_view->addHelperPath( 'Zend/Dojo/View/Helper/', 'Zend_Dojo_View_Helper' );
             Zend_Dojo::enableView($this->_view);
@@ -86,8 +86,7 @@ class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
         }
 
         $this->_view->headLink()
-                ->appendStylesheet( $this->_view->staticServer . 
-                	$this->_view->staticServer . 'layout/'.$layout.'/styles.css' );
+            ->appendStylesheet( $this->_view->staticServer . 'layout/'.$layout.'/styles.css' );
 
 
     }
