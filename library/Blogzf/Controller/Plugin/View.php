@@ -87,7 +87,7 @@ class Blogzf_Controller_Plugin_View extends Zend_Controller_Plugin_Abstract
 
         $this->_view->headLink()
                 ->appendStylesheet( $this->_view->staticServer . 
-                	'layout/'.$layout.'/styles.css' );
+                	$this->_view->staticServer . 'layout/'.$layout.'/styles.css' );
 
 
     }
