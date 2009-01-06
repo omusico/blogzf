@@ -23,6 +23,9 @@ class Blogzf_Controller_Action extends Zend_Controller_Action
          * Por ahora hardocdeamos esto, despues esto va a ser un objeto user, con todos los datos del usuario logueado
          */
         $this->_user = new stdClass();
+        /**
+         * TODO
+         */
         $this->_user->id = 1;//Zend_Auth::getInstance()->getIdentity();
     }
 }

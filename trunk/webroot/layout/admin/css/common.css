@@ -379,8 +379,8 @@ textarea { width: 450px; height: 120px; }
 .feed-list, .feed-list-inline { padding: 0; }
 .feed-list li, .feed-list-inline li { list-style-type: none; margin: 0; padding: 0; }
 
-.feed-list .feed-link { padding-left: 22px; background-image: url(/universal/images/xml/feed-icon-16x16-orange.png); background-repeat: no-repeat; background-position: center left; }
-.feed-list-inline .feed-link { padding-left: 16px; background-image: url(/universal/images/xml/feed-icon-12x12-orange.png); background-repeat: no-repeat; background-position: center left; }
+.feed-list .feed-link { padding-left: 22px; background-image: url(../images/feed-icon-16x16-orange.png); background-repeat: no-repeat; background-position: center left; }
+.feed-list-inline .feed-link { padding-left: 16px; background-image: url(../images/feed-icon-12x12-orange.png); background-repeat: no-repeat; background-position: center left; }
 
   
 /* --- social links ---------------------------------------------------------------------------- */
@@ -446,7 +446,7 @@ textarea { width: 450px; height: 120px; }
 /* --- standard button definitions ---------------------------------------------------------- */
   
 a.button {
-    background: transparent url(../imagesbutton-a.png) no-repeat scroll top right;
+    background: transparent url(../images/button-a.png) no-repeat scroll top right;
     color: #151515 !important;
     display: block;
     float: left;
@@ -463,7 +463,7 @@ a.important {
 }
 
 a.button span {
-    background: transparent url(../imagesbutton-span.png) no-repeat;
+    background: transparent url(../images/button-span.png) no-repeat;
     display: block;
     line-height: 14px !important;
     padding: 5px 0 5px 18px !important;
@@ -512,7 +512,7 @@ h3, .h3, .form-body .formCaption{font-family: 'Times New Roman', Palatino, serif
 .h1subtitle{font-family: 'Lucida Sans Unicode', 'Lucida Grande', Tahoma, sans-serif; font-size: 12px; color: #131313; }
 .h2subtitle{}
 .h3subtitle{}
-#canvasWrapper{margin-right: auto; margin-left: auto; background-color: #FFFFFF; background-image: url(/universal/images/core-resources/backgrounds/gradient-150px-D5D5D5-FFFFFF.jpg); background-repeat: repeat-x; }
+#canvasWrapper{margin-right: auto; margin-left: auto; background-color: #FFFFFF; background-image: url(../images/core-resources/backgrounds/gradient-150px-D5D5D5-FFFFFF.jpg); background-repeat: repeat-x; }
 #pageFooter{font-family: 'Lucida Sans Unicode', 'Lucida Grande', Tahoma, sans-serif; font-size: 11px; border-top: 1px solid #CCCCCC; padding-top: 3px; color: #A6A6A6; border-color: #CCCCCC; }
 .verticalNavigationBar .section{margin-bottom: 25px; }
 .verticalNavigationBar .section .active-module a{color: #131313; }
@@ -528,7 +528,7 @@ h3, .h3, .form-body .formCaption{font-family: 'Times New Roman', Palatino, serif
 #navigationTop .horizontalNavigationBar{padding-right: 50px; padding-left: 50px; padding-top: 2px; padding-bottom: 6px; margin-right: 0px; margin-left: -50px; margin-top: -30px; margin-bottom: 30px; background-color: #222222; }
 #navigationBottom .horizontalNavigationBar{padding-right: 10px; padding-left: 10px; padding-bottom: 5px; margin-top: 30px; background-color: #222222; }
 .notice-box{border: 1px solid #DFDFDF; padding-right: 15px; padding-left: 15px; padding-top: 15px; padding-bottom: 15px; background-color: #F7F7F7; border-color: #DFDFDF; }
-blockquote{padding-left: 50px; margin-left: 0px; background-image: url(/layout/images/blockquote.png); background-repeat: no-repeat; }
+blockquote{padding-left: 50px; margin-left: 0px; background-image: url(../images/blockquote.png); background-repeat: no-repeat; }
 #bannerWrapper{}
 .journal-comment-area{}
 .notice-box-alert{}
@@ -638,7 +638,7 @@ a:hover{text-decoration: none; color: #626262; }
 #noticeAreaLogin a { 
     padding:    8px 11px 11px 46px;
     float:    left;
-    background:   transparent url(/layout/managementSystems/gray/website-manager.png) no-repeat 2px 1px;
+    background:   transparent url(../images/website-manager.png) no-repeat 2px 1px;
     margin-left:  4px;
     display:    block;
     -moz-outline: 0;
@@ -649,9 +649,9 @@ a:hover{text-decoration: none; color: #626262; }
 .noticeAreaManagerLink { float: left; height: 42px; } 
 .noticeAreaManagerLink a { color: #f2f2f2; -moz-outline: 0; background-position: 4px 4px; background-repeat: no-repeat; padding: 0 6px 0 38px; height: 42px; display: block;  }
 .noticeAreaManagerLink a:hover { color: white; background-position: 4px -30px; }
-#noticeAreaManagerLink-configure a { background-image: url(/layout/managementSystems/gray/manager-icon-configure.png); }
-#noticeAreaManagerLink-user a { background-image: url(/layout/managementSystems/gray/manager-icon-user.png); }
-#noticeAreaManagerLink-return a { background-image: url(/layout/managementSystems/gray/manager-icon-return.png); }
+#noticeAreaManagerLink-configure a { background-image: url(../images/manager-icon-configure.png); }
+#noticeAreaManagerLink-user a { background-image: url(../images/manager-icon-user.png); }
+#noticeAreaManagerLink-return a { background-image: url(../images/manager-icon-return.png); }
 .noticeAreaManagerLink a div { font-size: 11px; font-family: Arial; padding: 15px 6px 0 0; } 
 
 #noticeAreaMode-preview a { width: 120px; }
@@ -660,8 +660,8 @@ a:hover{text-decoration: none; color: #626262; }
 #noticeAreaManagerLink-logout a div { padding: 5px 0 5px 10px; margin-top: 10px; border-left: 1px dotted #555; }
   
 .management-strip {  color: #f2f2f2; position: absolute; overflow: hidden; left: 0px; top: 42px; display: block; line-height: 17px; }
-.management-strip .outerWrapper { background: url(/universal/images/manager/manager-bg.png) top left repeat-x; height: 230px; }
-.management-strip .innerWrapper { background: url(/universal/images/manager/manager-big-brand.png) 98% 0% no-repeat; padding: 25px 0 25px 0; height: 230px; } 
+.management-strip .outerWrapper { background: url(../images/manager-bg.png) top left repeat-x; height: 230px; }
+.management-strip .innerWrapper { background: url(../images/manager-big-brand.png) 98% 0% no-repeat; padding: 25px 0 25px 0; height: 230px; } 
 .management-strip .innerContent { width: 1300px; } 
    
 .management-strip .management-section { float: left; padding-right: 15px; letter-spacing: 0px; margin-right: 15px; border-right: 1px dotted #303030; width: 122px; height: 108px; text-align: left !important; }
@@ -674,7 +674,7 @@ a:hover{text-decoration: none; color: #626262; }
   
 .management-strip .management-section a:hover { color: #ffffff; border-bottom: 0px !important;  background: #151515; }
 .management-strip .management-section .active-section { color: #ffffff; background: #050505; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
-.management-strip #manager-return-button { -moz-outline: 0; background: url(/universal/images/manager/manager-back-button.png) 0px 0px no-repeat; display: block; height: 62px; width: 47px; }  
+.management-strip #manager-return-button { -moz-outline: 0; background: url(../images/manager-back-button.png) 0px 0px no-repeat; display: block; height: 62px; width: 47px; }  
 .management-strip #manager-return-button:hover {  background-position: 0px -62px; } 
   
   
@@ -686,94 +686,94 @@ a:hover{text-decoration: none; color: #626262; }
   
    
 #noticeAreaLogin a:hover {
-    background:   transparent url(/layout/managementSystems/gray/website-manager.png) no-repeat 2px -37px;
+    background:   transparent url(../images/website-manager.png) no-repeat 2px -37px;
 }
 
 #noticeAreaProfileSection {
     padding:    8px 11px 11px 46px;
     float:    left;
-    background:   transparent url(/layout/managementSystems/gray/user.png) no-repeat 2px 1px;
+    background:   transparent url(../images/user.png) no-repeat 2px 1px;
     margin-left:  4px;
 } 
   
 #noticeAreaReturnToSite a { 
     padding:    8px 11px 11px 46px;
     float:    left;
-    background:   transparent url(/layout/managementSystems/gray/user-website.png) no-repeat 2px 1px;
+    background:   transparent url(../images/user-website.png) no-repeat 2px 1px;
     margin-left:  4px;
     display:    block;
     -moz-outline: 0;
 }
 #noticeAreaReturnToSite a:hover {
-    background:   transparent url(/layout/managementSystems/gray/user-website.png) no-repeat 2px -37px;
+    background:   transparent url(../images/user-website.png) no-repeat 2px -37px;
 }
 
 #noticeAreaContentSubscribed {
     padding:    8px 11px 11px 46px;
     float:    left;
-    background:   transparent url(/layout/managementSystems/gray/subscription-on.png) no-repeat 2px 1px;
+    background:   transparent url(../images/subscription-on.png) no-repeat 2px 1px;
     margin-left:  4px;
 }
 
 #noticeAreaContentUnSubscribed {
     padding:    8px 11px 11px 46px;
     float:    left;
-    background:   transparent url(/layout/managementSystems/gray/subscription-off.png) no-repeat 2px 1px;
+    background:   transparent url(../images/subscription-off.png) no-repeat 2px 1px;
     margin-left:  4px;
 }
 
 .noticeAreaWarning a {
     padding:    8px 11px 11px 46px;
     float:    right;
-    background:   transparent url(/layout/managementSystems/gray/warning.png) no-repeat 2px 1px;
+    background:   transparent url(../images/warning.png) no-repeat 2px 1px;
     margin-left:  4px;
     display:    block;
     -moz-outline: 0;
 }
 
 .noticeAreaWarning a:hover {
-    background:   transparent url(/layout/managementSystems/gray/warning.png) no-repeat 2px -37px;
+    background:   transparent url(../images/warning.png) no-repeat 2px -37px;
 }
 
 .noticeAreaHelp a {
     padding:    8px 11px 11px 28px;
     float:    right;
-    background:   transparent url(/layout/managementSystems/gray/help.png) no-repeat 2px 1px;
+    background:   transparent url(../images/help.png) no-repeat 2px 1px;
     margin-left:  4px;
     display:    block;
     -moz-outline: 0; 
 }
 
 .noticeAreaHelp a:hover {
-    background:   transparent url(/layout/managementSystems/gray/help.png) no-repeat 2px -37px;
+    background:   transparent url(../images/help.png) no-repeat 2px -37px;
 } 
 
 #noticeAreaMode-preview a {
-    background:   transparent url(/layout/managementSystems/gray/configure-preview.png) no-repeat 2px 1px;
+    background:   transparent url(../images/configure-preview.png) no-repeat 2px 1px;
 }
 #noticeAreaMode-preview a:hover, #noticeAreaMode-preview.active-mode a {
-    background:   transparent url(/layout/managementSystems/gray/configure-preview.png) no-repeat 2px -37px;
+    background:   transparent url(../images/configure-preview.png) no-repeat 2px -37px;
 }
  
 #noticeAreaMode-style a { 
-    background:   transparent url(/layout/managementSystems/gray/configure-style.png) no-repeat 2px 1px;
+    background:   transparent url(../images/configure-style.png) no-repeat 2px 1px;
 }
 #noticeAreaMode-style a:hover, #noticeAreaMode-style.active-mode a {
-    background:   transparent url(/layout/managementSystems/gray/configure-style.png) no-repeat 2px -37px;
+    background:   transparent url(../images/configure-style.png) no-repeat 2px -37px;
 }
   
 #noticeAreaMode-structure a {
-    background:   transparent url(/layout/managementSystems/gray/configure-structure.png) no-repeat 2px 1px;
+    background:   transparent url(../images/configure-structure.png) no-repeat 2px 1px;
 } 
 #noticeAreaMode-structure a:hover, #noticeAreaMode-structure.active-mode a {
-    background:   transparent url(/layout/managementSystems/gray/configure-structure.png) no-repeat 2px -37px;
+    background:   transparent url(../images/configure-structure.png) no-repeat 2px -37px;
 }
   
 #noticeAreaMode-content a {
-    background:   transparent url(/layout/managementSystems/gray/configure-content.png) no-repeat 2px 1px;
+    background:   transparent url(../images/configure-content.png) no-repeat 2px 1px;
 }
 #noticeAreaMode-content a:hover, #noticeAreaMode-content.active-mode a {
-    background:   transparent url(/layout/managementSystems/gray/configure-content.png) no-repeat 2px -37px;
+    background:   transparent url(../images/configure-content.png) no-repeat 2px -37px;
 }
   
 #noticeAreaIcon-help {
@@ -785,10 +785,10 @@ a:hover{text-decoration: none; color: #626262; }
 }
 
 #noticeAreaIcon-help {
-    background:   transparent url(/layout/managementSystems/gray/configure-help.png) no-repeat 0px 0px;
+    background:   transparent url(../images/configure-help.png) no-repeat 0px 0px;
 }
 #noticeAreaIcon-help:hover, #noticeAreaIcon-help.active-mode {
-    background:   transparent url(/layout/managementSystems/gray/configure-help.png) no-repeat 0px -53px;
+    background:   transparent url(../images/configure-help.png) no-repeat 0px -53px;
 }
   
 .noticeAreaConfigure {
@@ -806,7 +806,7 @@ a:hover{text-decoration: none; color: #626262; }
 }
 
 #siteNoticeAreaLogo {
-    background:         transparent url(/universal/images/manager/squarespace-logo.png) no-repeat 0px 2px;
+    background:         transparent url(../images/squarespace-logo.png) no-repeat 0px 2px;
     height:             40px;
     width:              160px;
     padding-right:      20px;
@@ -832,13 +832,13 @@ a:hover{text-decoration: none; color: #626262; }
 } 
 
 .adminSegmentBoxBegin {
-    background:         transparent url(/layout/managementSystems/gray/admin-left.png) no-repeat bottom left;
+    background:         transparent url(../images/admin-left.png) no-repeat bottom left;
     line-height:        20px !important;
     width:              16px !important;
 }
 
 .adminSegmentBoxContent {
-    background:         transparent url(/layout/managementSystems/gray/admin-middle.png) repeat-x bottom left;
+    background:         transparent url(../images/admin-middle.png) repeat-x bottom left;
     line-height:        20px !important;
     color:              white !important;
     text-align:         left !important;
@@ -846,7 +846,7 @@ a:hover{text-decoration: none; color: #626262; }
 }
 
 .adminSegmentBoxEnd {
-    background:         transparent url(/layout/managementSystems/gray/admin-right.png) no-repeat bottom right;
+    background:         transparent url(../images/admin-right.png) no-repeat bottom right;
     line-height:        20px !important;
     width:              6px !important;
 }
@@ -931,7 +931,7 @@ a:hover{text-decoration: none; color: #626262; }
 
   
 a.button {
-    background: transparent url(../imagesbutton-a.png) no-repeat scroll top right !important;
+    background: transparent url(../images/button-a.png) no-repeat scroll top right !important;
     color: #151515 !important;
     display: block;
     float: left;
@@ -949,7 +949,7 @@ a.button-important {
 }
 
 a.button span {
-    background: transparent url(../imagesbutton-span.png) no-repeat !important;
+    background: transparent url(../images/button-span.png) no-repeat !important;
     display: block;
     line-height: 14px !important;
     padding: 5px 0 5px 18px !important;
@@ -968,7 +968,7 @@ a.button:active span {
 }
     
 a.button-disabled {
-    background: transparent url(../imagesbutton-a.png) no-repeat scroll top right;
+    background: transparent url(../images/button-a.png) no-repeat scroll top right;
     color: #777777 !important;
     display: block;
     float: left;
@@ -980,7 +980,7 @@ a.button-disabled {
     text-decoration: none !important;
 }
 a.button-disabled span {
-    background: transparent url(../imagesbutton-span.png) no-repeat;
+    background: transparent url(../images/button-span.png) no-repeat;
     display: block;
     line-height: 14px !important;
     padding: 5px 0 5px 18px !important;
@@ -1064,7 +1064,7 @@ a.button-disabled span {
 }
 
 .helptip-title {
-    background: url(/universal/images/helptip-bg-300.png) top left;
+    background: url(../images/helptip-bg-300.png) top left;
     padding: 15px;
     font-size: 14px;
     color: white !important;
@@ -1076,7 +1076,7 @@ a.button-disabled span {
 }
 
 .helptip-text {
-    background: url(/universal/images/helptip-bg-300.png) bottom left;
+    background: url(../images/helptip-bg-300.png) bottom left;
     font-size: 11px;
     line-height: 14px;
     font-family: Arial, Verdana, Helvetica, sans-serif;
@@ -1101,12 +1101,12 @@ a.button-disabled span {
 }
 
 .helptip-style-dialog .helptip-title-wrapper {
-  background: transparent url(/universal/images/helptip-bg-330.png) top left;
+  background: transparent url(../images/helptip-bg-330.png) top left;
   padding: 3px;
 }
 
 .helptip-style-dialog .helptip-title {
-  background: transparent url(/universal/images/helptip-warning.png) 5px 5px no-repeat;
+  background: transparent url(../images/helptip-warning.png) 5px 5px no-repeat;
   padding: 15px 15px 8px 50px;
   font-size:    14px;
   font-weight:    bold;
@@ -1115,7 +1115,7 @@ a.button-disabled span {
 }
 
 .helptip-style-dialog .helptip-text {
-  background:  transparent url(/universal/images/helptip-bg-330.png) bottom left;
+  background:  transparent url(../images/helptip-bg-330.png) bottom left;
   padding:    0 15px 20px 53px;
   font-size:    11px !important;
   letter-spacing: 0px !important;
@@ -1375,14 +1375,14 @@ a.video-container-link-selected, a.video-container-link-selected:hover {
   width:      600px;
 }
 .configuration-container-w600 .configuration-container-footer {
-  background:   url(/universal/images/helptip-bg-600.png) bottom left;
+  background:   url(../images/helptip-bg-600.png) bottom left;
 }
 .configuration-container-w600 #configuration-container-title-wrapper {
   width:        600px;
-  background:   url(/universal/images/helptip-bg-600.png) top left;
+  background:   url(../images/helptip-bg-600.png) top left;
 }
 .configuration-container-w600 #configuration-container-text {
-  background:   url(/universal/images/helptip-bg-600.png) bottom left;
+  background:   url(../images/helptip-bg-600.png) bottom left;
 }
   
   
@@ -1396,14 +1396,14 @@ a.video-container-link-selected, a.video-container-link-selected:hover {
   width:      750px;
 }
 .configuration-container-w750 .configuration-container-footer {
-  background:   url(/universal/images/helptip-bg-750.png) bottom left;
+  background:   url(../images/helptip-bg-750.png) bottom left;
 }
 .configuration-container-w750 #configuration-container-title-wrapper {
   width:        750px;
-  background:   url(/universal/images/helptip-bg-750.png) top left;
+  background:   url(../images/helptip-bg-750.png) top left;
 }
 .configuration-container-w750 #configuration-container-text {
-  background:   url(/universal/images/helptip-bg-750.png) bottom left;
+  background:   url(../images/helptip-bg-750.png) bottom left;
 }
   
 .helptip-style-dialog-wide {
@@ -1423,12 +1423,12 @@ a.video-container-link-selected, a.video-container-link-selected:hover {
 }
 
 .helptip-style-dialog-wide .helptip-title-wrapper {
-    background: transparent url(/universal/images/helptip-bg-400-pointer.png) top left;
+    background: transparent url(../images/helptip-bg-400-pointer.png) top left;
     padding: 20px 3px 3px 3px;
 }
 
 .helptip-style-dialog-wide .helptip-title {
-    background: transparent url(/universal/images/helptip-warning.png) 5px 5px no-repeat;
+    background: transparent url(../images/helptip-warning.png) 5px 5px no-repeat;
     padding: 15px 15px 8px 50px;
     font-size: 14px;
     font-weight: bold;
@@ -1436,7 +1436,7 @@ a.video-container-link-selected, a.video-container-link-selected:hover {
 }
 
 .helptip-style-dialog-wide .helptip-text {
-    background: transparent url(/universal/images/helptip-bg-400.png) bottom left;
+    background: transparent url(../images/helptip-bg-400.png) bottom left;
     padding: 0 15px 20px 53px;
     font-size: 11px !important;
     letter-spacing: 0px !important;
@@ -1460,7 +1460,7 @@ a.video-container-link-selected, a.video-container-link-selected:hover {
 }
 
 a.configuration-container-tab {
-    background: transparent url(/universal/images/manager/tab-a-active.png) no-repeat scroll top right !important;
+    background: transparent url(../images/tab-a-active.png) no-repeat scroll top right !important;
     color: #efefef !important;
     display: block;
     margin-right: 8px;
@@ -1476,7 +1476,7 @@ a.configuration-container-tab {
 }
 
 a.configuration-container-tab span {
-    background: transparent url(/universal/images/manager/tab-span-active.png) no-repeat !important;
+    background: transparent url(../images/tab-span-active.png) no-repeat !important;
     display: block; 
     line-height: 20px !important;
     padding: 5px 0 5px 12px !important;
@@ -1485,7 +1485,7 @@ a.configuration-container-tab span {
 }
   
 a.configuration-container-tab-inactive { 
-    background: transparent url(/universal/images/manager/tab-a-inactive.png) no-repeat scroll top right !important;
+    background: transparent url(../images/tab-a-inactive.png) no-repeat scroll top right !important;
     color: #999 !important;
     display: block;
     font: 13px arial, sans-serif !important;
@@ -1500,7 +1500,7 @@ a.configuration-container-tab-inactive {
 }
 
 a.configuration-container-tab-inactive span {
-    background: transparent url(/universal/images/manager/tab-span-inactive.png) no-repeat !important;
+    background: transparent url(../images/tab-span-inactive.png) no-repeat !important;
     display: block; 
     line-height: 20px !important;
     padding: 5px 0 5px 12px !important;
@@ -1516,9 +1516,9 @@ a.configuration-container-tab-inactive span {
 .squarespace-selector-dialog .file-select-location-strip { height: 220px; padding: 20px 0 0 0; background: #101010; }
 .squarespace-selector-dialog a.file-select-category-option { -moz-outline: 0; display: block; text-align: right; color: #aaa; margin-bottom: 5px; background: transparent !important; text-decoration: none !important; border: 0 !important; } 
 .squarespace-selector-dialog a.file-select-category-option:hover { color: #fff; border: 0 !important; } 
-.squarespace-selector-dialog .file-select-title { color: #eee; font: 16px Arial; font-weight: bold; letter-spacing: -1px; background: transparent url('/universal/images/manager/dialog-create-link.png') 18px 13px no-repeat; padding: 14px 0 14px 54px; }
-.squarespace-selector-dialog .file-select-title-strip { background: transparent url('/universal/images/helptip-bg-550-dark.png') top left no-repeat;  } 
-.squarespace-selector-dialog .file-select-button-strip { background: transparent url('/universal/images/helptip-bg-550-dark.png') bottom left no-repeat; }
+.squarespace-selector-dialog .file-select-title { color: #eee; font: 16px Arial; font-weight: bold; letter-spacing: -1px; background: transparent url('../images/dialog-create-link.png') 18px 13px no-repeat; padding: 14px 0 14px 54px; }
+.squarespace-selector-dialog .file-select-title-strip { background: transparent url('../images/helptip-bg-550-dark.png') top left no-repeat;  } 
+.squarespace-selector-dialog .file-select-button-strip { background: transparent url('../images/helptip-bg-550-dark.png') bottom left no-repeat; }
 .squarespace-selector-dialog .file-select-field-title { color: #eee; font: 10px Arial; font-weight: bold; padding: 0 0 2px 0; }
 .squarespace-selector-dialog .file-select-field-text { margin-bottom: 6px; }
 .squarespace-selector-dialog .file-select-category-active { color: #fff !important; }

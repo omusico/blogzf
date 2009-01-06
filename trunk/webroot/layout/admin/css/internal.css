@@ -41,14 +41,14 @@ body {
 	margin: 		0; 
 	padding: 		0; 	
 	height: 		100%; 
-	background: #ffffff url(/universal/images/manager/manager-background-bottom.png) 200px 0px repeat-x;
+	background: #ffffff url(../images/manager-background-bottom.png) 200px 0px repeat-x;
 }
 
 #pageContainerWrapper {
   padding-left:   81px;
   text-align:     left;
   z-index:        1;
-  background:    transparent url(/universal/images/manager/manager-page-left.png) 18px 0px no-repeat;
+  background:    transparent url(../images/manager-page-left.png) 18px 0px no-repeat;
   position: absolute;
   top: 50px;
   left: 0px;
@@ -56,7 +56,7 @@ body {
 
 #pageContainer { 
   padding-right: 63px; 
-  background: transparent url(/universal/images/manager/manager-page-right.png) top right no-repeat;
+  background: transparent url(../images/manager-page-right.png) top right no-repeat;
   padding-top: 8px;
 }
   
@@ -264,8 +264,8 @@ form {
 
 
 
-.sortLinkASC { background: transparent url(/universal/images/manager/table-asc.png) no-repeat center right; padding-right: 11px; }
-.sortLinkDESC { background: transparent url(/universal/images/manager/table-desc.png) no-repeat center right; padding-right: 11px; }
+.sortLinkASC { background: transparent url(../images/table-asc.png) no-repeat center right; padding-right: 11px; }
+.sortLinkDESC { background: transparent url(../images/table-desc.png) no-repeat center right; padding-right: 11px; }
 
 .standardList .editableCell { 
 	vertical-align: 	top;
@@ -440,9 +440,9 @@ A.significantLink:hover {
 
 .pricingHeader { text-align: center; font-size: 10pt; }
 
-.actionBoxIconUpload { background: url(/universal/images/manager/upload.jpg); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
-.actionBoxIconImport { background: url(/universal/images/manager/import-data.jpg); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
-.actionBoxIconEmail { background: url(/universal/images/manager/email.png); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
+.actionBoxIconUpload { background: url(../images/upload.jpg); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
+.actionBoxIconImport { background: url(../images/import-data.jpg); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
+.actionBoxIconEmail { background: url(../images/email.png); background-repeat: no-repeat; float: left; height: 50px; width: 50px; }
 .actionBoxContent { margin-left: 55px; height: 1%; }
 .actionBox { padding-top: 4px; }
  
@@ -461,7 +461,7 @@ A.significantLink:hover {
 .managerSideTitle a:link, .managerSideTitle a:visited, .managerSideTitle a:active { color: #e7e7e7; } 
 .managerSideTitle a:hover { color: #ffffff; }
 
-.managerSideContent ul li a { display: block; padding-left: 18px; background: transparent url(/universal/images/manager/post.png) no-repeat top left; }
+.managerSideContent ul li a { display: block; padding-left: 18px; background: transparent url(../images/post.png) no-repeat top left; }
 
 .managerDataCell { font: 14pt Georgia; padding-right: 6px; }
 .managerDataDescriptionCell { font: 8pt; padding-right: 6px; }
@@ -537,40 +537,40 @@ A.significantLink:hover {
 
 .pricingPackageText { margin-top: 6px; margin-bottom: 6px; margin-left: 125px; text-align: right; line-height: 14px; }
 .pricingPackageTitle { font-weight: bold; font-size: 140%; }
-.optionImage { background: transparent url(/universal/images/manager/option.png) no-repeat center center; }
+.optionImage { background: transparent url(../images/option.png) no-repeat center center; }
 .planTitle { color: #708D44; margin-bottom: 4px; }
 
 
 .innerWarningSegmentBox {  
-	background: 		#BDBB00 url(/universal/images/util/box_bottom_left_gray.gif) no-repeat bottom left;
+	background: 		#BDBB00 url(../images/box_bottom_left_gray.gif) no-repeat bottom left;
 	color: 			#fff;
 }
 .innerWarningSegmentBox .innerSegmentBoxIcon {  
-	background: 		transparent url(/universal/images/manager/warning-box-icon.jpg) no-repeat 3px 0px;
+	background: 		transparent url(../images/warning-box-icon.jpg) no-repeat 3px 0px;
 	width:			32px;
 	height:			32px;
 	float:			left;
 }
 .innerSegmentBoxTitle { 
-	background: 		transparent url(/universal/images/util/box_top_right_gray.gif) no-repeat top right;
+	background: 		transparent url(../images/box_top_right_gray.gif) no-repeat top right;
  }
 .innerSegmentBoxHeader {
-	background: 		transparent url(/universal/images/util/box_top_left_gray.gif) no-repeat top left;
+	background: 		transparent url(../images/box_top_left_gray.gif) no-repeat top left;
 	height:			9px;
 	line-height:		9px;
 }
 .innerSegmentBoxContent { 
-	background: 		transparent url(/universal/images/util/box_bottom_right_gray.gif) no-repeat bottom right;
+	background: 		transparent url(../images/box_bottom_right_gray.gif) no-repeat bottom right;
 	padding: 		12px;
 	padding-top:		4px;
 }
 .innerSegmentBoxContentWide { 
-	background: 		transparent url(/universal/images/util/box_bottom_right_gray.gif) no-repeat bottom right;
+	background: 		transparent url(../images/box_bottom_right_gray.gif) no-repeat bottom right;
 	padding: 		18px;
 	padding-top:		4px;
 }
 .innerSegmentBoxContentThin { 
-	background: 		transparent url(/universal/images/util/box_bottom_right_gray.gif) no-repeat bottom right;
+	background: 		transparent url(../images/box_bottom_right_gray.gif) no-repeat bottom right;
 	padding: 		4px;
 	padding-top:		4px;
 }
@@ -584,8 +584,8 @@ A.significantLink:hover {
  
 
 
-#commonTasks a { margin-bottom: 12px; display: block; border: 1px solid #BFD0AC; padding: 15px; padding-left: 42px; background: #F8FAF4 url(/universal/images/manager/triangle.png) no-repeat 14px 18px; }
-#commonTasks a:hover { margin-bottom: 12px; display: block; border: 1px solid #516E48; padding: 15px; padding-left: 42px; color: white; background: #516E48 url(/universal/images/manager/triangle.png) no-repeat 14px 18px; }
+#commonTasks a { margin-bottom: 12px; display: block; border: 1px solid #BFD0AC; padding: 15px; padding-left: 42px; background: #F8FAF4 url(../images/triangle.png) no-repeat 14px 18px; }
+#commonTasks a:hover { margin-bottom: 12px; display: block; border: 1px solid #516E48; padding: 15px; padding-left: 42px; color: white; background: #516E48 url(../images/triangle.png) no-repeat 14px 18px; }
 #commonTasks a .taskTitle { font-weight: bold; font-size: 18px; font-family: Arial; letter-spacing: -1px; }
 #commonTasks a .taskDescription { padding-top: 3px; }
 
@@ -600,8 +600,8 @@ A.significantLink:hover {
 
 
 #multiItemAction .container { padding: 8px 0 15px;  background-color: #EEF5EB; border-bottom: 1px solid #ccc; }
-.unmarkedRow .commentIcon { background: url(/universal/images/manager/comment.png) bottom left no-repeat; }
-.markedRow .commentIcon { background: url(/universal/images/manager/comment.png) bottom left no-repeat; }
+.unmarkedRow .commentIcon { background: url(../images/comment.png) bottom left no-repeat; }
+.markedRow .commentIcon { background: url(../images/comment.png) bottom left no-repeat; }
 .markedRow .significantText { color: black; }
 .markedRow td { background: #EEF5EB; } 
 .markedRow td a, .markedRow td a:hover, .markedRow td a:visited {  }
