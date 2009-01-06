@@ -5,13 +5,6 @@
         <?= $this->headTitle() ?>
         <?= $this->headLink() ?>
         <?= $this->headScript() ?>	
-		
-        <link rel="shortcut icon" href="http://pablofmorales.squarespace.com/universal/favicon.ico" type="image/x-icon">
-        
-        <link rel="stylesheet" type="text/css" href="Domain_files/internal.css" title="default">
-        <link type="text/css" rel="stylesheet" href="Domain_files/management.css">
-        
-        <title>Squarespace - Configuration - Custom Domain</title> 
 	</head>
 	
 	<body class="yui-skin-sam">
@@ -20,17 +13,15 @@
             <div style="opacity: 1;" id="manager-top-bar">
              
                  <span class="info-block" style="font-size: 16px; margin-top: -2px; font-family: Arial;">
-                 	<a href="http://pablofmorales.squarespace.com/">Your Site Name</a>
+                 	<a href="#">Your Site Name</a>
                  </span>
-                 <span class="info-block">You are 
-                 	<a href="http://pablofmorales.squarespace.com/display/configuration/CreateOrModifyMemberAccount?accountId=448091">[Your Name Here]</a> /
-                    <a href="http://pablofmorales.squarespace.com/process/Logout?returnUrl=%2F">Logout</a>
+                 <span class="info-block"> 
+                 	<a href="#">[Your Name Here]</a> /
+                    <a href="#">Logout</a>
                  </span> 
-                 <span class="info-block-final">
-					<a href="http://pablofmorales.squarespace.com/display/configuration/AccountPricing">This trial account expires in 8 days. <strong>Click Here to Upgrade »</strong></a>
-                 </span>
+                 <span class="info-block-final"></span>
                  <span class="info-block-rhs-final">
-                 	This is <a href="javascript:Squarespace.Interaction.managerAbout();">Squarespace</a> V5
+                 	Esto es <a href="#">Blogzf</a>
                  </span> 
             </div>
         </div>
@@ -38,127 +29,8 @@
         <div id="pageContainerWrapper">
 	        <div id="pageContainer">
   				<div id="pageContent">
-
-                <div id="pageHeaderTitle">Custom Domain</div>
-				<div id="pageBody">
-					<form method="post" name="dataform" action="/process/configuration/UpdateDomain">
-						<div style="overflow: hidden; height: 0px; display: none;" id="squarespaceClosableNotice">
-                        	<div class="updateSegmentBox">
-                            	<div class="segmentBoxHeader">
-                            		<div class="segmentBoxTitle">&nbsp;</div>
-                            	</div>
-                            	<div class="segmentBoxContent">
-                                	<div class="segmentBoxIcon"></div>
-                              		<div class="segmentBoxText">
-                                		<strong>Your domain mapping has been added.</strong>  Please ensure your CNAME records are set up properly for this domain.  Valid CNAME
-                                		records are required for this mapping to function properly.
-                              		</div>
-	                            </div>
-                          	</div>
-                    	</div>
-    					
-    					<div id="squarespaceStaticNotice">
-      						<div class="informationSegmentBox">
-        						<div class="segmentBoxHeader">
-        							<div class="segmentBoxTitle">&nbsp;</div>
-        						</div>
-        						<div class="segmentBoxContent">
-                                    <div class="segmentBoxIcon"></div>
-                                    <div class="segmentBoxText">
-								    	<div class="segmentBoxImportantText">Suggestion: Add Multiple Domain Forms</div>
-										You may also wish to add a mapping for other forms of your domain. For
-										example, if you have added 'www.example.com' to be mapped, you may also
-										wish to add 'example.com' (no www) to be mapped (or vice versa). These
-										two independent records should be established at your registrar also. <br><br>
-										<input onclick="document.location = '/process/configuration/UpdateDomain?virtualHost=dominio.com';" class="button" style="width: 280px; height: 30px;" value="Add the domain 'dominio.com' also »" type="button"> &nbsp;
-          							</div>
-								</div>
-                            </div>
-                        </div>
-    					
-    					<div id="tutorials">
-      						<div id="tutorialBlock">
-        						<div class="taskTitle">What if I need more help setting up?</div>
-       							<div class="taskDescription">You'll
-                                    need to create a pointer that points your domain to our system. Our FAQ
-                                    contains extensive information related to how to set this pointer up. <a target="_blank" style="font-weight: bold;" href="http://manual.squarespace.com/faq/domain-setup/">Click here to read more »</a>
-                                </div>
-							</div>
-   							<div class="disableOption"><a href="http://pablofmorales.squarespace.com/display/configuration/InterfacePreferences">Disable Tutorial Mode »</a></div>
-   						</div>
-  						<div id="sectionDescription">
-                            <strong>Custom domain settings provide a way for you to completely hide the squarespace.com domain your site visitors.</strong>
-                            For example, instead of having your site appear at
-                            http://pablofmorales.squarespace.com/, you could point your own domain
-                            to Squarespace, and have your visitors go directly to
-                            http://www.mysite.com/. The steps for setting up your domain are as
-                            follows: <br/><br/>
-    						
-    						<table class="smallFeatureTable">
-      							<tbody>
-      								<tr>
-      									<td class="leftTD">Purchase</td>
-      									<td style="padding-bottom: 15px;">The first step in using a custom domain is purchasing one.  In order to do this, you should use a domain registrar.  <a href="http://www.nettica.com/" target="new">We currently recommend Nettica for new domain registrations.</a></td>
-      								</tr>
-      								<tr>
-      									<td class="leftTD">Point</td>
-      									<td style="padding-bottom: 15px;">
-                                            Step two is telling your new domain to send traffic to our new servers.
-                                            Within your registrar's advanced setup interface, create a CNAME record
-                                            that points <strong>www.yourdomain.com</strong> to <strong>www.squarespace.com</strong>. 
-                                            Please note that it can take <strong>up to 24 hours</strong> for the pointing process to take place.  Please be patient as your pointer spreads throughout the internet.
-                                            <br><br>
-                                            <strong style="font-size: 12px;"><a target="new" href="http://manual.squarespace.com/">NOTE: Our User Manual contains illustrated setup guides for most popular registrars »</a></strong>
-      									</td>
-      								</tr>
-      								<tr>
-      									<td class="leftTD">Claim</td>
-      									<td>The final step is to claim your domains on our system.  Below, type in the domains that you would like to use with this website.</td>
-      								</tr>
-    							</tbody>
-    						</table>
-  						</div>
-    					
-    					<div class="subsectionContentBlock">
-      						<table class="standardList" style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
-        						<thead>
-          							<tr>
-                                        <td>&nbsp;</td>
-                                        <td style="text-align: left; cursor: help;" id="domainHelp" nowrap="nowrap">Domain <span class="managerLinkTitleHelp">?</span></td>
-                                        <td style="text-align: left;" nowrap="nowrap">External URL Example</td>
-                                        <td style="text-align: center; cursor: help;" id="primaryHelp" nowrap="nowrap">Primary <span class="managerLinkTitleHelp">?</span></td>
-                                        <td></td>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody>
-                                	<tr>
-                                    	<td><img alt="Domain Mapping" src="Domain_files/domain-mapping.png"></td>
-                                    	<td><strong>www.dominio.com</strong></td>
-                                        <td><a href="http://www.dominio.com/" target="_blank">http://www.dominio.com/</a></td>
-                                        <td style="text-align: center;"><strong>yes</strong></td>
-                                        <td style="text-align: center;" nowrap="nowrap">
-                                        	<a href="javascript:doConfirmRemoveMapping(33348);">remove</a> / 
-                                        	<a href="javascript:doCheckDNS('www.dominio.com');">check setup</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    	<td style="border: 0pt none ; padding-top: 15px;"></td>
-                                      	<td style="border-bottom: 0px none; padding-top: 15px;" colspan="3">
-  											<div id="virtualHost_title" style="margin-bottom: 4px;">
-      											Enter a new domain to map (no http://):
-											</div>
-            								<input maxlength="50" name="virtualHost" id="virtualHost" class="text" style="width: 260px;" type="input" />
-										</td>
-          								<td style="border-bottom: 0px none; padding-top: 15px;" nowrap="nowrap">&nbsp;</td>
-        							</tr>
-      							</tbody>
-      						</table>
-    					</div>
-                        <div class="footerButtons">
-                        	<input style="width: 200px;" class="button" onclick="return Squarespace.Form.smartSubmit('dataform');" value="Add Mapping" type="submit">
-                        </div>
-					</form>
+  					<div id="messages"><?=$this->blogzfFlashMessenger()?></div>
+					<?= $this->layout()->content ?>
 				</div>
 			</div>
 		</div>

@@ -1,47 +1,41 @@
-<div class="main">
-    <h2>Posts</h2>
-    
-    <div class="menu">
-        <ul>
-        	<li><a href="/admin/posts/create/">Agregar</a></li>
-        </ul>
-    </div>
-	<?php if (count($this->paginator)) : ?>
-	<div id="results">
-    	<table width="80%" border="0" cellpadding="0" cellspacing="0">
-    	<thead>
-    		<tr>
-    			<th>Id</th>
-    			<th>Title</th>
-    			<th>Autor</th>
-    			<th>Fecha</th>
-    			<th>Acciones</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    	<?php
-        $i = 0;
-        foreach ($this->paginator as $post) :
-        ?>
-	        <tr class=<?= ($i%2==0?'"even clickable"':'"odd clickable"') ?>">
-    			<td><?=$post["post_id"]?></td>
-    			<td><?=$post["title"]?></td>
-    			<td><?=$post["user_id"]?></td>
-    			<td><?=$post["created_on"]?></td>
-    			<td>
-    				<a href="/admin/posts/update/postId/<?=$post["post_id"]?>">Modificar</a>
-    				<a href="/admin/posts/delete/postId/<?=$post["post_id"]?>">Borrar</a>
-    			</td>
-    		</tr>
-    	<?php
-        ++ $i;
-        endforeach;
-        ?>
-		</tbody>
-        </table>
-    </div>
-<br class="clear" />
-	<?=$this->paginator?>
-	
-<?php endif;?>
+<div id="pageHeaderTitle"><?=$this->moduleName?></div>
+<div id="pageBody">
+	<div class="subsectionContentBlock">
+	    <?php if (count($this->paginator)) : ?>
+		<table class="standardList" style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+                    <td>&nbsp;</td>
+                    <td style="text-align: left; cursor: pointer;" nowrap="nowrap">Id</td>
+                    <td style="text-align: left; cursor: pointer;" nowrap="nowrap">Titulo</td>
+                    <td style="text-align: left;" nowrap="nowrap">Autor</td>
+                    <td style="text-align: center;" nowrap="nowrap">Creado</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+            	<?php
+                $i = 0;
+                foreach ($this->paginator as $post) :
+                ?>
+        	        <tr>
+        	        	<td>&nbsp;</td>
+            			<td><?=$post["post_id"]?></td>
+            			<td><?=$post["title"]?></td>
+            			<td><?=$post["user_id"]?></td>
+            			<td><?=$post["created_on"]?></td>
+            			<td>
+            				<a href="/admin/posts/update/postId/<?=$post["post_id"]?>">Modificar</a> /&nbsp; 
+            				<a href="/admin/posts/delete/postId/<?=$post["post_id"]?>">Borrar</a>
+            			</td>
+            		</tr>
+            	<?php
+                ++ $i;
+                endforeach;
+                ?>
+			</tbody>
+		</table>
+		<?php endif; ?>
+	</div>
 </div>

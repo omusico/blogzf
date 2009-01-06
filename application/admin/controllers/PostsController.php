@@ -7,6 +7,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
     }
     public function readAction ()
     {
+        $this->view->moduleName = 'Post';
         $posts = new Post();
         $select = $posts->select();
         $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect( $select ));
