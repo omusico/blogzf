@@ -1,46 +1,49 @@
-	<ul>
-		<li><a class="returnFalse" href="">Post</a>	
-			<ul>
-				<li><a id="ajaxpageLinkCheck" href="<?=$this->appServer?>/admin/post/read/">Editar</a></li>
-				<li><a id="jsonLink" href="<?=$this->appServer?>/admin/post/create/">Crear</a></li>
-				<li><a id="youtubeLinkCheck" href="<?=$this->appServer?>/admin/tags/read/">Tags</a></li>
-				<li><a id="slideshareLinkCheck" href="<?=$this->appServer?>/admin/category/read/">Categorias</li>
-			</ul>
-		</li>
-		<li><a class="returnFalse" href="<?=$this->appServer?>/admin/media/read/">Media</a></li>
-		<li><a class="returnFalse" href="">Links</a>
-			<ul>
-				<li><a id="builderLinkCheck" href="<?=$this->appServer?>/admin/links/read/">Editar</a></li>
-				<li><a id="builderLinkCheck" href="<?=$this->appServer?>/admin/links/create/">Crear</a></li>
-				<li><a id="builderLinkCheck" href="<?=$this->appServer?>/admin/linkscategory/read/">Categoria de links</a></li>
-			</ul>
-		</li>
-		<li>
-			<a class="returnFalse" href="">Paginas</a>
-			<ul>
-				<li><a id="saveWorkspaceLink" href="<?=$this->appServer?>/admin/pages/read/">Editar</a></li>
-				<li><a id="loadWorkspaceLink" href="<?=$this->appServer?>/admin/pages/create/">Crear</a></li>
-			</ul>
-		</li>
-		<li><a class="returnFalse" href="">Comentarios</a></li>
-		<li><a class="returnFalse" href="">Apariencia</a></li>
-		<li><a class="returnFalse" href="">Plugins</a></li>
-		<li><a class="returnFalse" href="">Usuarios</a>
-			<ul>
-				<li><a id="featuresLinkCheck" href="<?=$this->appServer?>/admin/users/read/">Autores y usuarios</a></li>
-				<li class="divider"><a target="_blank" href="<?=$this->appServer?>/admin/users/create/">Crear</a></li>
-				<li class="divider"><a id="aboutLink" href="<?=$this->appServer?>/admin/users/update/userId/1/">Perfil</a></li>
-			</ul>
-		</li>
-		<li><a class="returnFalse" href="">Herramientas</a></li>
-		<li><a class="returnFalse" href="">Configuracion</a></li>		
-	</ul>	
-<div class="toolbox divider2">
-	<div id="spinnerWrapper"><div id="spinner"></div></div>		
-</div>
-
-<div class="toolbox divider2">
-	<img src="images/icons/cog.gif" onclick="MochaUI.notification('Do Something');" width="16" height="16" alt="" />
-	<img src="images/icons/windows.gif" onclick="MochaUI.notification('Do Something');" width="16" height="16" alt="" />
-	<img src="images/icons/sheet.gif" onclick="MochaUI.notification('Do Something');" width="16" height="16" alt="" />
-</div>	
+<div class="subsectionContentBlock">
+		<table class="standardList" style="width:200px;" border="0" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+                    <td>&nbsp;</td>
+                    <td style="text-align: left; " nowrap="nowrap">Secciones</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/posts/create/">Crear Post</a>
+                    </td>
+                </tr>
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/posts/read/">Ver Posts</a>
+                    </td>
+                </tr>    
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/category/read/">Categorias</a>
+                    </td>
+                </tr>
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/tags/read/">Tags</a>
+                    </td>
+                </tr>
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/perfil/">Perfil</a>
+                    </td>
+                </tr>
+            	<tr>
+                	<td></td>
+                	<td>
+                    	<a href="/admin/setup/">Configuracion</a>
+                    </td>
+                </tr>                                                   
+			</tbody>
+		</table>
+	</div>
