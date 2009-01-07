@@ -29,6 +29,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
                     $post->content = $postData['content'];
                     $post->user_id = $this->_user->id;
                     $post->open_comment = $postData['comment'];
+                    $post->lang = 'es';
                     $post->created_on = new Zend_Db_Expr('now()');
                     $post->status = $postData['status'];
                     $post->save();
@@ -57,7 +58,7 @@ class Admin_PostsController extends Blogzf_Controller_Action
                     $post->title = $postData['title'];
                     $post->content = $postData['content'];
                     $post->open_comment = $postData['comment'];
-                    $post->update_on = new Zend_Db_Expr('now()');
+                    $post->updated_on = new Zend_Db_Expr('now()');
                     $post->status = $postData['status'];
                     $post->save();
                     $this->_redirect('/admin/posts/read/');
